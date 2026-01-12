@@ -48,7 +48,9 @@ class HtmlScraper:
         soup = BeautifulSoup(html, "lxml")
 
         # 1) Prefer structured SSR data when available.
-        apollo_matches = HtmlScraper._parse_from_apollo_ssr(html, league_slugs=league_slugs, tz=tz, page_url=page_url)
+        apollo_matches = HtmlScraper._parse_from_apollo_ssr(
+            html, league_slugs=league_slugs, tz=tz, page_url=page_url
+        )
         if apollo_matches:
             return apollo_matches
 
@@ -167,7 +169,15 @@ class HtmlScraper:
             # Attempt stage from labeled chips
             for chip in container.find_all(["span", "div"]):
                 t = chip.get_text(" ", strip=True)
-                if t and t.lower() in {"playoffs", "swiss", "groups", "group stage", "final", "semifinal", "quarterfinal"}:
+                if t and t.lower() in {
+                    "playoffs",
+                    "swiss",
+                    "groups",
+                    "group stage",
+                    "final",
+                    "semifinal",
+                    "quarterfinal",
+                }:
                     stage = t
                     break
 
@@ -294,7 +304,7 @@ class HtmlScraper:
                 team2 = str(t2_data.get("name") or t2_data.get("code") or "TBD")
                 team1_code = t1_data.get("code") or None
                 team2_code = t2_data.get("code") or None
-                
+
                 # Extract scores from team result
                 team1_score = None
                 team2_score = None
@@ -331,7 +341,7 @@ class HtmlScraper:
                             winner = team2
 
                 stage = ev.get("blockName") or None
-                
+
                 # Build proper match URL using match ID
                 match_id = match.get("id") or ev.get("id")
                 if match_id:
@@ -377,7 +387,9 @@ class HtmlScraper:
     def fetch_matches(self, league_slugs: List[str], *, config: ScrapeConfig) -> List[Match]:
         page_url = f"https://lolesports.com/schedule?leagues={','.join(league_slugs)}"
         resp = self.fetcher.get(page_url)
-        return self.parse_schedule_html(resp.text, league_slugs=league_slugs, tz_name=config.tz, page_url=page_url)
+        return self.parse_schedule_html(
+            resp.text, league_slugs=league_slugs, tz_name=config.tz, page_url=page_url
+        )
 
 
 def scrape_matches(

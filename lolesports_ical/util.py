@@ -138,18 +138,31 @@ class Fetcher:
         self.cache = cache
         self.rate_limiter = rate_limiter
         self.retry = retry or RetryConfig()
-        self.client = httpx.Client(timeout=timeout_s, headers={"User-Agent": user_agent}, follow_redirects=True)
+        self.client = httpx.Client(
+            timeout=timeout_s, headers={"User-Agent": user_agent}, follow_redirects=True
+        )
 
     def close(self) -> None:
         self.client.close()
 
-    def _cache_key(self, url: str, params: Optional[Dict[str, Any]], headers: Optional[Dict[str, str]]) -> str:
+    def _cache_key(
+        self, url: str, params: Optional[Dict[str, Any]], headers: Optional[Dict[str, str]]
+    ) -> str:
         params_items: Iterable[Tuple[str, Any]] = sorted((params or {}).items())
         headers_items: Iterable[Tuple[str, str]] = sorted((headers or {}).items())
-        raw = json.dumps({"url": url, "params": list(params_items), "headers": list(headers_items)}, sort_keys=True)
+        raw = json.dumps(
+            {"url": url, "params": list(params_items), "headers": list(headers_items)},
+            sort_keys=True,
+        )
         return sha256_hex(raw)
 
-    def get(self, url: str, *, params: Optional[Dict[str, Any]] = None, headers: Optional[Dict[str, str]] = None) -> httpx.Response:
+    def get(
+        self,
+        url: str,
+        *,
+        params: Optional[Dict[str, Any]] = None,
+        headers: Optional[Dict[str, str]] = None,
+    ) -> httpx.Response:
         host = httpx.URL(url).host or ""
         key = self._cache_key(url, params, headers)
         cached = self.cache.get(key)
@@ -157,7 +170,12 @@ class Fetcher:
             status = int(cached.get("status", 200))
             body = str(cached.get("body_b64", "")).encode("latin1")
             resp_headers = {str(k): str(v) for k, v in (cached.get("headers") or {}).items()}
-            return httpx.Response(status_code=status, headers=resp_headers, content=body, request=httpx.Request("GET", url))
+            return httpx.Response(
+                status_code=status,
+                headers=resp_headers,
+                content=body,
+                request=httpx.Request("GET", url),
+            )
 
         attempt = 0
         while True:
@@ -185,5 +203,7 @@ class Fetcher:
                 continue
 
             resp.raise_for_status()
-            self.cache.set(key, status=resp.status_code, headers=dict(resp.headers), body=resp.content)
+            self.cache.set(
+                key, status=resp.status_code, headers=dict(resp.headers), body=resp.content
+            )
             return resp

@@ -14,17 +14,30 @@ from zoneinfo import ZoneInfo
 
 
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="lolesports_ical", description="Scrape LoL Esports schedules and emit an iCalendar feed")
+    p = argparse.ArgumentParser(
+        prog="lolesports_ical",
+        description="Scrape LoL Esports schedules and emit an iCalendar feed",
+    )
     p.add_argument("--out", default="feed.ics", help="Output .ics path (default: feed.ics)")
-    p.add_argument("--tz", default="Europe/Berlin", help="Local timezone for match_start_local (default: Europe/Berlin)")
-    p.add_argument("--days", type=int, default=30, help="How many days ahead to include (default: 30)")
+    p.add_argument(
+        "--tz",
+        default="Europe/Berlin",
+        help="Local timezone for match_start_local (default: Europe/Berlin)",
+    )
+    p.add_argument(
+        "--days", type=int, default=30, help="How many days ahead to include (default: 30)"
+    )
     p.add_argument(
         "--leagues",
         default=",".join(LEAGUE_SLUGS_DEFAULT),
         help="Comma-separated league slugs (default: all supported)",
     )
-    p.add_argument("--cache-dir", default=str(Path(".cache") / "lolesports_ical"), help="Disk cache dir")
-    p.add_argument("--cache-ttl", type=int, default=60 * 30, help="Cache TTL seconds (default: 1800)")
+    p.add_argument(
+        "--cache-dir", default=str(Path(".cache") / "lolesports_ical"), help="Disk cache dir"
+    )
+    p.add_argument(
+        "--cache-ttl", type=int, default=60 * 30, help="Cache TTL seconds (default: 1800)"
+    )
     p.add_argument("--history", default=None, help="Path to JSON file for persisting match history")
     return p
 
@@ -57,7 +70,7 @@ def dict_to_match(d: Dict[str, Any], tz_name: str) -> Match:
     if start_utc.tzinfo is None:
         start_utc = start_utc.replace(tzinfo=timezone.utc)
     start_local = start_utc.astimezone(tz)
-    
+
     return Match(
         league_slug=d["league_slug"],
         league_name=d["league_name"],
@@ -81,7 +94,7 @@ def dict_to_match(d: Dict[str, Any], tz_name: str) -> Match:
 def merge_with_history(fresh_matches: List[Match], history_path: Path, tz_name: str) -> List[Match]:
     """
     Merge freshly scraped matches with historical data.
-    
+
     - Fresh matches always take precedence (they may have updated scores)
     - Historical completed matches are preserved even if not in fresh data
     - History file is updated with the merged result
@@ -97,17 +110,17 @@ def merge_with_history(fresh_matches: List[Match], history_path: Path, tz_name: 
                     history_by_uid[uid] = m
         except Exception:
             pass  # Start fresh if history is corrupted
-    
+
     # Index fresh matches by UID
     fresh_by_uid: Dict[str, Match] = {m.stable_uid: m for m in fresh_matches}
-    
+
     # Merge: fresh takes priority, but keep historical completed matches
     merged: Dict[str, Match] = {}
-    
+
     # First, add all fresh matches
     for uid, m in fresh_by_uid.items():
         merged[uid] = m
-    
+
     # Then, add historical matches that aren't in fresh data
     for uid, d in history_by_uid.items():
         if uid not in merged:
@@ -115,17 +128,14 @@ def merge_with_history(fresh_matches: List[Match], history_path: Path, tz_name: 
                 merged[uid] = dict_to_match(d, tz_name)
             except Exception:
                 pass  # Skip malformed entries
-    
+
     # Save updated history
     all_matches_dicts = [match_to_dict(m) for m in merged.values()]
     # Sort by date for readability
     all_matches_dicts.sort(key=lambda x: x.get("match_start_utc", ""))
     history_path.parent.mkdir(parents=True, exist_ok=True)
-    history_path.write_text(
-        json.dumps({"matches": all_matches_dicts}, indent=2),
-        encoding="utf-8"
-    )
-    
+    history_path.write_text(json.dumps({"matches": all_matches_dicts}, indent=2), encoding="utf-8")
+
     return list(merged.values())
 
 
