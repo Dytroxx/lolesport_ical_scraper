@@ -5,7 +5,7 @@ from pathlib import Path
 
 from .ical import render_ical
 from .scrape import LEAGUE_SLUGS_DEFAULT, ScrapeConfig, scrape_matches
-from .util import DiskCache, Fetcher, RateLimiter, RetryConfig, env_api_key
+from .util import DiskCache, Fetcher, RateLimiter, RetryConfig
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -18,7 +18,6 @@ def build_parser() -> argparse.ArgumentParser:
         default=",".join(LEAGUE_SLUGS_DEFAULT),
         help="Comma-separated league slugs (default: all supported)",
     )
-    p.add_argument("--no-api", action="store_true", help="Disable API mode and force HTML parsing")
     p.add_argument("--cache-dir", default=str(Path(".cache") / "lolesports_ical"), help="Disk cache dir")
     p.add_argument("--cache-ttl", type=int, default=60 * 30, help="Cache TTL seconds (default: 1800)")
     return p
@@ -38,8 +37,6 @@ def main(argv: list[str] | None = None) -> int:
             league_slugs=league_slugs,
             fetcher=fetcher,
             config=config,
-            prefer_api=not bool(args.no_api),
-            api_key=env_api_key(),
         )
     finally:
         fetcher.close()

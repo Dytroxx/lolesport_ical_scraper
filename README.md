@@ -35,13 +35,6 @@ Custom:
 python -m lolesports_ical --out feed.ics --tz Europe/Berlin --days 30 --leagues emea_masters,lck,lec
 ```
 
-If the unofficial API requires an API key, provide it:
-
-```bash
-setx LOLESPORTS_API_KEY "<key>"
-python -m lolesports_ical --out feed.ics
-```
-
 ## Hosting `feed.ics`
 
 Any static file host works (nginx, GitHub Pages, S3, etc.). Point your calendar app at the URL of `feed.ics` as a subscription.
@@ -75,16 +68,8 @@ Your feed will be available at:
 
 `https://<github-user>.github.io/<repo>/feed.ics`
 
-### Optional: API key secret
-
-If you discover you need an API key for the unofficial `esports-api.lolesports.com` endpoints, add a repo secret:
-- **Settings → Secrets and variables → Actions → New repository secret**
-- Name: `LOLESPORTS_API_KEY`
-
-The workflow already passes it through as an env var.
-
 ## Known limitations
 
-- The site occasionally changes markup and/or internal API behavior. This project prefers a JSON schedule endpoint when accessible; otherwise it falls back to HTML parsing.
+- The site occasionally changes markup. This project uses HTML parsing to extract schedule data.
 - HTML parsing is best-effort and relies on machine-readable `<time datetime="...">` when present.
 - Some matches may have TBD teams; these are represented as `TBD`.

@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 from zoneinfo import ZoneInfo
 
 from .models import Match
-from .util import Fetcher, isoformat_z, stable_uid, try_extract_api_key_from_text
+from .util import Fetcher, isoformat_z, stable_uid
 
 
 LEAGUE_SLUGS_DEFAULT = [
@@ -32,162 +32,7 @@ class ScrapeConfig:
     locale: str = "en-US"
 
 
-class BaseScraper:
-    def fetch_matches(self, league_slugs: List[str], *, config: ScrapeConfig) -> List[Match]:
-        raise NotImplementedError
-
-
-class ApiScraper(BaseScraper):
-    """Best-effort support for LoL Esports internal schedule endpoints.
-
-    This typically uses the `esports-api.lolesports.com/persisted/gw/*` endpoints.
-    Some deployments require an `x-api-key` header.
-    """
-
-    API_BASE = "https://esports-api.lolesports.com"
-
-    def __init__(self, fetcher: Fetcher, *, api_key: Optional[str] = None) -> None:
-        self.fetcher = fetcher
-        self.api_key = api_key
-
-    def _headers(self) -> Dict[str, str]:
-        headers: Dict[str, str] = {"Accept": "application/json"}
-        if self.api_key:
-            headers["x-api-key"] = self.api_key
-        return headers
-
-    def _get_json(self, path: str, *, params: Dict[str, Any]) -> Dict[str, Any]:
-        url = f"{self.API_BASE}{path}"
-        resp = self.fetcher.get(url, params=params, headers=self._headers())
-        return resp.json()
-
-    def _league_slug_to_id_map(self, *, locale: str) -> Dict[str, str]:
-        # Known endpoint name, but structure can change; keep parser permissive.
-        data = self._get_json("/persisted/gw/getLeagues", params={"hl": locale})
-        leagues = (
-            data.get("data", {}).get("leagues")
-            or data.get("leagues")
-            or []
-        )
-        mapping: Dict[str, str] = {}
-        for lg in leagues:
-            slug = lg.get("slug") or lg.get("leagueSlug")
-            league_id = lg.get("id") or lg.get("leagueId")
-            if slug and league_id:
-                mapping[str(slug)] = str(league_id)
-        return mapping
-
-    def _parse_events_to_matches(
-        self,
-        events: Iterable[Dict[str, Any]],
-        *,
-        league_slug: str,
-        tz: ZoneInfo,
-        league_page_url: str,
-    ) -> List[Match]:
-        out: List[Match] = []
-        for ev in events:
-            start = ev.get("startTime") or ev.get("start_time")
-            if not start:
-                continue
-            try:
-                start_dt = datetime.fromisoformat(str(start).replace("Z", "+00:00"))
-            except Exception:
-                continue
-            if start_dt.tzinfo is None:
-                start_dt = start_dt.replace(tzinfo=timezone.utc)
-            start_utc = start_dt.astimezone(timezone.utc)
-            start_local = start_utc.astimezone(tz)
-
-            league = ev.get("league") or {}
-            league_name = league.get("name") or league.get("displayName") or league_slug
-
-            match = ev.get("match") or {}
-            strategy = match.get("strategy") or {}
-            best_of_val = strategy.get("count") or match.get("bestOf")
-            best_of = None
-            if best_of_val:
-                try:
-                    best_of = f"Bo{int(best_of_val)}"
-                except Exception:
-                    best_of = str(best_of_val)
-
-            teams = match.get("teams") or []
-            t1 = "TBD"
-            t2 = "TBD"
-            if len(teams) >= 1:
-                t1 = (teams[0].get("name") or teams[0].get("code") or "TBD")
-            if len(teams) >= 2:
-                t2 = (teams[1].get("name") or teams[1].get("code") or "TBD")
-
-            stage = (
-                (ev.get("blockName") or ev.get("stage") or ev.get("tournamentStage"))
-                or None
-            )
-
-            match_url = match.get("matchUrl") or ev.get("matchUrl") or league_page_url
-
-            uid = stable_uid(
-                league_slug=league_slug,
-                match_start_utc_iso=isoformat_z(start_utc),
-                team1=t1,
-                team2=t2,
-                stage=stage,
-                match_url=match_url,
-            )
-
-            out.append(
-                Match(
-                    league_slug=league_slug,
-                    league_name=str(league_name),
-                    match_start_utc=start_utc,
-                    match_start_local=start_local,
-                    best_of=best_of,
-                    team1=str(t1),
-                    team2=str(t2),
-                    stage=str(stage) if stage else None,
-                    match_url=str(match_url),
-                    stable_uid=uid,
-                )
-            )
-        return out
-
-    def fetch_matches(self, league_slugs: List[str], *, config: ScrapeConfig) -> List[Match]:
-        tz = ZoneInfo(config.tz)
-        league_ids = self._league_slug_to_id_map(locale=config.locale)
-
-        now = datetime.now(timezone.utc)
-        start_time = now - timedelta(days=2)  # include recent
-        end_time = now + timedelta(days=config.days)
-
-        all_matches: List[Match] = []
-        for slug in league_slugs:
-            league_page_url = f"https://lolesports.com/{config.locale}/leagues/{slug}"
-            league_id = league_ids.get(slug)
-            if not league_id:
-                continue
-
-            # Common schedule endpoint; fields/params can change.
-            data = self._get_json(
-                "/persisted/gw/getSchedule",
-                params={
-                    "hl": config.locale,
-                    "leagueId": league_id,
-                },
-            )
-            sched = data.get("data", {}).get("schedule") or data.get("schedule") or {}
-            events = sched.get("events") or []
-
-            matches = self._parse_events_to_matches(events, league_slug=slug, tz=tz, league_page_url=league_page_url)
-
-            # Filter time window.
-            matches = [m for m in matches if start_time <= m.match_start_utc <= end_time]
-            all_matches.extend(matches)
-
-        return all_matches
-
-
-class HtmlScraper(BaseScraper):
+class HtmlScraper:
     def __init__(self, fetcher: Fetcher) -> None:
         self.fetcher = fetcher
 
@@ -491,44 +336,10 @@ class HtmlScraper(BaseScraper):
         return self.parse_schedule_html(resp.text, league_slugs=league_slugs, tz_name=config.tz, page_url=page_url)
 
 
-def discover_api_key_via_html(fetcher: Fetcher) -> Optional[str]:
-    # Best-effort: fetch schedule page and scan for api key patterns.
-    url = "https://lolesports.com/schedule"
-    resp = fetcher.get(url)
-    key = try_extract_api_key_from_text(resp.text)
-    if key:
-        return key
-
-    # Next.js script sources often include the key; try a small subset.
-    soup = BeautifulSoup(resp.text, "lxml")
-    scripts = [str(s.get("src")) for s in soup.find_all("script") if s.get("src")]
-    for src in scripts[:5]:
-        src_url = src if src.startswith("http") else f"https://lolesports.com{src}"
-        try:
-            js = fetcher.get(src_url).text
-        except Exception:
-            continue
-        key = try_extract_api_key_from_text(js)
-        if key:
-            return key
-
-    return None
-
-
 def scrape_matches(
     *,
     league_slugs: List[str],
     fetcher: Fetcher,
     config: ScrapeConfig,
-    prefer_api: bool = True,
-    api_key: Optional[str] = None,
 ) -> List[Match]:
-    if prefer_api:
-        key = api_key or discover_api_key_via_html(fetcher)
-        if key:
-            try:
-                return ApiScraper(fetcher, api_key=key).fetch_matches(league_slugs, config=config)
-            except Exception:
-                # Fall back to HTML if API fails
-                pass
     return HtmlScraper(fetcher).fetch_matches(league_slugs, config=config)

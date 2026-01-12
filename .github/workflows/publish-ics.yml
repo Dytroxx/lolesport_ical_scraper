@@ -35,13 +35,9 @@ jobs:
           python -m pip install -e .
 
       - name: Generate feed
-        env:
-          # Optional: if you add LOLESPORTS_API_KEY as a GitHub secret,
-          # the scraper may use the unofficial API path.
-          LOLESPORTS_API_KEY: ${{ secrets.LOLESPORTS_API_KEY }}
         run: |
           mkdir -p site
-          python -m lolesports_ical --out site/feed.ics --tz Europe/Berlin --days 30 --no-api
+          python -m lolesports_ical --out site/feed.ics --tz Europe/Berlin --days 30
           printf '<!doctype html><meta charset="utf-8"><title>LoL Esports iCal</title><a href="feed.ics">feed.ics</a>\n' > site/index.html
 
       - name: Configure Pages

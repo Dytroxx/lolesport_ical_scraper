@@ -187,25 +187,3 @@ class Fetcher:
             resp.raise_for_status()
             self.cache.set(key, status=resp.status_code, headers=dict(resp.headers), body=resp.content)
             return resp
-
-
-_API_KEY_PATTERNS = [
-    re.compile(r"x-api-key\"\s*:\s*\"([^\"]+)\""),
-    re.compile(r"x-api-key\s*\"?\s*[:=]\s*\"([^\"]+)\""),
-    re.compile(r"apiKey\"\s*:\s*\"([^\"]+)\""),
-]
-
-
-def try_extract_api_key_from_text(text: str) -> Optional[str]:
-    for pat in _API_KEY_PATTERNS:
-        m = pat.search(text)
-        if m:
-            return m.group(1)
-    return None
-
-
-def env_api_key() -> Optional[str]:
-    key = os.getenv("LOLESPORTS_API_KEY")
-    if key:
-        return key.strip()
-    return None
