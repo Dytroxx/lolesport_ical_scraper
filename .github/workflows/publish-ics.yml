@@ -7,9 +7,7 @@ on:
     - cron: "17 2 * * *"
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: "pages"
@@ -36,26 +34,15 @@ jobs:
 
       - name: Generate feed
         run: |
-          mkdir -p site
-          python -m lolesports_ical --out site/feed.ics --tz Europe/Berlin --days 30
-          printf '<!doctype html><meta charset="utf-8"><title>LoL Esports iCal</title><a href="feed.ics">feed.ics</a>\n' > site/index.html
+          mkdir -p docs
+          python -m lolesports_ical --out docs/feed.ics --tz Europe/Berlin --days 30
+          printf '<!doctype html><meta charset="utf-8"><title>LoL Esports iCal</title><a href="feed.ics">feed.ics</a>\n' > docs/index.html
+          touch docs/.nojekyll
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --quiet --cached || git commit -m "Update feed.ics [skip ci]"
+          git push
