@@ -1,5 +1,7 @@
 # LoL Esports Calendar
 
+[![Publish LoL Esports iCal](https://github.com/Dytroxx/lolesport_ical_scraper/actions/workflows/publish-ics.yml/badge.svg)](https://github.com/Dytroxx/lolesport_ical_scraper/actions/workflows/publish-ics.yml)
+
 Subscribe to upcoming League of Legends esports matches in your calendar app.
 
 ## Subscribe
