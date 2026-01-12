@@ -10,19 +10,19 @@ def test_uid_stable() -> None:
     dt = datetime(2026, 1, 12, 18, 0, tzinfo=timezone.utc)
     uid1 = stable_uid(
         league_slug="lec",
+        match_id="123",
         match_start_utc_iso=isoformat_z(dt),
         team1="Team A",
         team2="Team B",
         stage="Playoffs",
-        match_url="https://lolesports.com/match/123",
     )
     uid2 = stable_uid(
         league_slug="lec",
+        match_id="123",
         match_start_utc_iso=isoformat_z(dt),
         team1="Team A",
         team2="Team B",
         stage="Playoffs",
-        match_url="https://lolesports.com/match/123",
     )
     assert uid1 == uid2
     assert uid1.endswith("@lolesports")

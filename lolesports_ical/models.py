@@ -9,6 +9,7 @@ from typing import Optional
 class Match:
     league_slug: str
     league_name: str
+    match_id: Optional[str]  # Stable match identifier when available
     match_start_utc: datetime
     match_start_local: datetime
     best_of: Optional[str]

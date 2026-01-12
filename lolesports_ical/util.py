@@ -28,20 +28,22 @@ def sha256_hex(text: str) -> str:
 def stable_uid(
     *,
     league_slug: str,
+    match_id: str | None,
     match_start_utc_iso: str,
     team1: str,
     team2: str,
     stage: str | None,
-    match_url: str,
 ) -> str:
+    # IMPORTANT: iOS/Calendar clients treat UID changes as new events.
+    # Do not include fields that may change over time (like URLs).
     base = "|".join(
         [
             league_slug,
+            (match_id or "").strip(),
             match_start_utc_iso,
             team1.strip(),
             team2.strip(),
             (stage or "").strip(),
-            match_url.strip(),
         ]
     )
     return f"{sha256_hex(base)[:32]}@lolesports"

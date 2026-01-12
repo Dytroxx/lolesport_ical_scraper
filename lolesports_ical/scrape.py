@@ -190,17 +190,18 @@ class HtmlScraper:
 
             uid = stable_uid(
                 league_slug=slug,
+                match_id=None,
                 match_start_utc_iso=isoformat_z(start_utc),
                 team1=team1,
                 team2=team2,
                 stage=stage,
-                match_url=match_url,
             )
 
             matches.append(
                 Match(
                     league_slug=slug,
                     league_name=league_name,
+                    match_id=None,
                     match_start_utc=start_utc,
                     match_start_local=start_local,
                     best_of=best_of,
@@ -351,17 +352,18 @@ class HtmlScraper:
 
                 uid = stable_uid(
                     league_slug=str(slug),
+                    match_id=str(match_id) if match_id else None,
                     match_start_utc_iso=isoformat_z(start_utc),
                     team1=team1,
                     team2=team2,
                     stage=str(stage) if stage else None,
-                    match_url=match_url,
                 )
 
                 matches.append(
                     Match(
                         league_slug=str(slug),
                         league_name=str(league_name),
+                        match_id=str(match_id) if match_id else None,
                         match_start_utc=start_utc,
                         match_start_local=start_local,
                         best_of=best_of,

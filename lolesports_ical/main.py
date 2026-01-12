@@ -4,7 +4,7 @@ import argparse
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 
 from .ical import render_ical
 from .models import Match
@@ -47,6 +47,7 @@ def match_to_dict(m: Match) -> Dict[str, Any]:
     return {
         "league_slug": m.league_slug,
         "league_name": m.league_name,
+        "match_id": m.match_id,
         "match_start_utc": m.match_start_utc.isoformat(),
         "best_of": m.best_of,
         "team1": m.team1,
@@ -74,6 +75,7 @@ def dict_to_match(d: Dict[str, Any], tz_name: str) -> Match:
     return Match(
         league_slug=d["league_slug"],
         league_name=d["league_name"],
+        match_id=d.get("match_id"),
         match_start_utc=start_utc,
         match_start_local=start_local,
         best_of=d.get("best_of"),
@@ -91,6 +93,76 @@ def dict_to_match(d: Dict[str, Any], tz_name: str) -> Match:
     )
 
 
+def extract_match_id_from_url(url: str | None) -> str | None:
+    if not url:
+        return None
+    # Common LoL Esports match URLs we emit:
+    # - https://lolesports.com/live/<league>/<match_id>
+    # - https://lolesports.com/match/<match_id>
+    # - https://lolesports.com/matches/<match_id>
+    for pat in (r"/live/[^/]+/(\d+)", r"/match/(\d+)", r"/matches/(\d+)"):
+        m = __import__("re").search(pat, url)
+        if m:
+            return m.group(1)
+    return None
+
+
+def canonical_key_for_dict(d: Dict[str, Any]) -> Tuple[str, str, str]:
+    league_slug = str(d.get("league_slug") or "")
+    match_id = d.get("match_id") or extract_match_id_from_url(d.get("match_url"))
+    if match_id:
+        return ("id", league_slug, str(match_id))
+    start = str(d.get("match_start_utc") or "")
+    team1 = str(d.get("team1") or "").strip()
+    team2 = str(d.get("team2") or "").strip()
+    return ("fallback", league_slug, "|".join([start, team1, team2]))
+
+
+def canonical_key_for_match(m: Match) -> Tuple[str, str, str]:
+    if m.match_id:
+        return ("id", m.league_slug, str(m.match_id))
+    return (
+        "fallback",
+        m.league_slug,
+        "|".join([m.match_start_utc.isoformat(), m.team1.strip(), m.team2.strip()]),
+    )
+
+
+def history_rank(d: Dict[str, Any]) -> Tuple[int, int, int, int, int]:
+    # Higher is better.
+    url = str(d.get("match_url") or "")
+    state = str(d.get("state") or "")
+    return (
+        1 if (d.get("match_id") or extract_match_id_from_url(url)) else 0,
+        1 if "/live/" in url else 0,
+        1 if state == "completed" else 0,
+        1 if (d.get("team1_score") is not None or d.get("team2_score") is not None) else 0,
+        1 if (d.get("team1_code") or d.get("team2_code")) else 0,
+    )
+
+
+def with_uid(m: Match, uid: str) -> Match:
+    return Match(
+        league_slug=m.league_slug,
+        league_name=m.league_name,
+        match_id=m.match_id,
+        match_start_utc=m.match_start_utc,
+        match_start_local=m.match_start_local,
+        best_of=m.best_of,
+        team1=m.team1,
+        team2=m.team2,
+        team1_code=m.team1_code,
+        team2_code=m.team2_code,
+        stage=m.stage,
+        match_url=m.match_url,
+        stable_uid=uid,
+        state=m.state,
+        team1_score=m.team1_score,
+        team2_score=m.team2_score,
+        winner=m.winner,
+    )
+
+
 def merge_with_history(fresh_matches: List[Match], history_path: Path, tz_name: str) -> List[Match]:
     """
     Merge freshly scraped matches with historical data.
@@ -100,43 +172,55 @@ def merge_with_history(fresh_matches: List[Match], history_path: Path, tz_name: 
     - History file is updated with the merged result
     """
     # Load existing history
-    history_by_uid: Dict[str, Dict[str, Any]] = {}
+    history_best_by_canonical: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
     if history_path.exists():
         try:
             history_data = json.loads(history_path.read_text(encoding="utf-8"))
-            for m in history_data.get("matches", []):
-                uid = m.get("stable_uid")
-                if uid:
-                    history_by_uid[uid] = m
+            for d in history_data.get("matches", []):
+                if not isinstance(d, dict):
+                    continue
+                key = canonical_key_for_dict(d)
+                prev = history_best_by_canonical.get(key)
+                if prev is None or history_rank(d) > history_rank(prev):
+                    history_best_by_canonical[key] = d
         except Exception:
             pass  # Start fresh if history is corrupted
 
-    # Index fresh matches by UID
-    fresh_by_uid: Dict[str, Match] = {m.stable_uid: m for m in fresh_matches}
+    # Merge by canonical key so the same match can't exist twice.
+    merged_by_canonical: Dict[Tuple[str, str, str], Match] = {}
 
-    # Merge: fresh takes priority, but keep historical completed matches
-    merged: Dict[str, Match] = {}
-
-    # First, add all fresh matches
-    for uid, m in fresh_by_uid.items():
-        merged[uid] = m
+    # First, add all fresh matches (but preserve previously-seen UID for the same match).
+    for m in fresh_matches:
+        key = canonical_key_for_match(m)
+        hist = history_best_by_canonical.get(key)
+        if hist and hist.get("stable_uid"):
+            merged_by_canonical[key] = with_uid(m, str(hist["stable_uid"]))
+        else:
+            merged_by_canonical[key] = m
 
     # Then, add historical matches that aren't in fresh data
-    for uid, d in history_by_uid.items():
-        if uid not in merged:
-            try:
-                merged[uid] = dict_to_match(d, tz_name)
-            except Exception:
-                pass  # Skip malformed entries
+    for key, d in history_best_by_canonical.items():
+        if key in merged_by_canonical:
+            continue
+        try:
+            # Backfill match_id if it can be inferred from URL.
+            if not d.get("match_id"):
+                mid = extract_match_id_from_url(d.get("match_url"))
+                if mid:
+                    d = dict(d)
+                    d["match_id"] = mid
+            merged_by_canonical[key] = dict_to_match(d, tz_name)
+        except Exception:
+            pass  # Skip malformed entries
 
     # Save updated history
-    all_matches_dicts = [match_to_dict(m) for m in merged.values()]
+    all_matches_dicts = [match_to_dict(m) for m in merged_by_canonical.values()]
     # Sort by date for readability
     all_matches_dicts.sort(key=lambda x: x.get("match_start_utc", ""))
     history_path.parent.mkdir(parents=True, exist_ok=True)
     history_path.write_text(json.dumps({"matches": all_matches_dicts}, indent=2), encoding="utf-8")
 
-    return list(merged.values())
+    return list(merged_by_canonical.values())
 
 
 def main(argv: list[str] | None = None) -> int:
