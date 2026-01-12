@@ -174,7 +174,7 @@ class HtmlScraper:
             match_url = page_url
             for a in container.find_all("a", href=True):
                 href = str(a.get("href") or "")
-                if "/match/" in href or "/matches/" in href:
+                if "/match/" in href or "/matches/" in href or "/live/" in href:
                     match_url = href if href.startswith("http") else f"https://lolesports.com{href}"
                     break
 
@@ -199,6 +199,10 @@ class HtmlScraper:
                     stage=stage,
                     match_url=match_url,
                     stable_uid=uid,
+                    state=None,
+                    team1_score=None,
+                    team2_score=None,
+                    winner=None,
                 )
             )
 
@@ -280,12 +284,22 @@ class HtmlScraper:
 
                 league_name = league.get("name") or slug
 
-                # Teams
+                # Teams and scores
                 teams = ev.get("matchTeams") or []
-                t1 = teams[0].get("name") if len(teams) >= 1 else None
-                t2 = teams[1].get("name") if len(teams) >= 2 else None
-                team1 = str(t1) if t1 else "TBD"
-                team2 = str(t2) if t2 else "TBD"
+                t1_data = teams[0] if len(teams) >= 1 else {}
+                t2_data = teams[1] if len(teams) >= 2 else {}
+                team1 = str(t1_data.get("name") or t1_data.get("code") or "TBD")
+                team2 = str(t2_data.get("name") or t2_data.get("code") or "TBD")
+                
+                # Extract scores from team result
+                team1_score = None
+                team2_score = None
+                t1_result = t1_data.get("result") or {}
+                t2_result = t2_data.get("result") or {}
+                if t1_result.get("gameWins") is not None:
+                    team1_score = int(t1_result.get("gameWins", 0))
+                if t2_result.get("gameWins") is not None:
+                    team2_score = int(t2_result.get("gameWins", 0))
 
                 # Best-of
                 match = ev.get("match") or {}
@@ -298,8 +312,28 @@ class HtmlScraper:
                     except Exception:
                         best_of = str(cnt)
 
+                # Match state and winner
+                state = ev.get("state") or match.get("state") or None
+                winner = None
+                if state == "completed":
+                    if t1_result.get("outcome") == "win":
+                        winner = team1
+                    elif t2_result.get("outcome") == "win":
+                        winner = team2
+                    elif team1_score is not None and team2_score is not None:
+                        if team1_score > team2_score:
+                            winner = team1
+                        elif team2_score > team1_score:
+                            winner = team2
+
                 stage = ev.get("blockName") or None
-                match_url = page_url
+                
+                # Build proper match URL using match ID
+                match_id = match.get("id") or ev.get("id")
+                if match_id:
+                    match_url = f"https://lolesports.com/live/{slug}/{match_id}"
+                else:
+                    match_url = f"https://lolesports.com/schedule?leagues={slug}"
 
                 uid = stable_uid(
                     league_slug=str(slug),
@@ -322,6 +356,10 @@ class HtmlScraper:
                         stage=str(stage) if stage else None,
                         match_url=match_url,
                         stable_uid=uid,
+                        state=state,
+                        team1_score=team1_score,
+                        team2_score=team2_score,
+                        winner=winner,
                     )
                 )
 

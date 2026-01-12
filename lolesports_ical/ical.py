@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Iterable
 
 from .models import Match
@@ -33,6 +33,16 @@ def _dt_to_ics_utc(dt: datetime) -> str:
     return dt_utc.strftime("%Y%m%dT%H%M%SZ")
 
 
+def _estimate_match_duration(best_of: str | None) -> timedelta:
+    """Estimate match duration based on best-of format."""
+    if best_of == "Bo5":
+        return timedelta(hours=4)
+    elif best_of == "Bo3":
+        return timedelta(hours=2, minutes=30)
+    else:  # Bo1 or unknown
+        return timedelta(hours=1, minutes=30)
+
+
 def render_ical(matches: Iterable[Match], *, prodid: str = "-//lolesports-ical//EN") -> str:
     now = datetime.now(timezone.utc)
     lines = [
@@ -41,29 +51,49 @@ def render_ical(matches: Iterable[Match], *, prodid: str = "-//lolesports-ical//
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
         f"PRODID:{_ics_escape(prodid)}",
+        "X-WR-CALNAME:LoL Esports",
     ]
 
     for m in sorted(matches, key=lambda x: x.match_start_utc):
-        summary = f"[{m.league_name}] {m.team1} vs {m.team2}" if m.league_name else f"{m.team1} vs {m.team2}"
+        # Build summary with score if match is completed
+        if m.state == "completed" and m.team1_score is not None and m.team2_score is not None:
+            summary = f"[{m.league_name}] {m.team1} {m.team1_score}-{m.team2_score} {m.team2}"
+        else:
+            summary = f"[{m.league_name}] {m.team1} vs {m.team2}"
+        
+        # Build description
         desc_parts = [f"League: {m.league_name}"]
         if m.stage:
             desc_parts.append(f"Stage: {m.stage}")
         if m.best_of:
-            desc_parts.append(f"Best-of: {m.best_of}")
-        if m.match_url:
-            desc_parts.append(f"URL: {m.match_url}")
+            desc_parts.append(f"Format: {m.best_of}")
+        
+        # Add result info for completed matches
+        if m.state == "completed":
+            if m.team1_score is not None and m.team2_score is not None:
+                desc_parts.append(f"Result: {m.team1} {m.team1_score} - {m.team2_score} {m.team2}")
+            if m.winner:
+                desc_parts.append(f"Winner: {m.winner}")
+        elif m.state == "inProgress":
+            desc_parts.append("Status: LIVE")
+        
         description = "\n".join(desc_parts)
+
+        # Calculate end time based on best-of format
+        match_duration = _estimate_match_duration(m.best_of)
+        match_end_utc = m.match_start_utc + match_duration
 
         event_lines = [
             "BEGIN:VEVENT",
             f"UID:{_ics_escape(m.stable_uid)}",
             f"DTSTAMP:{_dt_to_ics_utc(now)}",
             f"DTSTART:{_dt_to_ics_utc(m.match_start_utc)}",
+            f"DTEND:{_dt_to_ics_utc(match_end_utc)}",
             f"SUMMARY:{_ics_escape(summary)}",
             f"DESCRIPTION:{_ics_escape(description)}",
         ]
         if m.match_url:
-            event_lines.append(f"URL:{_ics_escape(m.match_url)}")
+            event_lines.append(f"URL:{m.match_url}")
         event_lines.append("END:VEVENT")
 
         for l in event_lines:

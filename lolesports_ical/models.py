@@ -17,3 +17,8 @@ class Match:
     stage: Optional[str]
     match_url: str
     stable_uid: str
+    # Match result fields (populated for completed matches)
+    state: Optional[str] = None  # "unstarted", "inProgress", "completed"
+    team1_score: Optional[int] = None
+    team2_score: Optional[int] = None
+    winner: Optional[str] = None  # team name of winner
