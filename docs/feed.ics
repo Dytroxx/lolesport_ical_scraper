@@ -1,886 +1,886 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-PRODID:-//lolesports-ical//EN
-BEGIN:VEVENT
-UID:a24a176a13b58e651365a02a8016535f@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251015T120000Z
-SUMMARY:[WM] Gen.G Esports vs PSG Talon
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:6e9f1f09d88019e7cf90d3e1166246ea@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T050000Z
-SUMMARY:[WM] Vivo Keyd Stars vs FlyQuest
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:a69a7b368bc1dd2500e690dbe8942f50@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T060000Z
-SUMMARY:[WM] kt Rolster vs Team Secret Whales
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:19f33450412fa7788e3914cee20d74e4@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T070000Z
-SUMMARY:[WM] Movistar KOI vs G2 Esports
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:630eb08c87fb431749ecf2f578e9f6b0@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T080000Z
-SUMMARY:[WM] TOPESPORTS vs 100 Thieves
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:92ccf52add7230a26ee701bd8d51e40c@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T090000Z
-SUMMARY:[WM] CTBC Flying Oyster vs T1
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:e3a2f32ee003d1642ace8f4a4719fb6b@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T100000Z
-SUMMARY:[WM] Gen.G Esports vs Anyone's Legend
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:d812a385de2325211e69e0413ae29a0d@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T110000Z
-SUMMARY:[WM] BILIBILI GAMING DREAMSMART vs Fnatic
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:3f50c3e622db815dfbe5dee66c84089e@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T120000Z
-SUMMARY:[WM] Hanwha Life Esports vs PSG Talon
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:0ea42f588aec16b985e271320c569bc7@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T160000Z
-SUMMARY:[EMEA Masters] Misa Esports vs Karmine Corp Blue
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nBest-of: Bo5\
- nURL: https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,l
- ck\,lcs\,lec\,lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:1c0ea5c5cd5103747296c457a2514678@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251016T160000Z
-SUMMARY:[EMEA Masters] Unicorns of Love Sexy Edition vs Geekay Esports
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nBest-of: Bo5\
- nURL: https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,l
- ck\,lcs\,lec\,lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:5f8cb5904f13aada5cdf6876568d5085@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251017T080000Z
-SUMMARY:[WM] kt Rolster vs TOPESPORTS
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:9d8b883fef063a0f28f818ae81b9d3ef@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251017T110000Z
-SUMMARY:[WM] CTBC Flying Oyster vs Anyone's Legend
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:472d7c80f5bbcc18847243e66f23f363@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251017T160000Z
-SUMMARY:[EMEA Masters] Rossmann Centaurs vs Los Heretics
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nBest-of: Bo5\
- nURL: https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,l
- ck\,lcs\,lec\,lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:cddb99f747322fe05ed2a16d9efafb7f@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251017T160000Z
-SUMMARY:[EMEA Masters] Los Ratones vs Galions
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nBest-of: Bo5\
- nURL: https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,l
- ck\,lcs\,lec\,lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:ebefc3e38c6c927672db39f19b36120e@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251018T080000Z
-SUMMARY:[WM] FlyQuest vs Team Secret Whales
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:a04edc202f20f0dcad1e00c1c981bd49@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251018T090000Z
-SUMMARY:[WM] Gen.G Esports vs T1
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:31631a5efd9a26f6910526f805f03058@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251018T100000Z
-SUMMARY:[WM] BILIBILI GAMING DREAMSMART vs G2 Esports
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:383eadc000a7e27540c9e99be502564f@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251018T110000Z
-SUMMARY:[WM] Hanwha Life Esports vs 100 Thieves
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo1\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:1e8ce7addd0b831a743af88a495c0fc7@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251019T080000Z
-SUMMARY:[WM] Movistar KOI vs Fnatic
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:d09d140f24cd53c15bcb6fb1fa4d54cf@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251019T110000Z
-SUMMARY:[WM] PSG Talon vs Vivo Keyd Stars
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:a1c43b8d3769390184a18230dd574715@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251020T160000Z
-SUMMARY:[EMEA Masters] Los Ratones vs Karmine Corp Blue
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nBest-of: Bo5\
- nURL: https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,l
- ck\,lcs\,lec\,lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:687d6980850e52a93c2b827313360bf0@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251021T160000Z
-SUMMARY:[EMEA Masters] Los Heretics vs Unicorns of Love Sexy Edition
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nBest-of: Bo5\
- nURL: https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,l
- ck\,lcs\,lec\,lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:5fdab047a8bf4fec0a128b1e49cd3ff5@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251022T080000Z
-SUMMARY:[WM] CTBC Flying Oyster vs Hanwha Life Esports
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:0e6bd9878c0602b6a1e0f9443147211b@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251022T110000Z
-SUMMARY:[WM] FlyQuest vs G2 Esports
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:b72bbfa955c9b5b28e6d9149add276b0@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251023T080000Z
-SUMMARY:[WM] Movistar KOI vs Team Secret Whales
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:ae2e285bcdad5e3648946e5eff788c95@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251023T110000Z
-SUMMARY:[WM] Gen.G Esports vs TOPESPORTS
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:68538c050f9a2afdc6ebbe121f8daf19@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251024T080000Z
-SUMMARY:[WM] BILIBILI GAMING DREAMSMART vs Vivo Keyd Stars
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:9f9d2066b1182e784601f6efc068d263@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251024T110000Z
-SUMMARY:[WM] 100 Thieves vs T1
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:0a2ccdbf957b51da7f9d3583fd2c466f@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251025T050000Z
-SUMMARY:[WM] CTBC Flying Oyster vs FlyQuest
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:8cde9383e9f4503d4aff565e36fabb96@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251025T080000Z
-SUMMARY:[WM] TOPESPORTS vs BILIBILI GAMING DREAMSMART
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:62bd7abf001bb9155d5ebbf7b46b7262@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251025T110000Z
-SUMMARY:[WM] Movistar KOI vs T1
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nBest-of: Bo3\nURL: https://
- lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,
- lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:7767e388f9b103346d9214e453a342ab@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251028T070000Z
-SUMMARY:[WM] Gen.G Esports vs Hanwha Life Esports
-DESCRIPTION:League: WM\nStage: Viertelfinale\nBest-of: Bo5\nURL: https://lo
- lesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lp
- l\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:df917d1378b8a0eb658b0c899c328c8e@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251029T070000Z
-SUMMARY:[WM] kt Rolster vs CTBC Flying Oyster
-DESCRIPTION:League: WM\nStage: Viertelfinale\nBest-of: Bo5\nURL: https://lo
- lesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lp
- l\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:ac78cf8b0a8020ce9db71d731f20b2b3@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251030T070000Z
-SUMMARY:[WM] TOPESPORTS vs G2 Esports
-DESCRIPTION:League: WM\nStage: Viertelfinale\nBest-of: Bo5\nURL: https://lo
- lesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lp
- l\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:775a8ae8ef88eaaba49da100d5f3b079@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251031T070000Z
-SUMMARY:[WM] Anyone's Legend vs T1
-DESCRIPTION:League: WM\nStage: Viertelfinale\nBest-of: Bo5\nURL: https://lo
- lesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lp
- l\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:5bbf18d38f9ab09838814f333347426e@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251101T070000Z
-SUMMARY:[WM] Gen.G Esports vs kt Rolster
-DESCRIPTION:League: WM\nStage: Halbfinale\nBest-of: Bo5\nURL: https://loles
- ports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,
- msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:cafbf740a659261a19bf15334fcd809c@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251102T070000Z
-SUMMARY:[WM] T1 vs TOPESPORTS
-DESCRIPTION:League: WM\nStage: Halbfinale\nBest-of: Bo5\nURL: https://loles
- ports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,
- msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:c211659bcf464e32231ace8eeeb510dd@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251102T180000Z
-SUMMARY:[EMEA Masters] Karmine Corp Blue vs Los Heretics
-DESCRIPTION:League: EMEA Masters\nStage: Finale\nBest-of: Bo5\nURL: https:/
- /lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\
- ,lpl\,msi\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:d86bbfd72fc20c1efba0eaca3324a095@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20251109T070000Z
-SUMMARY:[WM] kt Rolster vs T1
-DESCRIPTION:League: WM\nStage: Finale\nBest-of: Bo5\nURL: https://lolesport
- s.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi\
- ,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:9f976a9617a70e7b100e25fc5eca2526@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260114T080000Z
-SUMMARY:[LCK] kt Rolster vs DN SOOPers
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:8878d6a5ea42632b81d2c972caec283d@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260114T090000Z
-SUMMARY:[LPL] WeiboGaming Faw Audi vs Invictus Gaming
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:f8937c1b9a498133cc8653b4611abb84@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260114T100000Z
-SUMMARY:[LCK] Dplus KIA vs BRION
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:8e5c03c00268c22d31d03acc0bff95bd@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260114T110000Z
-SUMMARY:[LPL] Beijing JDG Intel Esports vs TOPESPORTS
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:c6807ae13ee56ab343a8d8b71a383989@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260115T070000Z
-SUMMARY:[LPL] Ultra Prime vs Hangzhou LGD Gaming
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:b91d07ec012ca4801e3e9e3cba8fb6c2@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260115T080000Z
-SUMMARY:[LCK] Gen.G Esports vs DRX
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:9da32727aa650cf73a943ca7bd97880d@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260115T090000Z
-SUMMARY:[LPL] Invictus Gaming vs Anyone's Legend
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:cdf0b0074e83753378cb7a7966dd4f3b@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260115T100000Z
-SUMMARY:[LCK] BNK FEARX vs NONGSHIM RED FORCE
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:8621fee4a743cec18e1ef548e4345eb6@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260115T110000Z
-SUMMARY:[LPL] WeiboGaming Faw Audi vs BILIBILI GAMING DREAMSMART
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:2816c303f8ac8db35d6f63fc92c86de1@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260116T080000Z
-SUMMARY:[LCK] DN SOOPers vs Dplus KIA
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:fca26e90f9c4a0116836c7b782c25d95@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260116T090000Z
-SUMMARY:[LPL] Oh My God vs Suzhou LNG Ninebot Esports
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:9a01a1af628a7738c0eafd9d5b59661a@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260116T100000Z
-SUMMARY:[LCK] Hanwha Life Esports vs T1
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:cd009cba58165198cf4a2eadf18de29a@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260116T110000Z
-SUMMARY:[LPL] SHANGHAI EDWARD GAMING HYCAN vs Xi'an Team WE
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:c4f9c687f1654243fa879ca30d336311@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T080000Z
-SUMMARY:[LCK] BRION vs BNK FEARX
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:5e5d8534eb4c975a08f1d0af464ea1ce@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T090000Z
-SUMMARY:[LPL] Anyone's Legend vs BILIBILI GAMING DREAMSMART
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:e2be1d153490720ecc61f4a1b8a301bb@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T100000Z
-SUMMARY:[LCK] Gen.G Esports vs kt Rolster
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:b9db98d35ef5dff245c9eb75078e1f75@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T110000Z
-SUMMARY:[LPL] Beijing JDG Intel Esports vs Invictus Gaming
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:e332883130dcbb86d7a1c0dee7b2e5ef@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T160000Z
-SUMMARY:[LEC] Los Ratones vs Fnatic
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:b53d3401392715ab7a0fabe2e27d9ca5@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T164500Z
-SUMMARY:[LEC] Shifters vs GIANTX
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:d6358763894fc968974f92d41ffbd1bf@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T173000Z
-SUMMARY:[LEC] Team Heretics vs Natus Vincere
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:ad80f124b076fe4a8365674b8ec6a18a@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T181500Z
-SUMMARY:[LEC] Team Vitality vs SK Gaming
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:88a53a5b8a310b9ea2ba1d6d87da15dd@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T190000Z
-SUMMARY:[LEC] Karmine Corp Blue vs Karmine Corp
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:5902ef252f362a0af0d416db9acc5aed@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260117T194500Z
-SUMMARY:[LEC] Movistar KOI vs G2 Esports
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:54567167671e21781d2d08ea3138d9e7@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T080000Z
-SUMMARY:[LCK] NONGSHIM RED FORCE vs Hanwha Life Esports
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:4d38b2acc61e12fb21183ec3c9b3b641@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T090000Z
-SUMMARY:[LPL] TOPESPORTS vs BILIBILI GAMING DREAMSMART
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:f3a924862a5850b91b0e41c8edcf07bc@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T100000Z
-SUMMARY:[LCK] DRX vs T1
-DESCRIPTION:League: LCK\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:570e1e797632b3fe565e2f90b6f62fce@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T110000Z
-SUMMARY:[LPL] Beijing JDG Intel Esports vs Anyone's Legend
-DESCRIPTION:League: LPL\nStage: Woche 1\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:00cbbef45d62685f3aa69f0356e4ed6f@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T160000Z
-SUMMARY:[LEC] Team Heretics vs Shifters
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:8ad545b6e3a9fd17da6f5d67ae2feee4@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T164500Z
-SUMMARY:[LEC] Los Ratones vs Karmine Corp Blue
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:8ee9da80e3fb1d4faa0a7a570d144bbd@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T173000Z
-SUMMARY:[LEC] Team Vitality vs Natus Vincere
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:328277779eb01f20b12e1a934c11d87e@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T181500Z
-SUMMARY:[LEC] SK Gaming vs Fnatic
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:63ba6f03f5b73aba02f2b53d05c04546@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T190000Z
-SUMMARY:[LEC] G2 Esports vs GIANTX
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:d49c5eff1c4ebf03b09a5da3544c957d@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260118T194500Z
-SUMMARY:[LEC] Movistar KOI vs Karmine Corp
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:eabacc779e4d36b5646cb0d74bcf25f0@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260119T070000Z
-SUMMARY:[LPL] THUNDERTALKGAMING vs Xi'an Team WE
-DESCRIPTION:League: LPL\nStage: Woche 2\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:3dfc4afeb7165e6624ad1ebfa940bc15@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260119T090000Z
-SUMMARY:[LPL] WeiboGaming Faw Audi vs TOPESPORTS
-DESCRIPTION:League: LPL\nStage: Woche 2\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:6dae9cf53006f182f7440f53505bd446@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260119T110000Z
-SUMMARY:[LPL] SHANGHAI EDWARD GAMING HYCAN vs SHENZHEN NINJAS IN PYJAMAS
-DESCRIPTION:League: LPL\nStage: Woche 2\nBest-of: Bo3\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:c492dade4309052470b9f8fefc092f07@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260119T160000Z
-SUMMARY:[LEC] Natus Vincere vs Fnatic
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:e7b34c5ec86b32ff0d992f978ae8c1cb@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260119T164500Z
-SUMMARY:[LEC] Team Vitality vs Karmine Corp Blue
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:9fdd103d3970b3d80b13d4ccad994efb@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260119T173000Z
-SUMMARY:[LEC] Team Heretics vs GIANTX
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-BEGIN:VEVENT
-UID:0633b420d4db40f7a6f3b221cd5995a4@lolesports
-DTSTAMP:20260112T133109Z
-DTSTART:20260119T181500Z
-SUMMARY:[LEC] Shifters vs Movistar KOI
-DESCRIPTION:League: LEC\nStage: Woche 1\nBest-of: Bo1\nURL: https://lolespo
- rts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,ms
- i\,worlds
-URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
- ,lcs\,lec\,lpl\,msi\,worlds
-END:VEVENT
-END:VCALENDAR
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//lolesports-ical//EN
+BEGIN:VEVENT
+UID:ee6fc58ad872d74b686c88a8051c0879@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251015T120000Z
+SUMMARY:[Worlds] Gen.G Esports vs PSG Talon
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:edc5fa36fa64f8482a0fb86d2ff31e67@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T050000Z
+SUMMARY:[Worlds] Vivo Keyd Stars vs FlyQuest
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:5ce68c632f6be1f550c008cfe36a8847@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T060000Z
+SUMMARY:[Worlds] kt Rolster vs Team Secret Whales
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:712724f5e27603c76e3d49044e1060d0@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T070000Z
+SUMMARY:[Worlds] Movistar KOI vs G2 Esports
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:625403371baf6792cb6c029836c1ac1a@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T080000Z
+SUMMARY:[Worlds] TOPESPORTS vs 100 Thieves
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:224ea8515cff5663bf7715f50a5589c3@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T090000Z
+SUMMARY:[Worlds] CTBC Flying Oyster vs T1
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:5b6b6c244218346337fccdecf3d46aec@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T100000Z
+SUMMARY:[Worlds] Gen.G Esports vs Anyone's Legend
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:f5b646627c03e0a3f65544ff22d754f6@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T110000Z
+SUMMARY:[Worlds] BILIBILI GAMING DREAMSMART vs Fnatic
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:ce1450a4451e0a9470726e64673e60e4@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T120000Z
+SUMMARY:[Worlds] Hanwha Life Esports vs PSG Talon
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:8ba985f593c2277e5594611905ac8a81@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T160000Z
+SUMMARY:[EMEA Masters] Misa Esports vs Karmine Corp Blue
+DESCRIPTION:League: EMEA Masters\nStage: Playoffs\nBest-of: Bo5\nURL: https
+ ://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,le
+ c\,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:bf743645fa840dbd0d6e0a7c09472ecd@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251016T160000Z
+SUMMARY:[EMEA Masters] Unicorns of Love Sexy Edition vs Geekay Esports
+DESCRIPTION:League: EMEA Masters\nStage: Playoffs\nBest-of: Bo5\nURL: https
+ ://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,le
+ c\,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:d506376a04e1c68065213ac91bd8d98d@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251017T080000Z
+SUMMARY:[Worlds] kt Rolster vs TOPESPORTS
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:ed997e26ee5f30aa21562896111bb602@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251017T110000Z
+SUMMARY:[Worlds] CTBC Flying Oyster vs Anyone's Legend
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:46e003ebbda55085b7652a465a7c8e29@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251017T160000Z
+SUMMARY:[EMEA Masters] Rossmann Centaurs vs Los Heretics
+DESCRIPTION:League: EMEA Masters\nStage: Playoffs\nBest-of: Bo5\nURL: https
+ ://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,le
+ c\,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:eece30515be045980dbf1e2c0003ef9c@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251017T160000Z
+SUMMARY:[EMEA Masters] Los Ratones vs Galions
+DESCRIPTION:League: EMEA Masters\nStage: Playoffs\nBest-of: Bo5\nURL: https
+ ://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,le
+ c\,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:13c1f58524df98dccdc7cd5d96b20a86@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251018T080000Z
+SUMMARY:[Worlds] FlyQuest vs Team Secret Whales
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:918ee5c9a76be8cb948ea27979e92610@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251018T090000Z
+SUMMARY:[Worlds] Gen.G Esports vs T1
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:5aa6fa20e7b070a41d918cdac85e2d61@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251018T100000Z
+SUMMARY:[Worlds] BILIBILI GAMING DREAMSMART vs G2 Esports
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:f362f2d4a973c66ac6221d4f2b809962@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251018T110000Z
+SUMMARY:[Worlds] Hanwha Life Esports vs 100 Thieves
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo1\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:4e0dfb713aee2c17935b21c88a12cc0c@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251019T080000Z
+SUMMARY:[Worlds] Movistar KOI vs Fnatic
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:005e695f6030322d72fcb59921390ea9@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251019T110000Z
+SUMMARY:[Worlds] PSG Talon vs Vivo Keyd Stars
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:5dcfb130fb61b95bfdd622ba6ef04f8b@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251020T160000Z
+SUMMARY:[EMEA Masters] Los Ratones vs Karmine Corp Blue
+DESCRIPTION:League: EMEA Masters\nStage: Playoffs\nBest-of: Bo5\nURL: https
+ ://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,le
+ c\,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:2254392d22e99ea6a7845cc9e7693efe@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251021T160000Z
+SUMMARY:[EMEA Masters] Los Heretics vs Unicorns of Love Sexy Edition
+DESCRIPTION:League: EMEA Masters\nStage: Playoffs\nBest-of: Bo5\nURL: https
+ ://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,le
+ c\,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:1a3db226248f47a6c6abba9bd6699237@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251022T080000Z
+SUMMARY:[Worlds] CTBC Flying Oyster vs Hanwha Life Esports
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:d518b9681d81a4319a6d35a2d6f7ca35@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251022T110000Z
+SUMMARY:[Worlds] FlyQuest vs G2 Esports
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:fe60c38cc6f5b4ba03adf675fc6d9286@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251023T080000Z
+SUMMARY:[Worlds] Movistar KOI vs Team Secret Whales
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:0dab0c6950b716d8e65728bc84a4e76e@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251023T110000Z
+SUMMARY:[Worlds] Gen.G Esports vs TOPESPORTS
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:56ceedce8b57af35977afa1e027a86ea@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251024T080000Z
+SUMMARY:[Worlds] BILIBILI GAMING DREAMSMART vs Vivo Keyd Stars
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:5ece0a068feb0fca7ee0f05bdc097a66@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251024T110000Z
+SUMMARY:[Worlds] 100 Thieves vs T1
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:5d0b6f88dbffb93f2446ce65bcf1fb08@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251025T050000Z
+SUMMARY:[Worlds] CTBC Flying Oyster vs FlyQuest
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:8903d4402dd218998862d6a36bab9417@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251025T080000Z
+SUMMARY:[Worlds] TOPESPORTS vs BILIBILI GAMING DREAMSMART
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:30e8619b5dbef7aadc5e75a36b0ee8a9@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251025T110000Z
+SUMMARY:[Worlds] Movistar KOI vs T1
+DESCRIPTION:League: Worlds\nStage: Swiss\nBest-of: Bo3\nURL: https://lolesp
+ orts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,m
+ si\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:9e14bdd4a302b7313c7dfebaf424a410@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251028T070000Z
+SUMMARY:[Worlds] Gen.G Esports vs Hanwha Life Esports
+DESCRIPTION:League: Worlds\nStage: Quarterfinals\nBest-of: Bo5\nURL: https:
+ //lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec
+ \,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:0c71c636da9f09b71632d4f612b21c43@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251029T070000Z
+SUMMARY:[Worlds] kt Rolster vs CTBC Flying Oyster
+DESCRIPTION:League: Worlds\nStage: Quarterfinals\nBest-of: Bo5\nURL: https:
+ //lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec
+ \,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:d3851b716dabb788f94c654da5fd5bf5@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251030T070000Z
+SUMMARY:[Worlds] TOPESPORTS vs G2 Esports
+DESCRIPTION:League: Worlds\nStage: Quarterfinals\nBest-of: Bo5\nURL: https:
+ //lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec
+ \,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:c99fff3f1ad7b25a650aa05cb0b789e1@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251031T070000Z
+SUMMARY:[Worlds] Anyone's Legend vs T1
+DESCRIPTION:League: Worlds\nStage: Quarterfinals\nBest-of: Bo5\nURL: https:
+ //lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec
+ \,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:cd6f69997d604c270c30d5d54904b9cf@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251101T070000Z
+SUMMARY:[Worlds] Gen.G Esports vs kt Rolster
+DESCRIPTION:League: Worlds\nStage: Semifinals\nBest-of: Bo5\nURL: https://l
+ olesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,l
+ pl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:31c03780769f40d499530d09976959a0@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251102T070000Z
+SUMMARY:[Worlds] T1 vs TOPESPORTS
+DESCRIPTION:League: Worlds\nStage: Semifinals\nBest-of: Bo5\nURL: https://l
+ olesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,l
+ pl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:f09aef1aa7e95cd722ce2c95d12933a0@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251102T180000Z
+SUMMARY:[EMEA Masters] Karmine Corp Blue vs Los Heretics
+DESCRIPTION:League: EMEA Masters\nStage: Finals\nBest-of: Bo5\nURL: https:/
+ /lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\
+ ,lpl\,msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:858c7b4d4a4a0cff5e1f877ad65cc0a6@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20251109T070000Z
+SUMMARY:[Worlds] kt Rolster vs T1
+DESCRIPTION:League: Worlds\nStage: Finals\nBest-of: Bo5\nURL: https://loles
+ ports.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,
+ msi\,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:1fecb88cfe84e642c53e94154034c4e9@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260114T080000Z
+SUMMARY:[LCK] kt Rolster vs DN SOOPers
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:04ad47ab55903eb6df454fa02ba573d4@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260114T090000Z
+SUMMARY:[LPL] WeiboGaming Faw Audi vs Invictus Gaming
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:b289838afd142562a88ec9c91f6a0729@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260114T100000Z
+SUMMARY:[LCK] Dplus KIA vs BRION
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:0e94ba35d6dd971b1ac0d558df198ef3@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260114T110000Z
+SUMMARY:[LPL] Beijing JDG Intel Esports vs TOPESPORTS
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:50e79017ffdc35064e75aa045c5dbe94@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260115T070000Z
+SUMMARY:[LPL] Ultra Prime vs Hangzhou LGD Gaming
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:ec70b525fc0d76660a59d39e81634f92@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260115T080000Z
+SUMMARY:[LCK] Gen.G Esports vs DRX
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:cffc22349429321401ac48e1cdf224e4@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260115T090000Z
+SUMMARY:[LPL] Invictus Gaming vs Anyone's Legend
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:77e042df90dbac5a51eacc94a9fd6455@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260115T100000Z
+SUMMARY:[LCK] BNK FEARX vs NONGSHIM RED FORCE
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:fbc059250633bbac1c5fcfd58aae675c@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260115T110000Z
+SUMMARY:[LPL] WeiboGaming Faw Audi vs BILIBILI GAMING DREAMSMART
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:a65f2148963d7bfc24a092c44609d14f@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260116T080000Z
+SUMMARY:[LCK] DN SOOPers vs Dplus KIA
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:d4374898d8a5f7e7a7354703d87895d4@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260116T090000Z
+SUMMARY:[LPL] Oh My God vs Suzhou LNG Ninebot Esports
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:40d5d59fdc7e14eddb03a0c0c0e33852@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260116T100000Z
+SUMMARY:[LCK] Hanwha Life Esports vs T1
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:9dac0496da7913cb56b33db2ea2c8536@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260116T110000Z
+SUMMARY:[LPL] SHANGHAI EDWARD GAMING HYCAN vs Xi'an Team WE
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:019fee778429978cebf7c68fc32256e6@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T080000Z
+SUMMARY:[LCK] BRION vs BNK FEARX
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:45d7b3022938ff1f9b17f59e776fd7d3@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T090000Z
+SUMMARY:[LPL] Anyone's Legend vs BILIBILI GAMING DREAMSMART
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:77aaa4bd090d4c2288ccce4feb4f7f62@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T100000Z
+SUMMARY:[LCK] Gen.G Esports vs kt Rolster
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:b2affbce21cafc0023275591d511f093@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T110000Z
+SUMMARY:[LPL] Beijing JDG Intel Esports vs Invictus Gaming
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:80f56a89b4f4d6195d534c96c76ab4f5@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T160000Z
+SUMMARY:[LEC] Los Ratones vs Fnatic
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:48ebf75c4ec88d9b5438426527840f98@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T164500Z
+SUMMARY:[LEC] Shifters vs GIANTX
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:f6dad82809af4cec868036a1e2a5fb14@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T173000Z
+SUMMARY:[LEC] Team Heretics vs Natus Vincere
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:160581cd555a0898cbb162ccdfdda69f@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T181500Z
+SUMMARY:[LEC] Team Vitality vs SK Gaming
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:fe35364b612aa5a873ad0151390ce702@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T190000Z
+SUMMARY:[LEC] Karmine Corp Blue vs Karmine Corp
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:f9e04ae0c191d23bf47d613f0aef1043@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260117T194500Z
+SUMMARY:[LEC] Movistar KOI vs G2 Esports
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:97136278e815adba032d3258d7988f1f@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T080000Z
+SUMMARY:[LCK] NONGSHIM RED FORCE vs Hanwha Life Esports
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:f91446ec36f5014e23c5f00794dccb0e@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T090000Z
+SUMMARY:[LPL] TOPESPORTS vs BILIBILI GAMING DREAMSMART
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:da56fd83377fe8e8c5cfc5242fa8b1d0@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T100000Z
+SUMMARY:[LCK] DRX vs T1
+DESCRIPTION:League: LCK\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:5072b2ec964d2d1bae67c23f184f6b67@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T110000Z
+SUMMARY:[LPL] Beijing JDG Intel Esports vs Anyone's Legend
+DESCRIPTION:League: LPL\nStage: Week 1\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:8af264023d94b6ab740659f9a4eb9e34@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T160000Z
+SUMMARY:[LEC] Team Heretics vs Shifters
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:be2e8a94560c74d9563ea91017dc5540@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T164500Z
+SUMMARY:[LEC] Los Ratones vs Karmine Corp Blue
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:653c424bff6ca56b400e8207ac83d065@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T173000Z
+SUMMARY:[LEC] Team Vitality vs Natus Vincere
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:900ef5b50473fbc6004f2fec68d49652@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T181500Z
+SUMMARY:[LEC] SK Gaming vs Fnatic
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:5e8114bf94987eac16560d56f8bc8bbc@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T190000Z
+SUMMARY:[LEC] G2 Esports vs GIANTX
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:6909e9b0f5a2868700e0750cd483dc59@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260118T194500Z
+SUMMARY:[LEC] Movistar KOI vs Karmine Corp
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:f9a5f38bab1cff342c7ed9dd184649ce@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260119T070000Z
+SUMMARY:[LPL] THUNDERTALKGAMING vs Xi'an Team WE
+DESCRIPTION:League: LPL\nStage: Week 2\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:bf0da0a624f48fd82a14b6e4a0f17d02@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260119T090000Z
+SUMMARY:[LPL] WeiboGaming Faw Audi vs TOPESPORTS
+DESCRIPTION:League: LPL\nStage: Week 2\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:e9ea3e2c78fa7959ae9dfe03bac2ddf5@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260119T110000Z
+SUMMARY:[LPL] SHANGHAI EDWARD GAMING HYCAN vs SHENZHEN NINJAS IN PYJAMAS
+DESCRIPTION:League: LPL\nStage: Week 2\nBest-of: Bo3\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:14286b594e852375eb6e7065d34b0256@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260119T160000Z
+SUMMARY:[LEC] Natus Vincere vs Fnatic
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:5d0d22e67c67bce28b3758ccd85080f2@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260119T164500Z
+SUMMARY:[LEC] Team Vitality vs Karmine Corp Blue
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:06dcd337b6a97265865d783d4ca6abd7@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260119T173000Z
+SUMMARY:[LEC] Team Heretics vs GIANTX
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+BEGIN:VEVENT
+UID:cc2fb5f1d663d15cd4f42015ba1bd402@lolesports
+DTSTAMP:20260112T133950Z
+DTSTART:20260119T181500Z
+SUMMARY:[LEC] Shifters vs Movistar KOI
+DESCRIPTION:League: LEC\nStage: Week 1\nBest-of: Bo1\nURL: https://lolespor
+ ts.com/schedule?leagues=emea_masters\,first_stand\,lck\,lcs\,lec\,lpl\,msi
+ \,worlds
+URL:https://lolesports.com/schedule?leagues=emea_masters\,first_stand\,lck\
+ ,lcs\,lec\,lpl\,msi\,worlds
+END:VEVENT
+END:VCALENDAR
