@@ -6,765 +6,832 @@ PRODID:-//lolesports-ical//EN
 X-WR-CALNAME:LoL Esports
 BEGIN:VEVENT
 UID:98ddc5df014a387aca7f6e3f9283ccdb@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251015T120000Z
 DTEND:20251015T133000Z
-SUMMARY:[WM] Gen.G Esports 1-0 PSG Talon
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: Gen.G 
- Esports 1 - 0 PSG Talon\nWinner: Gen.G Esports
+SUMMARY:[WM] GEN 1-0 PSG
+DESCRIPTION:League: WM\nMatch: Gen.G Esports vs PSG Talon\nStage: Schweizer
+  Phase\nFormat: Bo1\nResult: Gen.G Esports 1 - 0 PSG Talon\nWinner: Gen.G 
+ Esports
 URL:https://lolesports.com/live/worlds/113475798006664584
 END:VEVENT
 BEGIN:VEVENT
 UID:dab15cdff0ea37890e549237c4c52288@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T050000Z
 DTEND:20251016T063000Z
-SUMMARY:[WM] Vivo Keyd Stars 0-1 FlyQuest
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: Vivo K
- eyd Stars 0 - 1 FlyQuest\nWinner: FlyQuest
+SUMMARY:[WM] VKS 0-1 FLY
+DESCRIPTION:League: WM\nMatch: Vivo Keyd Stars vs FlyQuest\nStage: Schweize
+ r Phase\nFormat: Bo1\nResult: Vivo Keyd Stars 0 - 1 FlyQuest\nWinner: FlyQ
+ uest
 URL:https://lolesports.com/live/worlds/113475798006664594
 END:VEVENT
 BEGIN:VEVENT
 UID:d2b26b4ac7dd6262cbecabb2efb5b53e@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T060000Z
 DTEND:20251016T073000Z
-SUMMARY:[WM] kt Rolster 1-0 Team Secret Whales
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: kt Rol
- ster 1 - 0 Team Secret Whales\nWinner: kt Rolster
+SUMMARY:[WM] KT 1-0 TSW
+DESCRIPTION:League: WM\nMatch: kt Rolster vs Team Secret Whales\nStage: Sch
+ weizer Phase\nFormat: Bo1\nResult: kt Rolster 1 - 0 Team Secret Whales\nWi
+ nner: kt Rolster
 URL:https://lolesports.com/live/worlds/113475798006664586
 END:VEVENT
 BEGIN:VEVENT
 UID:22b5c6e347a532ec54d4022fb91edcc4@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T070000Z
 DTEND:20251016T083000Z
-SUMMARY:[WM] Movistar KOI 0-1 G2 Esports
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: Movist
- ar KOI 0 - 1 G2 Esports\nWinner: G2 Esports
+SUMMARY:[WM] MKOI 0-1 G2
+DESCRIPTION:League: WM\nMatch: Movistar KOI vs G2 Esports\nStage: Schweizer
+  Phase\nFormat: Bo1\nResult: Movistar KOI 0 - 1 G2 Esports\nWinner: G2 Esp
+ orts
 URL:https://lolesports.com/live/worlds/113475798006664596
 END:VEVENT
 BEGIN:VEVENT
 UID:6a80cb73d1c10946bfaf45e5938a6e0e@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T080000Z
 DTEND:20251016T093000Z
-SUMMARY:[WM] TOPESPORTS 1-0 100 Thieves
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: TOPESP
- ORTS 1 - 0 100 Thieves\nWinner: TOPESPORTS
+SUMMARY:[WM] TES 1-0 100T
+DESCRIPTION:League: WM\nMatch: TOPESPORTS vs 100 Thieves\nStage: Schweizer 
+ Phase\nFormat: Bo1\nResult: TOPESPORTS 1 - 0 100 Thieves\nWinner: TOPESPOR
+ TS
 URL:https://lolesports.com/live/worlds/113475798006664588
 END:VEVENT
 BEGIN:VEVENT
 UID:8923a411fe196c15af8ec42e43d34096@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T090000Z
 DTEND:20251016T103000Z
-SUMMARY:[WM] CTBC Flying Oyster 1-0 T1
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: CTBC F
- lying Oyster 1 - 0 T1\nWinner: CTBC Flying Oyster
+SUMMARY:[WM] CFO 1-0 T1
+DESCRIPTION:League: WM\nMatch: CTBC Flying Oyster vs T1\nStage: Schweizer P
+ hase\nFormat: Bo1\nResult: CTBC Flying Oyster 1 - 0 T1\nWinner: CTBC Flyin
+ g Oyster
 URL:https://lolesports.com/live/worlds/113475798006664590
 END:VEVENT
 BEGIN:VEVENT
 UID:b8b90dfb8022cb93ea0687da415c9d1e@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T100000Z
 DTEND:20251016T113000Z
-SUMMARY:[WM] Gen.G Esports 0-1 Anyone's Legend
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: Gen.G 
- Esports 0 - 1 Anyone's Legend\nWinner: Anyone's Legend
+SUMMARY:[WM] GEN 0-1 AL
+DESCRIPTION:League: WM\nMatch: Gen.G Esports vs Anyone's Legend\nStage: Sch
+ weizer Phase\nFormat: Bo1\nResult: Gen.G Esports 0 - 1 Anyone's Legend\nWi
+ nner: Anyone's Legend
 URL:https://lolesports.com/live/worlds/113475798006664592
 END:VEVENT
 BEGIN:VEVENT
 UID:5e63ae732a8e5cd10ef33cb906ded16a@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T110000Z
 DTEND:20251016T123000Z
-SUMMARY:[WM] BILIBILI GAMING DREAMSMART 1-0 Fnatic
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: BILIBI
- LI GAMING DREAMSMART 1 - 0 Fnatic\nWinner: BILIBILI GAMING DREAMSMART
+SUMMARY:[WM] BLG 1-0 FNC
+DESCRIPTION:League: WM\nMatch: BILIBILI GAMING DREAMSMART vs Fnatic\nStage:
+  Schweizer Phase\nFormat: Bo1\nResult: BILIBILI GAMING DREAMSMART 1 - 0 Fn
+ atic\nWinner: BILIBILI GAMING DREAMSMART
 URL:https://lolesports.com/live/worlds/113475798006664598
 END:VEVENT
 BEGIN:VEVENT
 UID:1b21defcd52953cc2ec7878e186d08be@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T120000Z
 DTEND:20251016T133000Z
-SUMMARY:[WM] Hanwha Life Esports 1-0 PSG Talon
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: Hanwha
-  Life Esports 1 - 0 PSG Talon\nWinner: Hanwha Life Esports
+SUMMARY:[WM] HLE 1-0 PSG
+DESCRIPTION:League: WM\nMatch: Hanwha Life Esports vs PSG Talon\nStage: Sch
+ weizer Phase\nFormat: Bo1\nResult: Hanwha Life Esports 1 - 0 PSG Talon\nWi
+ nner: Hanwha Life Esports
 URL:https://lolesports.com/live/worlds/113475798006664600
 END:VEVENT
 BEGIN:VEVENT
 UID:6cd217f1f8b008730a71b51ed1d9a236@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T160000Z
 DTEND:20251016T200000Z
-SUMMARY:[EMEA Masters] Misa Esports 0-3 Karmine Corp Blue
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nFormat: Bo5\n
- Result: Misa Esports 0 - 3 Karmine Corp Blue\nWinner: Karmine Corp Blue
+SUMMARY:[EMEA Masters] MISA 0-3 KCB
+DESCRIPTION:League: EMEA Masters\nMatch: Misa Esports vs Karmine Corp Blue\
+ nStage: Entscheidungsspiele\nFormat: Bo5\nResult: Misa Esports 0 - 3 Karmi
+ ne Corp Blue\nWinner: Karmine Corp Blue
 URL:https://lolesports.com/live/emea_masters/115016265550803565
 END:VEVENT
 BEGIN:VEVENT
 UID:b2230520de22fdf4116731036848aa52@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251016T160000Z
 DTEND:20251016T200000Z
-SUMMARY:[EMEA Masters] Unicorns of Love Sexy Edition 3-1 Geekay Esports
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nFormat: Bo5\n
- Result: Unicorns of Love Sexy Edition 3 - 1 Geekay Esports\nWinner: Unicor
- ns of Love Sexy Edition
+SUMMARY:[EMEA Masters] USE 3-1 GK
+DESCRIPTION:League: EMEA Masters\nMatch: Unicorns of Love Sexy Edition vs G
+ eekay Esports\nStage: Entscheidungsspiele\nFormat: Bo5\nResult: Unicorns o
+ f Love Sexy Edition 3 - 1 Geekay Esports\nWinner: Unicorns of Love Sexy Ed
+ ition
 URL:https://lolesports.com/live/emea_masters/115016265550803571
 END:VEVENT
 BEGIN:VEVENT
 UID:d8b2f7ee9a147acb5f1568f833bdcab0@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251017T080000Z
 DTEND:20251017T103000Z
-SUMMARY:[WM] kt Rolster 2-0 TOPESPORTS
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: kt Rol
- ster 2 - 0 TOPESPORTS\nWinner: kt Rolster
+SUMMARY:[WM] KT 2-0 TES
+DESCRIPTION:League: WM\nMatch: kt Rolster vs TOPESPORTS\nStage: Schweizer P
+ hase\nFormat: Bo3\nResult: kt Rolster 2 - 0 TOPESPORTS\nWinner: kt Rolster
 URL:https://lolesports.com/live/worlds/113475798006664602
 END:VEVENT
 BEGIN:VEVENT
 UID:b569f48e00d4f73e85323bd9ab24ee86@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251017T110000Z
 DTEND:20251017T133000Z
-SUMMARY:[WM] CTBC Flying Oyster 1-2 Anyone's Legend
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: CTBC F
- lying Oyster 1 - 2 Anyone's Legend\nWinner: Anyone's Legend
+SUMMARY:[WM] CFO 1-2 AL
+DESCRIPTION:League: WM\nMatch: CTBC Flying Oyster vs Anyone's Legend\nStage
+ : Schweizer Phase\nFormat: Bo3\nResult: CTBC Flying Oyster 1 - 2 Anyone's 
+ Legend\nWinner: Anyone's Legend
 URL:https://lolesports.com/live/worlds/113475798006664606
 END:VEVENT
 BEGIN:VEVENT
 UID:dee42bc5c33206d371523265080be6b9@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251017T160000Z
 DTEND:20251017T200000Z
-SUMMARY:[EMEA Masters] Rossmann Centaurs 1-3 Los Heretics
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nFormat: Bo5\n
- Result: Rossmann Centaurs 1 - 3 Los Heretics\nWinner: Los Heretics
+SUMMARY:[EMEA Masters] ROSS 1-3 HRTS
+DESCRIPTION:League: EMEA Masters\nMatch: Rossmann Centaurs vs Los Heretics\
+ nStage: Entscheidungsspiele\nFormat: Bo5\nResult: Rossmann Centaurs 1 - 3 
+ Los Heretics\nWinner: Los Heretics
 URL:https://lolesports.com/live/emea_masters/115016265550803577
 END:VEVENT
 BEGIN:VEVENT
 UID:bf2a5d87a9d4d3844ee2c705f31be4db@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251017T160000Z
 DTEND:20251017T200000Z
-SUMMARY:[EMEA Masters] Los Ratones 3-1 Galions
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nFormat: Bo5\n
- Result: Los Ratones 3 - 1 Galions\nWinner: Los Ratones
+SUMMARY:[EMEA Masters] LR 3-1 GL
+DESCRIPTION:League: EMEA Masters\nMatch: Los Ratones vs Galions\nStage: Ent
+ scheidungsspiele\nFormat: Bo5\nResult: Los Ratones 3 - 1 Galions\nWinner: 
+ Los Ratones
 URL:https://lolesports.com/live/emea_masters/115016265550803559
 END:VEVENT
 BEGIN:VEVENT
 UID:8381e3f56868c4f392a01aa1aeec2e9e@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251018T080000Z
 DTEND:20251018T093000Z
-SUMMARY:[WM] FlyQuest 1-0 Team Secret Whales
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: FlyQue
- st 1 - 0 Team Secret Whales\nWinner: FlyQuest
+SUMMARY:[WM] FLY 1-0 TSW
+DESCRIPTION:League: WM\nMatch: FlyQuest vs Team Secret Whales\nStage: Schwe
+ izer Phase\nFormat: Bo1\nResult: FlyQuest 1 - 0 Team Secret Whales\nWinner
+ : FlyQuest
 URL:https://lolesports.com/live/worlds/113475798006664610
 END:VEVENT
 BEGIN:VEVENT
 UID:80d0dafc107e74979d39a1e9b9ca9b66@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251018T090000Z
 DTEND:20251018T103000Z
-SUMMARY:[WM] Gen.G Esports 1-0 T1
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: Gen.G 
- Esports 1 - 0 T1\nWinner: Gen.G Esports
+SUMMARY:[WM] GEN 1-0 T1
+DESCRIPTION:League: WM\nMatch: Gen.G Esports vs T1\nStage: Schweizer Phase\
+ nFormat: Bo1\nResult: Gen.G Esports 1 - 0 T1\nWinner: Gen.G Esports
 URL:https://lolesports.com/live/worlds/113475798006664612
 END:VEVENT
 BEGIN:VEVENT
 UID:a7cdcaa26a92f5a02e9af54117e3f7a0@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251018T100000Z
 DTEND:20251018T113000Z
-SUMMARY:[WM] BILIBILI GAMING DREAMSMART 0-1 G2 Esports
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: BILIBI
- LI GAMING DREAMSMART 0 - 1 G2 Esports\nWinner: G2 Esports
+SUMMARY:[WM] BLG 0-1 G2
+DESCRIPTION:League: WM\nMatch: BILIBILI GAMING DREAMSMART vs G2 Esports\nSt
+ age: Schweizer Phase\nFormat: Bo1\nResult: BILIBILI GAMING DREAMSMART 0 - 
+ 1 G2 Esports\nWinner: G2 Esports
 URL:https://lolesports.com/live/worlds/113475798006664614
 END:VEVENT
 BEGIN:VEVENT
 UID:6f202f5600e07c628716e3fd8b5f3505@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251018T110000Z
 DTEND:20251018T123000Z
-SUMMARY:[WM] Hanwha Life Esports 1-0 100 Thieves
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo1\nResult: Hanwha
-  Life Esports 1 - 0 100 Thieves\nWinner: Hanwha Life Esports
+SUMMARY:[WM] HLE 1-0 100T
+DESCRIPTION:League: WM\nMatch: Hanwha Life Esports vs 100 Thieves\nStage: S
+ chweizer Phase\nFormat: Bo1\nResult: Hanwha Life Esports 1 - 0 100 Thieves
+ \nWinner: Hanwha Life Esports
 URL:https://lolesports.com/live/worlds/113475798006664616
 END:VEVENT
 BEGIN:VEVENT
 UID:73349026ddc06ed4f1b7d397d9feaedf@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251019T080000Z
 DTEND:20251019T103000Z
-SUMMARY:[WM] Movistar KOI 2-1 Fnatic
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: Movist
- ar KOI 2 - 1 Fnatic\nWinner: Movistar KOI
+SUMMARY:[WM] MKOI 2-1 FNC
+DESCRIPTION:League: WM\nMatch: Movistar KOI vs Fnatic\nStage: Schweizer Pha
+ se\nFormat: Bo3\nResult: Movistar KOI 2 - 1 Fnatic\nWinner: Movistar KOI
 URL:https://lolesports.com/live/worlds/113475798006664618
 END:VEVENT
 BEGIN:VEVENT
 UID:4c5a3ed1c5c9fdf1f98a9595318ba25e@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251019T110000Z
 DTEND:20251019T133000Z
-SUMMARY:[WM] PSG Talon 1-2 Vivo Keyd Stars
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: PSG Ta
- lon 1 - 2 Vivo Keyd Stars\nWinner: Vivo Keyd Stars
+SUMMARY:[WM] PSG 1-2 VKS
+DESCRIPTION:League: WM\nMatch: PSG Talon vs Vivo Keyd Stars\nStage: Schweiz
+ er Phase\nFormat: Bo3\nResult: PSG Talon 1 - 2 Vivo Keyd Stars\nWinner: Vi
+ vo Keyd Stars
 URL:https://lolesports.com/live/worlds/113475798006664622
 END:VEVENT
 BEGIN:VEVENT
 UID:ac13153f5371e903f93ef0537e408c6e@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251020T160000Z
 DTEND:20251020T200000Z
-SUMMARY:[EMEA Masters] Los Ratones 0-3 Karmine Corp Blue
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nFormat: Bo5\n
- Result: Los Ratones 0 - 3 Karmine Corp Blue\nWinner: Karmine Corp Blue
+SUMMARY:[EMEA Masters] LR 0-3 KCB
+DESCRIPTION:League: EMEA Masters\nMatch: Los Ratones vs Karmine Corp Blue\n
+ Stage: Entscheidungsspiele\nFormat: Bo5\nResult: Los Ratones 0 - 3 Karmine
+  Corp Blue\nWinner: Karmine Corp Blue
 URL:https://lolesports.com/live/emea_masters/115016265550803583
 END:VEVENT
 BEGIN:VEVENT
 UID:200d4e305cd4ce0133147088327f1338@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251021T160000Z
 DTEND:20251021T200000Z
-SUMMARY:[EMEA Masters] Los Heretics 3-0 Unicorns of Love Sexy Edition
-DESCRIPTION:League: EMEA Masters\nStage: Entscheidungsspiele\nFormat: Bo5\n
- Result: Los Heretics 3 - 0 Unicorns of Love Sexy Edition\nWinner: Los Here
- tics
+SUMMARY:[EMEA Masters] HRTS 3-0 USE
+DESCRIPTION:League: EMEA Masters\nMatch: Los Heretics vs Unicorns of Love S
+ exy Edition\nStage: Entscheidungsspiele\nFormat: Bo5\nResult: Los Heretics
+  3 - 0 Unicorns of Love Sexy Edition\nWinner: Los Heretics
 URL:https://lolesports.com/live/emea_masters/115016265550803589
 END:VEVENT
 BEGIN:VEVENT
 UID:f79fbc8767e3e7f1f81cef2ddb2de7cc@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251022T080000Z
 DTEND:20251022T103000Z
-SUMMARY:[WM] CTBC Flying Oyster 0-2 Hanwha Life Esports
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: CTBC F
- lying Oyster 0 - 2 Hanwha Life Esports\nWinner: Hanwha Life Esports
+SUMMARY:[WM] CFO 0-2 HLE
+DESCRIPTION:League: WM\nMatch: CTBC Flying Oyster vs Hanwha Life Esports\nS
+ tage: Schweizer Phase\nFormat: Bo3\nResult: CTBC Flying Oyster 0 - 2 Hanwh
+ a Life Esports\nWinner: Hanwha Life Esports
 URL:https://lolesports.com/live/worlds/113475798006664626
 END:VEVENT
 BEGIN:VEVENT
 UID:edbc95375bd7a293034bce53d8e8afc9@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251022T110000Z
 DTEND:20251022T133000Z
-SUMMARY:[WM] FlyQuest 1-2 G2 Esports
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: FlyQue
- st 1 - 2 G2 Esports\nWinner: G2 Esports
+SUMMARY:[WM] FLY 1-2 G2
+DESCRIPTION:League: WM\nMatch: FlyQuest vs G2 Esports\nStage: Schweizer Pha
+ se\nFormat: Bo3\nResult: FlyQuest 1 - 2 G2 Esports\nWinner: G2 Esports
 URL:https://lolesports.com/live/worlds/113475798006664630
 END:VEVENT
 BEGIN:VEVENT
 UID:4fa8c7b7f4cb9ad1313356147b01d25d@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251023T080000Z
 DTEND:20251023T103000Z
-SUMMARY:[WM] Movistar KOI 2-1 Team Secret Whales
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: Movist
- ar KOI 2 - 1 Team Secret Whales\nWinner: Movistar KOI
+SUMMARY:[WM] MKOI 2-1 TSW
+DESCRIPTION:League: WM\nMatch: Movistar KOI vs Team Secret Whales\nStage: S
+ chweizer Phase\nFormat: Bo3\nResult: Movistar KOI 2 - 1 Team Secret Whales
+ \nWinner: Movistar KOI
 URL:https://lolesports.com/live/worlds/113475798006664638
 END:VEVENT
 BEGIN:VEVENT
 UID:e3a021e4f90861364f3f65c020af938f@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251023T110000Z
 DTEND:20251023T133000Z
-SUMMARY:[WM] Gen.G Esports 2-0 TOPESPORTS
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: Gen.G 
- Esports 2 - 0 TOPESPORTS\nWinner: Gen.G Esports
+SUMMARY:[WM] GEN 2-0 TES
+DESCRIPTION:League: WM\nMatch: Gen.G Esports vs TOPESPORTS\nStage: Schweize
+ r Phase\nFormat: Bo3\nResult: Gen.G Esports 2 - 0 TOPESPORTS\nWinner: Gen.
+ G Esports
 URL:https://lolesports.com/live/worlds/113475798006664634
 END:VEVENT
 BEGIN:VEVENT
 UID:05e31d8dceaeddee5fb9e8c4aa86baf5@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251024T080000Z
 DTEND:20251024T103000Z
-SUMMARY:[WM] BILIBILI GAMING DREAMSMART 2-0 Vivo Keyd Stars
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: BILIBI
- LI GAMING DREAMSMART 2 - 0 Vivo Keyd Stars\nWinner: BILIBILI GAMING DREAMS
- MART
+SUMMARY:[WM] BLG 2-0 VKS
+DESCRIPTION:League: WM\nMatch: BILIBILI GAMING DREAMSMART vs Vivo Keyd Star
+ s\nStage: Schweizer Phase\nFormat: Bo3\nResult: BILIBILI GAMING DREAMSMART
+  2 - 0 Vivo Keyd Stars\nWinner: BILIBILI GAMING DREAMSMART
 URL:https://lolesports.com/live/worlds/113475798006664642
 END:VEVENT
 BEGIN:VEVENT
 UID:8b01f13b17ec97726641190391c06c03@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251024T110000Z
 DTEND:20251024T133000Z
-SUMMARY:[WM] 100 Thieves 0-2 T1
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: 100 Th
- ieves 0 - 2 T1\nWinner: T1
+SUMMARY:[WM] 100T 0-2 T1
+DESCRIPTION:League: WM\nMatch: 100 Thieves vs T1\nStage: Schweizer Phase\nF
+ ormat: Bo3\nResult: 100 Thieves 0 - 2 T1\nWinner: T1
 URL:https://lolesports.com/live/worlds/113475798006664646
 END:VEVENT
 BEGIN:VEVENT
 UID:6c83ef50866128eb0704f46220a3caaa@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251025T050000Z
 DTEND:20251025T073000Z
-SUMMARY:[WM] CTBC Flying Oyster 2-0 FlyQuest
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: CTBC F
- lying Oyster 2 - 0 FlyQuest\nWinner: CTBC Flying Oyster
+SUMMARY:[WM] CFO 2-0 FLY
+DESCRIPTION:League: WM\nMatch: CTBC Flying Oyster vs FlyQuest\nStage: Schwe
+ izer Phase\nFormat: Bo3\nResult: CTBC Flying Oyster 2 - 0 FlyQuest\nWinner
+ : CTBC Flying Oyster
 URL:https://lolesports.com/live/worlds/113475798006664650
 END:VEVENT
 BEGIN:VEVENT
 UID:c168acb57bbaf41ac52cffddcbcb5a5f@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251025T080000Z
 DTEND:20251025T103000Z
-SUMMARY:[WM] TOPESPORTS 2-1 BILIBILI GAMING DREAMSMART
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: TOPESP
- ORTS 2 - 1 BILIBILI GAMING DREAMSMART\nWinner: TOPESPORTS
+SUMMARY:[WM] TES 2-1 BLG
+DESCRIPTION:League: WM\nMatch: TOPESPORTS vs BILIBILI GAMING DREAMSMART\nSt
+ age: Schweizer Phase\nFormat: Bo3\nResult: TOPESPORTS 2 - 1 BILIBILI GAMIN
+ G DREAMSMART\nWinner: TOPESPORTS
 URL:https://lolesports.com/live/worlds/113475798006664654
 END:VEVENT
 BEGIN:VEVENT
 UID:6afeee3272169665c7702465fb000410@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251025T110000Z
 DTEND:20251025T133000Z
-SUMMARY:[WM] Movistar KOI 0-2 T1
-DESCRIPTION:League: WM\nStage: Schweizer Phase\nFormat: Bo3\nResult: Movist
- ar KOI 0 - 2 T1\nWinner: T1
+SUMMARY:[WM] MKOI 0-2 T1
+DESCRIPTION:League: WM\nMatch: Movistar KOI vs T1\nStage: Schweizer Phase\n
+ Format: Bo3\nResult: Movistar KOI 0 - 2 T1\nWinner: T1
 URL:https://lolesports.com/live/worlds/113475798006664658
 END:VEVENT
 BEGIN:VEVENT
 UID:33cbc4768f5c5860dc3fbc61de8b6f0e@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251028T070000Z
 DTEND:20251028T110000Z
-SUMMARY:[WM] Gen.G Esports 3-1 Hanwha Life Esports
-DESCRIPTION:League: WM\nStage: Viertelfinale\nFormat: Bo5\nResult: Gen.G Es
- ports 3 - 1 Hanwha Life Esports\nWinner: Gen.G Esports
+SUMMARY:[WM] GEN 3-1 HLE
+DESCRIPTION:League: WM\nMatch: Gen.G Esports vs Hanwha Life Esports\nStage:
+  Viertelfinale\nFormat: Bo5\nResult: Gen.G Esports 3 - 1 Hanwha Life Espor
+ ts\nWinner: Gen.G Esports
 URL:https://lolesports.com/live/worlds/113475871523985223
 END:VEVENT
 BEGIN:VEVENT
 UID:3e916a281f95161abb0d551d42a56d52@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251029T070000Z
 DTEND:20251029T110000Z
-SUMMARY:[WM] kt Rolster 3-0 CTBC Flying Oyster
-DESCRIPTION:League: WM\nStage: Viertelfinale\nFormat: Bo5\nResult: kt Rolst
- er 3 - 0 CTBC Flying Oyster\nWinner: kt Rolster
+SUMMARY:[WM] KT 3-0 CFO
+DESCRIPTION:League: WM\nMatch: kt Rolster vs CTBC Flying Oyster\nStage: Vie
+ rtelfinale\nFormat: Bo5\nResult: kt Rolster 3 - 0 CTBC Flying Oyster\nWinn
+ er: kt Rolster
 URL:https://lolesports.com/live/worlds/113475871523985229
 END:VEVENT
 BEGIN:VEVENT
 UID:a2043db56adde4a3ee6c805522666f31@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251030T070000Z
 DTEND:20251030T110000Z
-SUMMARY:[WM] TOPESPORTS 3-1 G2 Esports
-DESCRIPTION:League: WM\nStage: Viertelfinale\nFormat: Bo5\nResult: TOPESPOR
- TS 3 - 1 G2 Esports\nWinner: TOPESPORTS
+SUMMARY:[WM] TES 3-1 G2
+DESCRIPTION:League: WM\nMatch: TOPESPORTS vs G2 Esports\nStage: Viertelfina
+ le\nFormat: Bo5\nResult: TOPESPORTS 3 - 1 G2 Esports\nWinner: TOPESPORTS
 URL:https://lolesports.com/live/worlds/113475871523985217
 END:VEVENT
 BEGIN:VEVENT
 UID:67bd041dd0096fd01200303ca8af9581@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251031T070000Z
 DTEND:20251031T110000Z
-SUMMARY:[WM] Anyone's Legend 2-3 T1
-DESCRIPTION:League: WM\nStage: Viertelfinale\nFormat: Bo5\nResult: Anyone's
-  Legend 2 - 3 T1\nWinner: T1
+SUMMARY:[WM] AL 2-3 T1
+DESCRIPTION:League: WM\nMatch: Anyone's Legend vs T1\nStage: Viertelfinale\
+ nFormat: Bo5\nResult: Anyone's Legend 2 - 3 T1\nWinner: T1
 URL:https://lolesports.com/live/worlds/113475871523985211
 END:VEVENT
 BEGIN:VEVENT
 UID:c37f6c856ed317ae05f74a541a579b35@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251101T070000Z
 DTEND:20251101T110000Z
-SUMMARY:[WM] Gen.G Esports 1-3 kt Rolster
-DESCRIPTION:League: WM\nStage: Halbfinale\nFormat: Bo5\nResult: Gen.G Espor
- ts 1 - 3 kt Rolster\nWinner: kt Rolster
+SUMMARY:[WM] GEN 1-3 KT
+DESCRIPTION:League: WM\nMatch: Gen.G Esports vs kt Rolster\nStage: Halbfina
+ le\nFormat: Bo5\nResult: Gen.G Esports 1 - 3 kt Rolster\nWinner: kt Rolste
+ r
 URL:https://lolesports.com/live/worlds/113475871523985241
 END:VEVENT
 BEGIN:VEVENT
 UID:8ddcec9b132b388213cf451214889eb7@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251102T070000Z
 DTEND:20251102T110000Z
-SUMMARY:[WM] T1 3-0 TOPESPORTS
-DESCRIPTION:League: WM\nStage: Halbfinale\nFormat: Bo5\nResult: T1 3 - 0 TO
- PESPORTS\nWinner: T1
+SUMMARY:[WM] T1 3-0 TES
+DESCRIPTION:League: WM\nMatch: T1 vs TOPESPORTS\nStage: Halbfinale\nFormat:
+  Bo5\nResult: T1 3 - 0 TOPESPORTS\nWinner: T1
 URL:https://lolesports.com/live/worlds/113475871523985235
 END:VEVENT
 BEGIN:VEVENT
 UID:93b3475f84efb3dae6becac53d882aef@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251102T180000Z
 DTEND:20251102T220000Z
-SUMMARY:[EMEA Masters] Karmine Corp Blue 3-0 Los Heretics
-DESCRIPTION:League: EMEA Masters\nStage: Finale\nFormat: Bo5\nResult: Karmi
- ne Corp Blue 3 - 0 Los Heretics\nWinner: Karmine Corp Blue
+SUMMARY:[EMEA Masters] KCB 3-0 HRTS
+DESCRIPTION:League: EMEA Masters\nMatch: Karmine Corp Blue vs Los Heretics\
+ nStage: Finale\nFormat: Bo5\nResult: Karmine Corp Blue 3 - 0 Los Heretics\
+ nWinner: Karmine Corp Blue
 URL:https://lolesports.com/live/emea_masters/115016265550803595
 END:VEVENT
 BEGIN:VEVENT
 UID:9f20fd24968e37547e96c8100b1d12e6@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20251109T070000Z
 DTEND:20251109T110000Z
-SUMMARY:[WM] kt Rolster 2-3 T1
-DESCRIPTION:League: WM\nStage: Finale\nFormat: Bo5\nResult: kt Rolster 2 - 
- 3 T1\nWinner: T1
+SUMMARY:[WM] KT 2-3 T1
+DESCRIPTION:League: WM\nMatch: kt Rolster vs T1\nStage: Finale\nFormat: Bo5
+ \nResult: kt Rolster 2 - 3 T1\nWinner: T1
 URL:https://lolesports.com/live/worlds/113475871524050783
 END:VEVENT
 BEGIN:VEVENT
 UID:f6a7585c720750a5a91184e2f50dcf80@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260114T080000Z
 DTEND:20260114T103000Z
-SUMMARY:[LCK] kt Rolster vs DN SOOPers
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LCK] KT vs DNS
+DESCRIPTION:League: LCK\nMatch: kt Rolster vs DN SOOPers\nStage: Woche 1\nF
+ ormat: Bo3
 URL:https://lolesports.com/live/lck/115848316381096423
 END:VEVENT
 BEGIN:VEVENT
 UID:8edd32bfcee371792e995949f504990b@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260114T090000Z
 DTEND:20260114T113000Z
-SUMMARY:[LPL] WeiboGaming Faw Audi vs Invictus Gaming
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] WBG vs IG
+DESCRIPTION:League: LPL\nMatch: WeiboGaming Faw Audi vs Invictus Gaming\nSt
+ age: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537245
 END:VEVENT
 BEGIN:VEVENT
 UID:22d7b3ed4610bb73c6cf04772e696be8@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260114T100000Z
 DTEND:20260114T123000Z
-SUMMARY:[LCK] Dplus KIA vs BRION
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LCK] DK vs BRO
+DESCRIPTION:League: LCK\nMatch: Dplus KIA vs BRION\nStage: Woche 1\nFormat:
+  Bo3
 URL:https://lolesports.com/live/lck/115848316596054531
 END:VEVENT
 BEGIN:VEVENT
 UID:0ceb55b1c56045da74a5b701ee10462c@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260114T110000Z
 DTEND:20260114T133000Z
-SUMMARY:[LPL] Beijing JDG Intel Esports vs TOPESPORTS
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] JDG vs TES
+DESCRIPTION:League: LPL\nMatch: Beijing JDG Intel Esports vs TOPESPORTS\nSt
+ age: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537239
 END:VEVENT
 BEGIN:VEVENT
 UID:0885a4d45a84bd82151ad8ac520ccea4@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260115T070000Z
 DTEND:20260115T093000Z
-SUMMARY:[LPL] Ultra Prime vs Hangzhou LGD Gaming
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] UP vs LGD
+DESCRIPTION:League: LPL\nMatch: Ultra Prime vs Hangzhou LGD Gaming\nStage: 
+ Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537261
 END:VEVENT
 BEGIN:VEVENT
 UID:3c21b39ce4eaa3cba391fa94656109c1@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260115T080000Z
 DTEND:20260115T103000Z
-SUMMARY:[LCK] Gen.G Esports vs DRX
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LCK] GEN vs DRX
+DESCRIPTION:League: LCK\nMatch: Gen.G Esports vs DRX\nStage: Woche 1\nForma
+ t: Bo3
 URL:https://lolesports.com/live/lck/115848315835312526
 END:VEVENT
 BEGIN:VEVENT
 UID:24354e1dfb6becc694f17d107f7deca7@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260115T090000Z
 DTEND:20260115T113000Z
-SUMMARY:[LPL] Invictus Gaming vs Anyone's Legend
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] IG vs AL
+DESCRIPTION:League: LPL\nMatch: Invictus Gaming vs Anyone's Legend\nStage: 
+ Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537231
 END:VEVENT
 BEGIN:VEVENT
 UID:32bdbe6264b08e04fcfb973850562409@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260115T100000Z
 DTEND:20260115T123000Z
-SUMMARY:[LCK] BNK FEARX vs NONGSHIM RED FORCE
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LCK] BFX vs NS
+DESCRIPTION:League: LCK\nMatch: BNK FEARX vs NONGSHIM RED FORCE\nStage: Woc
+ he 1\nFormat: Bo3
 URL:https://lolesports.com/live/lck/115848316120066501
 END:VEVENT
 BEGIN:VEVENT
 UID:73f351bde40ed294905204e67a75b33a@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260115T110000Z
 DTEND:20260115T133000Z
-SUMMARY:[LPL] WeiboGaming Faw Audi vs BILIBILI GAMING DREAMSMART
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] WBG vs BLG
+DESCRIPTION:League: LPL\nMatch: WeiboGaming Faw Audi vs BILIBILI GAMING DRE
+ AMSMART\nStage: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537227
 END:VEVENT
 BEGIN:VEVENT
 UID:ef4b6327c7608a9b048ba4b91bb7b47f@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260116T080000Z
 DTEND:20260116T103000Z
-SUMMARY:[LCK] DN SOOPers vs Dplus KIA
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LCK] DNS vs DK
+DESCRIPTION:League: LCK\nMatch: DN SOOPers vs Dplus KIA\nStage: Woche 1\nFo
+ rmat: Bo3
 URL:https://lolesports.com/live/lck/115848316355275232
 END:VEVENT
 BEGIN:VEVENT
 UID:da66eb4973dd4f2b6cbd462df431fc94@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260116T090000Z
 DTEND:20260116T113000Z
-SUMMARY:[LPL] Oh My God vs Suzhou LNG Ninebot Esports
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] OMG vs LNG
+DESCRIPTION:League: LPL\nMatch: Oh My God vs Suzhou LNG Ninebot Esports\nSt
+ age: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115807614490184122
 END:VEVENT
 BEGIN:VEVENT
 UID:27097a3cb868fa9223c5315948cf4118@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260116T100000Z
 DTEND:20260116T123000Z
-SUMMARY:[LCK] Hanwha Life Esports vs T1
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LCK] HLE vs T1
+DESCRIPTION:League: LCK\nMatch: Hanwha Life Esports vs T1\nStage: Woche 1\n
+ Format: Bo3
 URL:https://lolesports.com/live/lck/115848315857267093
 END:VEVENT
 BEGIN:VEVENT
 UID:bc493af89d9b633de26584f31c169fb3@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260116T110000Z
 DTEND:20260116T133000Z
-SUMMARY:[LPL] SHANGHAI EDWARD GAMING HYCAN vs Xi'an Team WE
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] EDG vs WE
+DESCRIPTION:League: LPL\nMatch: SHANGHAI EDWARD GAMING HYCAN vs Xi'an Team 
+ WE\nStage: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537255
 END:VEVENT
 BEGIN:VEVENT
 UID:0d963fa32ba6d0446ad95d71951f551f@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T080000Z
 DTEND:20260117T103000Z
-SUMMARY:[LCK] BRION vs BNK FEARX
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LCK] BRO vs BFX
+DESCRIPTION:League: LCK\nMatch: BRION vs BNK FEARX\nStage: Woche 1\nFormat:
+  Bo3
 URL:https://lolesports.com/live/lck/115848316736891410
 END:VEVENT
 BEGIN:VEVENT
 UID:6e492fc3ff61ee2b2621f39e98c4f526@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T090000Z
 DTEND:20260117T113000Z
-SUMMARY:[LPL] Anyone's Legend vs BILIBILI GAMING DREAMSMART
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] AL vs BLG
+DESCRIPTION:League: LPL\nMatch: Anyone's Legend vs BILIBILI GAMING DREAMSMA
+ RT\nStage: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674471683
 END:VEVENT
 BEGIN:VEVENT
 UID:c6e2b079fcc5b6b924b81c91dadba8fb@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T100000Z
 DTEND:20260117T123000Z
-SUMMARY:[LCK] Gen.G Esports vs kt Rolster
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LCK] GEN vs KT
+DESCRIPTION:League: LCK\nMatch: Gen.G Esports vs kt Rolster\nStage: Woche 1
+ \nFormat: Bo3
 URL:https://lolesports.com/live/lck/115848315792779652
 END:VEVENT
 BEGIN:VEVENT
 UID:1ca175f8cc3aa1bf3c530fe0c0d36578@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T110000Z
 DTEND:20260117T133000Z
-SUMMARY:[LPL] Beijing JDG Intel Esports vs Invictus Gaming
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] JDG vs IG
+DESCRIPTION:League: LPL\nMatch: Beijing JDG Intel Esports vs Invictus Gamin
+ g\nStage: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537243
 END:VEVENT
 BEGIN:VEVENT
 UID:541164a7609687e001a3ae2ad86c4144@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T160000Z
 DTEND:20260117T173000Z
-SUMMARY:[LEC] Los Ratones vs Fnatic
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] LR vs FNC
+DESCRIPTION:League: LEC\nMatch: Los Ratones vs Fnatic\nStage: Woche 1\nForm
+ at: Bo1
 URL:https://lolesports.com/live/lec/115548424308414192
 END:VEVENT
 BEGIN:VEVENT
 UID:3bc4c714789626e9603ed078af9a3712@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T164500Z
 DTEND:20260117T181500Z
-SUMMARY:[LEC] Shifters vs GIANTX
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] SHFT vs GX
+DESCRIPTION:League: LEC\nMatch: Shifters vs GIANTX\nStage: Woche 1\nFormat:
+  Bo1
 URL:https://lolesports.com/live/lec/115548424308414160
 END:VEVENT
 BEGIN:VEVENT
 UID:ced0bfdecbd1cb25c8375c11af2f1a56@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T173000Z
 DTEND:20260117T190000Z
-SUMMARY:[LEC] Team Heretics vs Natus Vincere
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] TH vs NAVI
+DESCRIPTION:League: LEC\nMatch: Team Heretics vs Natus Vincere\nStage: Woch
+ e 1\nFormat: Bo1
 URL:https://lolesports.com/live/lec/115548424308479798
 END:VEVENT
 BEGIN:VEVENT
 UID:83e3bdcf200e7ae9922bf53138de6361@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T181500Z
 DTEND:20260117T194500Z
-SUMMARY:[LEC] Team Vitality vs SK Gaming
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] VIT vs SK
+DESCRIPTION:League: LEC\nMatch: Team Vitality vs SK Gaming\nStage: Woche 1\
+ nFormat: Bo1
 URL:https://lolesports.com/live/lec/115548424308479810
 END:VEVENT
 BEGIN:VEVENT
 UID:71f96d9b1d9a2ab58edb20454ae1764a@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T190000Z
 DTEND:20260117T203000Z
-SUMMARY:[LEC] Karmine Corp Blue vs Karmine Corp
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] KCB vs KC
+DESCRIPTION:League: LEC\nMatch: Karmine Corp Blue vs Karmine Corp\nStage: W
+ oche 1\nFormat: Bo1
 URL:https://lolesports.com/live/lec/115548424308414206
 END:VEVENT
 BEGIN:VEVENT
 UID:b6168ce01e6252d2bd523b1e76326631@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260117T194500Z
 DTEND:20260117T211500Z
-SUMMARY:[LEC] Movistar KOI vs G2 Esports
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] MKOI vs G2
+DESCRIPTION:League: LEC\nMatch: Movistar KOI vs G2 Esports\nStage: Woche 1\
+ nFormat: Bo1
 URL:https://lolesports.com/live/lec/115548424308414176
 END:VEVENT
 BEGIN:VEVENT
 UID:f5c2e8eb70e266dba51a955c47b22bc7@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T080000Z
 DTEND:20260118T103000Z
-SUMMARY:[LCK] NONGSHIM RED FORCE vs Hanwha Life Esports
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LCK] NS vs HLE
+DESCRIPTION:League: LCK\nMatch: NONGSHIM RED FORCE vs Hanwha Life Esports\n
+ Stage: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lck/115848316005247408
 END:VEVENT
 BEGIN:VEVENT
 UID:ba5b9613ef148329d7af746355d6a0f3@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T090000Z
 DTEND:20260118T113000Z
-SUMMARY:[LPL] TOPESPORTS vs BILIBILI GAMING DREAMSMART
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] TES vs BLG
+DESCRIPTION:League: LPL\nMatch: TOPESPORTS vs BILIBILI GAMING DREAMSMART\nS
+ tage: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537221
 END:VEVENT
 BEGIN:VEVENT
 UID:703bba91193be53599886957dce2c1f9@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T100000Z
 DTEND:20260118T123000Z
 SUMMARY:[LCK] DRX vs T1
-DESCRIPTION:League: LCK\nStage: Woche 1\nFormat: Bo3
+DESCRIPTION:League: LCK\nMatch: DRX vs T1\nStage: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lck/115848315958585771
 END:VEVENT
 BEGIN:VEVENT
 UID:fd40c4ecbed07e35a3806c43b21ff4f1@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T110000Z
 DTEND:20260118T133000Z
-SUMMARY:[LPL] Beijing JDG Intel Esports vs Anyone's Legend
-DESCRIPTION:League: LPL\nStage: Woche 1\nFormat: Bo3
+SUMMARY:[LPL] JDG vs AL
+DESCRIPTION:League: LPL\nMatch: Beijing JDG Intel Esports vs Anyone's Legen
+ d\nStage: Woche 1\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537233
 END:VEVENT
 BEGIN:VEVENT
 UID:df8e8bc78ca453f07a2f13f8c3c875ea@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T160000Z
 DTEND:20260118T173000Z
-SUMMARY:[LEC] Team Heretics vs Shifters
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] TH vs SHFT
+DESCRIPTION:League: LEC\nMatch: Team Heretics vs Shifters\nStage: Woche 1\n
+ Format: Bo1
 URL:https://lolesports.com/live/lec/115548424308479804
 END:VEVENT
 BEGIN:VEVENT
 UID:5d8569aaeef7c9e1020f124511dde227@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T164500Z
 DTEND:20260118T181500Z
-SUMMARY:[LEC] Los Ratones vs Karmine Corp Blue
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] LR vs KCB
+DESCRIPTION:League: LEC\nMatch: Los Ratones vs Karmine Corp Blue\nStage: Wo
+ che 1\nFormat: Bo1
 URL:https://lolesports.com/live/lec/115548424308414222
 END:VEVENT
 BEGIN:VEVENT
 UID:4a461affb22a3b67437d8c98a66c6456@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T173000Z
 DTEND:20260118T190000Z
-SUMMARY:[LEC] Team Vitality vs Natus Vincere
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] VIT vs NAVI
+DESCRIPTION:League: LEC\nMatch: Team Vitality vs Natus Vincere\nStage: Woch
+ e 1\nFormat: Bo1
 URL:https://lolesports.com/live/lec/115548424308479800
 END:VEVENT
 BEGIN:VEVENT
 UID:f60bc126e86898787f134ee1b43e323b@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T181500Z
 DTEND:20260118T194500Z
-SUMMARY:[LEC] SK Gaming vs Fnatic
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] SK vs FNC
+DESCRIPTION:League: LEC\nMatch: SK Gaming vs Fnatic\nStage: Woche 1\nFormat
+ : Bo1
 URL:https://lolesports.com/live/lec/115548424308414200
 END:VEVENT
 BEGIN:VEVENT
 UID:209fb2421b257ddbfd05d3a6ba39128e@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T190000Z
 DTEND:20260118T203000Z
-SUMMARY:[LEC] G2 Esports vs GIANTX
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] G2 vs GX
+DESCRIPTION:League: LEC\nMatch: G2 Esports vs GIANTX\nStage: Woche 1\nForma
+ t: Bo1
 URL:https://lolesports.com/live/lec/115548424307955394
 END:VEVENT
 BEGIN:VEVENT
 UID:14e67830ae4a134e978939b06049712b@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260118T194500Z
 DTEND:20260118T211500Z
-SUMMARY:[LEC] Movistar KOI vs Karmine Corp
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] MKOI vs KC
+DESCRIPTION:League: LEC\nMatch: Movistar KOI vs Karmine Corp\nStage: Woche 
+ 1\nFormat: Bo1
 URL:https://lolesports.com/live/lec/115548424308414210
 END:VEVENT
 BEGIN:VEVENT
 UID:3cc2f44285905eda8b4a0fe4d850d234@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260119T070000Z
 DTEND:20260119T093000Z
-SUMMARY:[LPL] THUNDERTALKGAMING vs Xi'an Team WE
-DESCRIPTION:League: LPL\nStage: Woche 2\nFormat: Bo3
+SUMMARY:[LPL] TT vs WE
+DESCRIPTION:League: LPL\nMatch: THUNDERTALKGAMING vs Xi'an Team WE\nStage: 
+ Woche 2\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537257
 END:VEVENT
 BEGIN:VEVENT
 UID:d89e664bbc47e0458c4c41319989e581@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260119T090000Z
 DTEND:20260119T113000Z
-SUMMARY:[LPL] WeiboGaming Faw Audi vs TOPESPORTS
-DESCRIPTION:League: LPL\nStage: Woche 2\nFormat: Bo3
+SUMMARY:[LPL] WBG vs TES
+DESCRIPTION:League: LPL\nMatch: WeiboGaming Faw Audi vs TOPESPORTS\nStage: 
+ Woche 2\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537241
 END:VEVENT
 BEGIN:VEVENT
 UID:ed491575a0492f7e5428e1d5f1cfc9e2@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260119T110000Z
 DTEND:20260119T133000Z
-SUMMARY:[LPL] SHANGHAI EDWARD GAMING HYCAN vs SHENZHEN NINJAS IN PYJAMAS
-DESCRIPTION:League: LPL\nStage: Woche 2\nFormat: Bo3
+SUMMARY:[LPL] EDG vs NIP
+DESCRIPTION:League: LPL\nMatch: SHANGHAI EDWARD GAMING HYCAN vs SHENZHEN NI
+ NJAS IN PYJAMAS\nStage: Woche 2\nFormat: Bo3
 URL:https://lolesports.com/live/lpl/115617456674537251
 END:VEVENT
 BEGIN:VEVENT
 UID:201e80a8fc3539645fd0b15cbf3303ea@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260119T160000Z
 DTEND:20260119T173000Z
-SUMMARY:[LEC] Natus Vincere vs Fnatic
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] NAVI vs FNC
+DESCRIPTION:League: LEC\nMatch: Natus Vincere vs Fnatic\nStage: Woche 1\nFo
+ rmat: Bo1
 URL:https://lolesports.com/live/lec/115548424308414196
 END:VEVENT
 BEGIN:VEVENT
 UID:9b7888345f7359ee951c0ca8b7653da2@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260119T164500Z
 DTEND:20260119T181500Z
-SUMMARY:[LEC] Team Vitality vs Karmine Corp Blue
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] VIT vs KCB
+DESCRIPTION:League: LEC\nMatch: Team Vitality vs Karmine Corp Blue\nStage: 
+ Woche 1\nFormat: Bo1
 URL:https://lolesports.com/live/lec/115548424308414234
 END:VEVENT
 BEGIN:VEVENT
 UID:ec08408ba2f8c205edf08bb130127296@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260119T173000Z
 DTEND:20260119T190000Z
-SUMMARY:[LEC] Team Heretics vs GIANTX
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] TH vs GX
+DESCRIPTION:League: LEC\nMatch: Team Heretics vs GIANTX\nStage: Woche 1\nFo
+ rmat: Bo1
 URL:https://lolesports.com/live/lec/115548424308414164
 END:VEVENT
 BEGIN:VEVENT
 UID:82a1a607ab8e2b4f7ebb7fa5029a7235@lolesports
-DTSTAMP:20260112T134840Z
+DTSTAMP:20260112T135127Z
 DTSTART:20260119T181500Z
 DTEND:20260119T194500Z
-SUMMARY:[LEC] Shifters vs Movistar KOI
-DESCRIPTION:League: LEC\nStage: Woche 1\nFormat: Bo1
+SUMMARY:[LEC] SHFT vs MKOI
+DESCRIPTION:League: LEC\nMatch: Shifters vs Movistar KOI\nStage: Woche 1\nF
+ ormat: Bo1
 URL:https://lolesports.com/live/lec/115548424308414250
 END:VEVENT
 END:VCALENDAR

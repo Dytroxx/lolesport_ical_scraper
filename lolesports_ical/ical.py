@@ -55,14 +55,19 @@ def render_ical(matches: Iterable[Match], *, prodid: str = "-//lolesports-ical//
     ]
 
     for m in sorted(matches, key=lambda x: x.match_start_utc):
+        # Use team codes for summary (short names), fall back to full names
+        t1_display = m.team1_code or m.team1
+        t2_display = m.team2_code or m.team2
+        
         # Build summary with score if match is completed
         if m.state == "completed" and m.team1_score is not None and m.team2_score is not None:
-            summary = f"[{m.league_name}] {m.team1} {m.team1_score}-{m.team2_score} {m.team2}"
+            summary = f"[{m.league_name}] {t1_display} {m.team1_score}-{m.team2_score} {t2_display}"
         else:
-            summary = f"[{m.league_name}] {m.team1} vs {m.team2}"
+            summary = f"[{m.league_name}] {t1_display} vs {t2_display}"
         
-        # Build description
+        # Build description with full team names
         desc_parts = [f"League: {m.league_name}"]
+        desc_parts.append(f"Match: {m.team1} vs {m.team2}")
         if m.stage:
             desc_parts.append(f"Stage: {m.stage}")
         if m.best_of:

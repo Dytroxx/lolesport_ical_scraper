@@ -14,6 +14,8 @@ class Match:
     best_of: Optional[str]
     team1: str
     team2: str
+    team1_code: Optional[str]  # Short code like "FNC", "G2"
+    team2_code: Optional[str]  # Short code like "T1", "GEN"
     stage: Optional[str]
     match_url: str
     stable_uid: str

@@ -196,6 +196,8 @@ class HtmlScraper:
                     best_of=best_of,
                     team1=team1,
                     team2=team2,
+                    team1_code=None,  # HTML fallback doesn't have codes
+                    team2_code=None,
                     stage=stage,
                     match_url=match_url,
                     stable_uid=uid,
@@ -290,6 +292,8 @@ class HtmlScraper:
                 t2_data = teams[1] if len(teams) >= 2 else {}
                 team1 = str(t1_data.get("name") or t1_data.get("code") or "TBD")
                 team2 = str(t2_data.get("name") or t2_data.get("code") or "TBD")
+                team1_code = t1_data.get("code") or None
+                team2_code = t2_data.get("code") or None
                 
                 # Extract scores from team result
                 team1_score = None
@@ -353,6 +357,8 @@ class HtmlScraper:
                         best_of=best_of,
                         team1=team1,
                         team2=team2,
+                        team1_code=team1_code,
+                        team2_code=team2_code,
                         stage=str(stage) if stage else None,
                         match_url=match_url,
                         stable_uid=uid,
