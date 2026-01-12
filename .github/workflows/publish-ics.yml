@@ -3,11 +3,13 @@ name: Publish LoL Esports iCal
 on:
   workflow_dispatch:
   schedule:
-    # Daily at 02:17 UTC (adjust as desired)
+    # Daily at 02:17 UTC
     - cron: "17 2 * * *"
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
@@ -34,15 +36,21 @@ jobs:
 
       - name: Generate feed
         run: |
-          mkdir -p docs
-          python -m lolesports_ical --out docs/feed.ics --tz Europe/Berlin --days 30
-          printf '<!doctype html><meta charset="utf-8"><title>LoL Esports iCal</title><a href="feed.ics">feed.ics</a>\n' > docs/index.html
-          touch docs/.nojekyll
+          mkdir -p _site
+          python -m lolesports_ical --out _site/feed.ics --tz Europe/Berlin --days 30
+          printf '<!doctype html><meta charset="utf-8"><title>LoL Esports iCal</title><a href="feed.ics">feed.ics</a>\n' > _site/index.html
 
-      - name: Commit and push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/
-          git diff --quiet --cached || git commit -m "Update feed.ics [skip ci]"
-          git push
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
