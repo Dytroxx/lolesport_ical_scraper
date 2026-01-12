@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lolesports-ical"
+version = "0.1.0"
+description = "Scrape LoL Esports schedules and emit an iCalendar feed"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = ""}]
+dependencies = [
+  "httpx>=0.26",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.1",
+  "tzdata>=2024.1; platform_system == 'Windows'",
+]
+
+[project.optional-dependencies]
+playwright = ["playwright>=1.41"]
+dev = [
+  "pytest>=8.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lolesports_ical*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

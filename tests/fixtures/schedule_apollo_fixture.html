@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head><title>Schedule Apollo</title></head>
+<body>
+<script>
+(window[Symbol.for("ApolloSSRDataTransport")] ??= []).push({
+  "rehydrate": {
+    "R1": {
+      "data": {
+        "__typename": "Query",
+        "esports": {
+          "__typename": "EsportsData",
+          "events": [
+            {
+              "__typename": "EventMatch",
+              "id": "evt1",
+              "blockName": "Week 1",
+              "startTime": "2026-01-17T16:00:00Z",
+              "league": {"__typename": "League", "slug": "lec", "name": "LEC"},
+              "matchTeams": [
+                {"__typename": "MatchTeam", "name": "Team One", "code": "ONE"},
+                {"__typename": "MatchTeam", "name": "Team Two", "code": "TWO"}
+              ],
+              "match": {"__typename": "Match", "strategy": {"__typename": "MatchStrategy", "type": "bestOf", "count": 3}}
+            }
+          ]
+        }
+      },
+      "loading": true,
+      "data2": undefined
+    }
+  }
+})
+</script>
+</body>
+</html>
