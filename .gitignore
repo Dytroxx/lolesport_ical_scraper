@@ -32,5 +32,7 @@ Thumbs.db
 
 # Project-specific
 /feed.ics
+/docs/feed.ics
+/_site/
 /.cache/
 /debug_schedule.html

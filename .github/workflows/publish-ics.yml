@@ -3,11 +3,11 @@ name: Publish LoL Esports iCal
 on:
   workflow_dispatch:
   schedule:
-    # Daily at 02:17 UTC
-    - cron: "17 2 * * *"
+    # Every 6 hours at :17 past the hour
+    - cron: "17 */6 * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -37,8 +37,16 @@ jobs:
       - name: Generate feed
         run: |
           mkdir -p _site
-          python -m lolesports_ical --out _site/feed.ics --tz Europe/Berlin --days 30
+          python -m lolesports_ical --out _site/feed.ics --tz Europe/Berlin --days 30 --history data/history.json
           printf '<!doctype html><meta charset="utf-8"><title>LoL Esports iCal</title><a href="feed.ics">feed.ics</a>\n' > _site/index.html
+
+      - name: Commit history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/history.json
+          git diff --quiet --cached || git commit -m "Update match history [skip ci]"
+          git push
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
