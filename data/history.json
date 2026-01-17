@@ -1673,6 +1673,24 @@
       "team1_score": 0,
       "team2_score": 0,
       "winner": null
+    },
+    {
+      "league_slug": "lpl",
+      "league_name": "LPL",
+      "match_id": "115617456674537265",
+      "match_start_utc": "2026-01-23T07:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "Oh My God",
+      "team2": "Hangzhou LGD Gaming",
+      "team1_code": "OMG",
+      "team2_code": "LGD",
+      "stage": "Week 2",
+      "match_url": "https://lolesports.com/live/lpl/115617456674537265",
+      "stable_uid": "e947641aa876ca27d255640fe6f0bdbe@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
     }
   ]
 }
