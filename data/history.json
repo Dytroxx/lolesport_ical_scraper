@@ -924,17 +924,17 @@
       "match_id": "115848315857267093",
       "match_start_utc": "2026-01-16T10:00:00+00:00",
       "best_of": "Bo3",
-      "team1": "Hanwha Life Esports",
-      "team2": "T1",
-      "team1_code": "HLE",
-      "team2_code": "T1",
+      "team1": "T1",
+      "team2": "Hanwha Life Esports",
+      "team1_code": "T1",
+      "team2_code": "HLE",
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lck/115848315857267093",
       "stable_uid": "e51e5d6933d5191a24d2c475a9c7b640@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "T1"
     },
     {
       "league_slug": "lpl",
@@ -951,7 +951,7 @@
       "stable_uid": "e6e256842c026369f3f512ff9de6a4ce@lolesports",
       "state": "completed",
       "team1_score": 0,
-      "team2_score": 1,
+      "team2_score": 2,
       "winner": "Xi'an Team WE"
     },
     {
