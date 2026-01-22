@@ -1554,17 +1554,17 @@
       "match_id": "115848316475468277",
       "match_start_utc": "2026-01-21T10:00:00+00:00",
       "best_of": "Bo3",
-      "team1": "DRX",
-      "team2": "DN SOOPers",
-      "team1_code": "DRX",
-      "team2_code": "DNS",
+      "team1": "DN SOOPers",
+      "team2": "DRX",
+      "team1_code": "DNS",
+      "team2_code": "DRX",
       "stage": "Week 2",
       "match_url": "https://lolesports.com/live/lck/115848316475468277",
       "stable_uid": "55419ea15bdd9d55ed693a21f3484ec5@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "DN SOOPers"
     },
     {
       "league_slug": "lpl",
@@ -1580,9 +1580,9 @@
       "match_url": "https://lolesports.com/live/lpl/115617456674537237",
       "stable_uid": "00edf1228625814d70aabeb88a8fb768@lolesports",
       "state": "completed",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team1_score": 1,
+      "team2_score": 2,
+      "winner": "Invictus Gaming"
     },
     {
       "league_slug": "lpl",
