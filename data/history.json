@@ -1725,8 +1725,8 @@
       "stable_uid": "87f01a9f4a96d9cf5a3b319c67dd5cad@lolesports",
       "state": "completed",
       "team1_score": 1,
-      "team2_score": 0,
-      "winner": "THUNDERTALKGAMING"
+      "team2_score": 2,
+      "winner": "SHANGHAI EDWARD GAMING HYCAN"
     },
     {
       "league_slug": "lck",
@@ -1734,17 +1734,17 @@
       "match_id": "115848316188289487",
       "match_start_utc": "2026-01-23T10:00:00+00:00",
       "best_of": "Bo3",
-      "team1": "NONGSHIM RED FORCE",
-      "team2": "DRX",
-      "team1_code": "NS",
-      "team2_code": "DRX",
+      "team1": "DRX",
+      "team2": "NONGSHIM RED FORCE",
+      "team1_code": "DRX",
+      "team2_code": "NS",
       "stage": "Week 2",
       "match_url": "https://lolesports.com/live/lck/115848316188289487",
       "stable_uid": "b2d46c46a608dd40162eecddf299984b@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "DRX"
     },
     {
       "league_slug": "lpl",
@@ -1752,17 +1752,17 @@
       "match_id": "115617456674537225",
       "match_start_utc": "2026-01-23T11:00:00+00:00",
       "best_of": "Bo3",
-      "team1": "Beijing JDG Intel Esports",
-      "team2": "BILIBILI GAMING DREAMSMART",
-      "team1_code": "JDG",
-      "team2_code": "BLG",
+      "team1": "BILIBILI GAMING DREAMSMART",
+      "team2": "Beijing JDG Intel Esports",
+      "team1_code": "BLG",
+      "team2_code": "JDG",
       "stage": "Week 2",
       "match_url": "https://lolesports.com/live/lpl/115617456674537225",
       "stable_uid": "d75277a0543b5f09351effc3172c6ee2@lolesports",
       "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 2,
+      "winner": "Beijing JDG Intel Esports"
     },
     {
       "league_slug": "lck",
