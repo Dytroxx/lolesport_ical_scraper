@@ -2191,10 +2191,10 @@
       "stage": "Swiss",
       "match_url": "https://lolesports.com/live/lcs/115564689066907668",
       "stable_uid": "b562b978e7d0890b4f661668a27064f0@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 2,
       "team2_score": 0,
-      "winner": null
+      "winner": "LYON"
     },
     {
       "league_slug": "lpl",
