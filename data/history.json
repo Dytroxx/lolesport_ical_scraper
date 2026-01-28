@@ -2390,9 +2390,9 @@
       "match_url": "https://lolesports.com/live/lpl/115654384752393003",
       "stable_uid": "2c9c31c33057a4c4417ab85a23327058@lolesports",
       "state": "completed",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team1_score": 1,
+      "team2_score": 2,
+      "winner": "Anyone's Legend"
     },
     {
       "league_slug": "lpl",
