@@ -2418,17 +2418,17 @@
       "match_id": "115855145893081236",
       "match_start_utc": "2026-01-28T08:00:00+00:00",
       "best_of": "Bo5",
-      "team1": "BRION",
-      "team2": "DRX",
-      "team1_code": "BRO",
-      "team2_code": "DRX",
+      "team1": "DRX",
+      "team2": "BRION",
+      "team1_code": "DRX",
+      "team2_code": "BRO",
       "stage": "Week 3",
       "match_url": "https://lolesports.com/live/lck/115855145893081236",
       "stable_uid": "cf2938fad2c56a93678ddf838a00355c@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 3,
+      "team2_score": 2,
+      "winner": "DRX"
     },
     {
       "league_slug": "lpl",
@@ -2462,9 +2462,9 @@
       "match_url": "https://lolesports.com/live/lpl/115654384752393043",
       "stable_uid": "a9010db633def8ee5647c9772dadee6e@lolesports",
       "state": "completed",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "SHANGHAI EDWARD GAMING HYCAN"
     },
     {
       "league_slug": "lck",
