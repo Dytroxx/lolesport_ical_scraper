@@ -2526,17 +2526,17 @@
       "match_id": "115855145864310916",
       "match_start_utc": "2026-01-30T08:00:00+00:00",
       "best_of": "Bo5",
-      "team1": "NONGSHIM RED FORCE",
-      "team2": "kt Rolster",
-      "team1_code": "NS",
-      "team2_code": "KT",
+      "team1": "kt Rolster",
+      "team2": "NONGSHIM RED FORCE",
+      "team1_code": "KT",
+      "team2_code": "NS",
       "stage": "Week 3",
       "match_url": "https://lolesports.com/live/lck/115855145864310916",
       "stable_uid": "b348750b184fc36a9311aea770b743ea@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 3,
+      "winner": "NONGSHIM RED FORCE"
     },
     {
       "league_slug": "lpl",
@@ -2552,9 +2552,9 @@
       "match_url": "https://lolesports.com/live/lpl/115807614490184118",
       "stable_uid": "6669d5656fa26c82827ecd6728183384@lolesports",
       "state": "completed",
-      "team1_score": 0,
+      "team1_score": 2,
       "team2_score": 0,
-      "winner": null
+      "winner": "Oh My God"
     },
     {
       "league_slug": "lpl",
@@ -2571,8 +2571,8 @@
       "stable_uid": "1e87b8100728721b760ff10be6470044@lolesports",
       "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 1,
+      "winner": "BILIBILI GAMING DREAMSMART"
     },
     {
       "league_slug": "lck",
@@ -3274,6 +3274,24 @@
       "state": "unstarted",
       "team1_score": 0,
       "team2_score": 0,
+      "winner": null
+    },
+    {
+      "league_slug": "lck",
+      "league_name": "LCK",
+      "match_id": "115604876650880927",
+      "match_start_utc": "2026-02-06T10:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "TBD",
+      "team2": "TBD",
+      "team1_code": "TBD",
+      "team2_code": "TBD",
+      "stage": "Play-Ins",
+      "match_url": "https://lolesports.com/live/lck/115604876650880927",
+      "stable_uid": "4b0f5756706706c8ee5ce00c20940516@lolesports",
+      "state": "unstarted",
+      "team1_score": null,
+      "team2_score": null,
       "winner": null
     }
   ]
