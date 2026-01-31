@@ -3,8 +3,8 @@ name: Publish LoL Esports iCal
 on:
   workflow_dispatch:
   schedule:
-    # Every 6 hours at :17 past the hour
-    - cron: "17 */6 * * *"
+  # Every 24 hours at :13 past the hour
+  - cron: "13 0 * * *"
 
 permissions:
   contents: write
