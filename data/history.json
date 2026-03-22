@@ -5737,10 +5737,10 @@
       "stage": "Semifinals",
       "match_url": "https://lolesports.com/live/first_stand/115570888977308429",
       "stable_uid": "de489f5b30b7cfe5978a5bd2e4f46661@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 3,
       "team2_score": 0,
-      "winner": null
+      "winner": "G2 Esports"
     },
     {
       "league_slug": "first_stand",
@@ -5755,10 +5755,10 @@
       "stage": "Semifinals",
       "match_url": "https://lolesports.com/live/first_stand/115570888977308423",
       "stable_uid": "bb5dbcd43d98fd8eb36a2758c858c1b0@lolesports",
-      "state": "unstarted",
+      "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 3,
+      "winner": "BILIBILI GAMING"
     },
     {
       "league_slug": "first_stand",
@@ -5766,16 +5766,16 @@
       "match_id": "115570888977308435",
       "match_start_utc": "2026-03-22T13:00:00+00:00",
       "best_of": "Bo5",
-      "team1": "TBD",
-      "team2": "TBD",
-      "team1_code": "TBD",
-      "team2_code": "TBD",
+      "team1": "G2 Esports",
+      "team2": "BILIBILI GAMING",
+      "team1_code": "G2",
+      "team2_code": "BLG",
       "stage": "Finals",
       "match_url": "https://lolesports.com/live/first_stand/115570888977308435",
       "stable_uid": "43d34604f73a5499ee188709e40eab32@lolesports",
       "state": "unstarted",
-      "team1_score": null,
-      "team2_score": null,
+      "team1_score": 0,
+      "team2_score": 0,
       "winner": null
     },
     {
@@ -6442,6 +6442,42 @@
       "state": "unstarted",
       "team1_score": null,
       "team2_score": null,
+      "winner": null
+    },
+    {
+      "league_slug": "emea_masters",
+      "league_name": "EMEA Masters",
+      "match_id": "116130368701001738",
+      "match_start_utc": "2026-04-07T18:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "TBD",
+      "team2": "TBD",
+      "team1_code": "TBD",
+      "team2_code": "TBD",
+      "stage": "Playoffs",
+      "match_url": "https://lolesports.com/live/emea_masters/116130368701001738",
+      "stable_uid": "993ccaf0a7b168353158510ac4c37dbf@lolesports",
+      "state": "unstarted",
+      "team1_score": null,
+      "team2_score": null,
+      "winner": null
+    },
+    {
+      "league_slug": "lec",
+      "league_name": "LEC",
+      "match_id": "115548668059523636",
+      "match_start_utc": "2026-04-11T12:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "Team Heretics",
+      "team2": "Natus Vincere",
+      "team1_code": "TH",
+      "team2_code": "NAVI",
+      "stage": "Week 3",
+      "match_url": "https://lolesports.com/live/lec/115548668059523636",
+      "stable_uid": "b4a134f87019c7751d936459ec512744@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
       "winner": null
     }
   ]
