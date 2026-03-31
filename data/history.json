@@ -6097,10 +6097,10 @@
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lec/115548668059523652",
       "stable_uid": "b629a9cb31996f31ea924a9b480a839d@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "Team Heretics"
     },
     {
       "league_slug": "lec",
@@ -6115,10 +6115,10 @@
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lec/115548668059589328",
       "stable_uid": "4a523ed61d5d325e55e28aa710bd534c@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 2,
       "team2_score": 0,
-      "winner": null
+      "winner": "Movistar KOI"
     },
     {
       "league_slug": "lec",
@@ -6817,6 +6817,24 @@
       "stage": "Week 2",
       "match_url": "https://lolesports.com/live/lck/115548128962906267",
       "stable_uid": "2fbffa88f0fc47c79cff5f18a839a2f3@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
+      "league_slug": "lpl",
+      "league_name": "LPL",
+      "match_id": "115615924499588623",
+      "match_start_utc": "2026-04-09T09:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "WeiboGaming",
+      "team2": "Shenzhen NINJAS IN PYJAMAS",
+      "team1_code": "WBG",
+      "team2_code": "NIP",
+      "stage": "Week 2",
+      "match_url": "https://lolesports.com/live/lpl/115615924499588623",
+      "stable_uid": "7203d76233b38ba85d9ce48dfe42457a@lolesports",
       "state": "unstarted",
       "team1_score": 0,
       "team2_score": 0,
