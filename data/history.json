@@ -7861,10 +7861,10 @@
       "stage": "Finals",
       "match_url": "https://lolesports.com/live/emea_masters/116130368701001746",
       "stable_uid": "b8cf514ab16606cfc10dabc705d35ff8@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 3,
       "team2_score": 0,
-      "winner": null
+      "winner": "Solary"
     },
     {
       "league_slug": "lck",
@@ -8563,6 +8563,24 @@
       "stage": "Week 5",
       "match_url": "https://lolesports.com/live/lpl/115615924499588645",
       "stable_uid": "d4ff61ac4b27840bb0411ad3ee0929e4@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
+      "league_slug": "lck",
+      "league_name": "LCK",
+      "match_id": "115548128962840675",
+      "match_start_utc": "2026-04-30T10:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "BNK FEARX",
+      "team2": "Dplus KIA",
+      "team1_code": "BFX",
+      "team2_code": "DK",
+      "stage": "Week 5",
+      "match_url": "https://lolesports.com/live/lck/115548128962840675",
+      "stable_uid": "808a746fe7d20a6fe4fbd6ad79f34cc5@lolesports",
       "state": "unstarted",
       "team1_score": 0,
       "team2_score": 0,
