@@ -10111,10 +10111,10 @@
       "stage": "Week 8",
       "match_url": "https://lolesports.com/live/lck/115548128962971963",
       "stable_uid": "9ade5c5d7de906e54da9cf0a993a07bf@lolesports",
-      "state": "unstarted",
+      "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 2,
+      "winner": "KIWOOM DRX"
     },
     {
       "league_slug": "lck",
@@ -10129,10 +10129,10 @@
       "stage": "Week 8",
       "match_url": "https://lolesports.com/live/lck/115548128963037527",
       "stable_uid": "a556fa75b089798ddb6d8450c824ddc6@lolesports",
-      "state": "unstarted",
+      "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 2,
+      "winner": "Gen.G Esports"
     },
     {
       "league_slug": "lpl",
@@ -10813,6 +10813,24 @@
       "stage": "Knockouts",
       "match_url": "https://lolesports.com/live/lck/115548128963037563",
       "stable_uid": "e14b0620d5c24fc657e2a6eb4aa65429@lolesports",
+      "state": "unstarted",
+      "team1_score": null,
+      "team2_score": null,
+      "winner": null
+    },
+    {
+      "league_slug": "lpl",
+      "league_name": "LPL",
+      "match_id": "115616219464607503",
+      "match_start_utc": "2026-06-06T09:00:00+00:00",
+      "best_of": "Bo5",
+      "team1": "TBD",
+      "team2": "TBD",
+      "team1_code": "TBD",
+      "team2_code": "TBD",
+      "stage": "Playoffs",
+      "match_url": "https://lolesports.com/live/lpl/115616219464607503",
+      "stable_uid": "1b2a1c54ccda0995608aaad644dbd3e3@lolesports",
       "state": "unstarted",
       "team1_score": null,
       "team2_score": null,
