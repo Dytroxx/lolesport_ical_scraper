@@ -10381,10 +10381,10 @@
       "stage": "Week 9",
       "match_url": "https://lolesports.com/live/lck/115548128962971863",
       "stable_uid": "b000b6a5e88819368eb4838f69684923@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "Gen.G Esports"
     },
     {
       "league_slug": "lck",
@@ -10399,10 +10399,10 @@
       "stage": "Week 9",
       "match_url": "https://lolesports.com/live/lck/115548128962971939",
       "stable_uid": "ae7da5f353b127df022ba3b19488c35c@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "BNK FEARX"
     },
     {
       "league_slug": "lck",
@@ -10855,6 +10855,24 @@
       "winner": null
     },
     {
+      "league_slug": "lcs",
+      "league_name": "LCS",
+      "match_id": "115564793879469318",
+      "match_start_utc": "2026-06-06T20:00:00+00:00",
+      "best_of": "Bo5",
+      "team1": "TBD",
+      "team2": "TBD",
+      "team1_code": "TBD",
+      "team2_code": "TBD",
+      "stage": "Playoffs",
+      "match_url": "https://lolesports.com/live/lcs/115564793879469318",
+      "stable_uid": "a76944ca03c867fa7428504db19e8b49@lolesports",
+      "state": "unstarted",
+      "team1_score": null,
+      "team2_score": null,
+      "winner": null
+    },
+    {
       "league_slug": "lck",
       "league_name": "LCK",
       "match_id": "115548128963037569",
@@ -10905,6 +10923,24 @@
       "stable_uid": "9f8247f4f2f9154d1f44647db95689d7@lolesports",
       "state": "unstarted",
       "team1_score": null,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
+      "league_slug": "lcs",
+      "league_name": "LCS",
+      "match_id": "115564793879469300",
+      "match_start_utc": "2026-06-07T20:00:00+00:00",
+      "best_of": "Bo5",
+      "team1": "Cloud9 Kia",
+      "team2": "LYON",
+      "team1_code": "C9",
+      "team2_code": "LYON",
+      "stage": "Playoffs",
+      "match_url": "https://lolesports.com/live/lcs/115564793879469300",
+      "stable_uid": "26d5843d4f61210990adb8be0e3a4df9@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
       "team2_score": 0,
       "winner": null
     },
