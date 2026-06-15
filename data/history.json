@@ -12138,17 +12138,17 @@
       "match_id": "115548128963037587",
       "match_start_utc": "2026-06-14T06:00:00+00:00",
       "best_of": "Bo5",
-      "team1": "Gen.G Esports",
-      "team2": "T1",
-      "team1_code": "GEN",
-      "team2_code": "T1",
+      "team1": "T1",
+      "team2": "Gen.G Esports",
+      "team1_code": "T1",
+      "team2_code": "GEN",
       "stage": "Knockouts",
       "match_url": "https://lolesports.com/live/lck/115548128963037587",
       "stable_uid": "00893bb23f1cb186360c34b6bb63ee4f@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 3,
+      "team2_score": 2,
+      "winner": "T1"
     },
     {
       "league_slug": "lpl",
@@ -12163,10 +12163,10 @@
       "stage": "Finals",
       "match_url": "https://lolesports.com/live/lpl/115616219464607521",
       "stable_uid": "0198d10ae5d10d1d9e3e8e42f8f056df@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 3,
       "team2_score": 0,
-      "winner": null
+      "winner": "BILIBILI GAMING"
     },
     {
       "league_slug": "emea_masters",
@@ -12181,10 +12181,10 @@
       "stage": "Semifinals",
       "match_url": "https://lolesports.com/live/emea_masters/116634566264113552",
       "stable_uid": "61d9d40f030297969cadc693042060dc@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 3,
       "team2_score": 0,
-      "winner": null
+      "winner": "Solary"
     },
     {
       "league_slug": "emea_masters",
@@ -12199,10 +12199,10 @@
       "stage": "Semifinals",
       "match_url": "https://lolesports.com/live/emea_masters/116634566264113558",
       "stable_uid": "ddf0c569e76d8e97f24d954d5d3bcb86@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 3,
       "team2_score": 0,
-      "winner": null
+      "winner": "Galions"
     },
     {
       "league_slug": "lcs",
@@ -12217,10 +12217,10 @@
       "stage": "Finals",
       "match_url": "https://lolesports.com/live/lcs/115564793879469330",
       "stable_uid": "ed9df7aa50282497fa723d98f9293ac5@lolesports",
-      "state": "unstarted",
+      "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 3,
+      "winner": "LYON"
     },
     {
       "league_slug": "emea_masters",
@@ -12228,16 +12228,16 @@
       "match_id": "116634566264113564",
       "match_start_utc": "2026-06-15T15:00:00+00:00",
       "best_of": "Bo5",
-      "team1": "TBD",
-      "team2": "TBD",
-      "team1_code": "TBD",
-      "team2_code": "TBD",
+      "team1": "Galions",
+      "team2": "Solary",
+      "team1_code": "GL",
+      "team2_code": "SLY",
       "stage": "Finals",
       "match_url": "https://lolesports.com/live/emea_masters/116634566264113564",
       "stable_uid": "93f803c08ebb78be897cf6cc821ac56b@lolesports",
       "state": "unstarted",
-      "team1_score": null,
-      "team2_score": null,
+      "team1_score": 0,
+      "team2_score": 0,
       "winner": null
     },
     {
