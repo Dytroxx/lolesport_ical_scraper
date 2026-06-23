@@ -12887,6 +12887,42 @@
       "team1_score": 0,
       "team2_score": 0,
       "winner": null
+    },
+    {
+      "league_slug": "lcs",
+      "league_name": "LCS",
+      "match_id": "115564797164345571",
+      "match_start_utc": "2026-08-22T20:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "Team Liquid Alienware",
+      "team2": "Shopify Rebellion",
+      "team1_code": "TLAW",
+      "team2_code": "SR",
+      "stage": "Week 5",
+      "match_url": "https://lolesports.com/live/lcs/115564797164345571",
+      "stable_uid": "9b192e436541f9407ba613c51fbda714@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
+      "league_slug": "lcs",
+      "league_name": "LCS",
+      "match_id": "115564797163886751",
+      "match_start_utc": "2026-08-22T23:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "Cloud9 Kia",
+      "team2": "LYON",
+      "team1_code": "C9",
+      "team2_code": "LYON",
+      "stage": "Week 5",
+      "match_url": "https://lolesports.com/live/lcs/115564797163886751",
+      "stable_uid": "61134797729f49b6fdc9486b508a1564@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
     }
   ]
 }
