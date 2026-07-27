@@ -12829,10 +12829,10 @@
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lpl/116566854547769592",
       "stable_uid": "77c23d422f023a4ef02a93a7912f7158@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "TOP ESPORTS"
     },
     {
       "league_slug": "lec",
@@ -12848,9 +12848,9 @@
       "match_url": "https://lolesports.com/live/lec/115548681803406203",
       "stable_uid": "11d7f3a028d0067b479363b26edd6c9f@lolesports",
       "state": "completed",
-      "team1_score": 0,
+      "team1_score": 2,
       "team2_score": 0,
-      "winner": null
+      "winner": "G2 Esports"
     },
     {
       "league_slug": "lec",
@@ -12867,8 +12867,8 @@
       "stable_uid": "38ca30ca7e5180173c242265fb152129@lolesports",
       "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 2,
+      "winner": "Karmine Corp"
     },
     {
       "league_slug": "lcs",
@@ -12885,8 +12885,8 @@
       "stable_uid": "1b75e8b6a0f61119b9fe33e2ced19bd1@lolesports",
       "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 2,
+      "winner": "LYON"
     },
     {
       "league_slug": "lcs",
@@ -12894,17 +12894,17 @@
       "match_id": "115564797163821179",
       "match_start_utc": "2026-07-25T23:00:00+00:00",
       "best_of": "Bo3",
-      "team1": "Dignitas",
-      "team2": "Sentinels",
-      "team1_code": "DIG",
-      "team2_code": "SEN",
+      "team1": "Sentinels",
+      "team2": "Dignitas",
+      "team1_code": "SEN",
+      "team2_code": "DIG",
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lcs/115564797163821179",
       "stable_uid": "2d30b31451cdd16e673f4a5217acf0e0@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "Sentinels"
     },
     {
       "league_slug": "lpl",
@@ -12919,10 +12919,10 @@
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lpl/116566854547835316",
       "stable_uid": "60fe66d85a7cb86498e72b5bc3dfa744@lolesports",
-      "state": "unstarted",
+      "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 2,
+      "winner": "Shenzhen NINJAS IN PYJAMAS"
     },
     {
       "league_slug": "lpl",
@@ -12937,10 +12937,10 @@
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lpl/116566854547769652",
       "stable_uid": "d2c87ac65c481c64fd20266b4fe2a7a7@lolesports",
-      "state": "unstarted",
+      "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 2,
+      "winner": "THUNDER TALK GAMING"
     },
     {
       "league_slug": "lpl",
@@ -12955,10 +12955,10 @@
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lpl/116566854547769552",
       "stable_uid": "16804ac05c1048e453e7b8419b25c7b5@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "BILIBILI GAMING"
     },
     {
       "league_slug": "lec",
@@ -12973,10 +12973,10 @@
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lec/115548681803406191",
       "stable_uid": "0467097348c667067f617dfe822b20e6@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "Team Vitality"
     },
     {
       "league_slug": "lec",
@@ -12984,17 +12984,17 @@
       "match_id": "115548681803406287",
       "match_start_utc": "2026-07-26T17:30:00+00:00",
       "best_of": "Bo3",
-      "team1": "Karmine Corp",
-      "team2": "G2 Esports",
-      "team1_code": "KC",
-      "team2_code": "G2",
+      "team1": "G2 Esports",
+      "team2": "Karmine Corp",
+      "team1_code": "G2",
+      "team2_code": "KC",
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lec/115548681803406287",
       "stable_uid": "b86a3e7aed107c6c5389b501fea787a1@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 1,
+      "team2_score": 2,
+      "winner": "Karmine Corp"
     },
     {
       "league_slug": "lcs",
@@ -13002,17 +13002,17 @@
       "match_id": "115564797163886759",
       "match_start_utc": "2026-07-26T20:00:00+00:00",
       "best_of": "Bo3",
-      "team1": "Cloud9 Kia",
-      "team2": "Team Liquid Alienware",
-      "team1_code": "C9",
-      "team2_code": "TLAW",
+      "team1": "Team Liquid Alienware",
+      "team2": "Cloud9 Kia",
+      "team1_code": "TLAW",
+      "team2_code": "C9",
       "stage": "Week 1",
       "match_url": "https://lolesports.com/live/lcs/115564797163886759",
       "stable_uid": "aebc1fdb60e3316b51d1135fbad7985d@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 2,
       "team2_score": 0,
-      "winner": null
+      "winner": "Team Liquid Alienware"
     },
     {
       "league_slug": "lcs",
@@ -13650,10 +13650,10 @@
       "match_id": "115548681803406139",
       "match_start_utc": "2026-08-03T17:15:00+00:00",
       "best_of": "Bo3",
-      "team1": "Karmine Corp",
-      "team2": "Team Heretics",
-      "team1_code": "KC",
-      "team2_code": "TH",
+      "team1": "Team Heretics",
+      "team2": "Karmine Corp",
+      "team1_code": "TH",
+      "team2_code": "KC",
       "stage": "Week 2",
       "match_url": "https://lolesports.com/live/lec/115548681803406139",
       "stable_uid": "b81e8f3f731d0ab7cd659414a3baf917@lolesports",
@@ -13681,6 +13681,24 @@
       "winner": null
     },
     {
+      "league_slug": "lpl",
+      "league_name": "LPL",
+      "match_id": "116566854547769632",
+      "match_start_utc": "2026-08-05T09:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "LGD GAMING",
+      "team2": "Beijing JDG Esports",
+      "team1_code": "LGD",
+      "team2_code": "JDG",
+      "stage": "Week 3",
+      "match_url": "https://lolesports.com/live/lpl/116566854547769632",
+      "stable_uid": "fa134a74c5850b380519d2c1fb02a903@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
       "league_slug": "lck",
       "league_name": "LCK",
       "match_id": "115548147900553445",
@@ -13693,6 +13711,42 @@
       "stage": "Week 11",
       "match_url": "https://lolesports.com/live/lck/115548147900553445",
       "stable_uid": "ff5338c6a222eec226ad094114c7c045@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
+      "league_slug": "lpl",
+      "league_name": "LPL",
+      "match_id": "116566854547769588",
+      "match_start_utc": "2026-08-05T11:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "TOP ESPORTS",
+      "team2": "EDWARD GAMING",
+      "team1_code": "TES",
+      "team2_code": "EDG",
+      "stage": "Week 3",
+      "match_url": "https://lolesports.com/live/lpl/116566854547769588",
+      "stable_uid": "7339810990eb58aa47c52f8420a30630@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
+      "league_slug": "lpl",
+      "league_name": "LPL",
+      "match_id": "116566854547769648",
+      "match_start_utc": "2026-08-06T07:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "LGD GAMING",
+      "team2": "THUNDER TALK GAMING",
+      "team1_code": "LGD",
+      "team2_code": "TT",
+      "stage": "Week 3",
+      "match_url": "https://lolesports.com/live/lpl/116566854547769648",
+      "stable_uid": "b3fa086eaf78f3654f7f8bbbc75e811b@lolesports",
       "state": "unstarted",
       "team1_score": 0,
       "team2_score": 0,
