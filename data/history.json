@@ -13117,10 +13117,10 @@
       "stage": "Week 2",
       "match_url": "https://lolesports.com/live/lpl/116566854547835324",
       "stable_uid": "8f19c09c606beae9770cb27519fe4579@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 2,
       "team2_score": 0,
-      "winner": null
+      "winner": "Shenzhen NINJAS IN PYJAMAS"
     },
     {
       "league_slug": "lck",
@@ -13135,10 +13135,10 @@
       "stage": "Week 10",
       "match_url": "https://lolesports.com/live/lck/115548147900684657",
       "stable_uid": "1105a961f9173a72c623a53f5bfd9695@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
+      "state": "completed",
+      "team1_score": 2,
       "team2_score": 0,
-      "winner": null
+      "winner": "BNK FEARX"
     },
     {
       "league_slug": "lpl",
@@ -13153,10 +13153,10 @@
       "stage": "Week 2",
       "match_url": "https://lolesports.com/live/lpl/116566854547769608",
       "stable_uid": "ca17bf39dcb0bce67aa6332a101ba039@lolesports",
-      "state": "unstarted",
+      "state": "completed",
       "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "team2_score": 2,
+      "winner": "Xi'an Team WE"
     },
     {
       "league_slug": "lck",
@@ -13171,10 +13171,10 @@
       "stage": "Week 10",
       "match_url": "https://lolesports.com/live/lck/115548147900553453",
       "stable_uid": "24569524dd821ddba005ee0f74eb7441@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 1,
+      "team2_score": 2,
+      "winner": "Dplus KIA"
     },
     {
       "league_slug": "lpl",
@@ -13189,10 +13189,10 @@
       "stage": "Week 2",
       "match_url": "https://lolesports.com/live/lpl/116566854547769640",
       "stable_uid": "23c7986d32f81ecef45c4356fba3095b@lolesports",
-      "state": "unstarted",
-      "team1_score": 0,
-      "team2_score": 0,
-      "winner": null
+      "state": "completed",
+      "team1_score": 2,
+      "team2_score": 1,
+      "winner": "Beijing JDG Esports"
     },
     {
       "league_slug": "lpl",
@@ -13825,6 +13825,24 @@
       "winner": null
     },
     {
+      "league_slug": "lpl",
+      "league_name": "LPL",
+      "match_id": "116566854547769636",
+      "match_start_utc": "2026-08-07T07:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "EDWARD GAMING",
+      "team2": "Beijing JDG Esports",
+      "team1_code": "EDG",
+      "team2_code": "JDG",
+      "stage": "Week 3",
+      "match_url": "https://lolesports.com/live/lpl/116566854547769636",
+      "stable_uid": "d46dd761c354764f0858c3ecef395f77@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
       "league_slug": "lck",
       "league_name": "LCK",
       "match_id": "115548147900553469",
@@ -13843,6 +13861,24 @@
       "winner": null
     },
     {
+      "league_slug": "lpl",
+      "league_name": "LPL",
+      "match_id": "116566854547769724",
+      "match_start_utc": "2026-08-07T09:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "Xi'an Team WE",
+      "team2": "THUNDER TALK GAMING",
+      "team1_code": "WE",
+      "team2_code": "TT",
+      "stage": "Week 3",
+      "match_url": "https://lolesports.com/live/lpl/116566854547769724",
+      "stable_uid": "025ee6f796bd479363498a71fae66b00@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
       "league_slug": "lck",
       "league_name": "LCK",
       "match_id": "115548147900684633",
@@ -13855,6 +13891,24 @@
       "stage": "Week 11",
       "match_url": "https://lolesports.com/live/lck/115548147900684633",
       "stable_uid": "3078ed33a72fe2d797cea5b77629b053@lolesports",
+      "state": "unstarted",
+      "team1_score": 0,
+      "team2_score": 0,
+      "winner": null
+    },
+    {
+      "league_slug": "lpl",
+      "league_name": "LPL",
+      "match_id": "116566854547704008",
+      "match_start_utc": "2026-08-07T11:00:00+00:00",
+      "best_of": "Bo3",
+      "team1": "TOP ESPORTS",
+      "team2": "BILIBILI GAMING",
+      "team1_code": "TES",
+      "team2_code": "BLG",
+      "stage": "Week 3",
+      "match_url": "https://lolesports.com/live/lpl/116566854547704008",
+      "stable_uid": "4e59215060fccdef58c36996aa0ad785@lolesports",
       "state": "unstarted",
       "team1_score": 0,
       "team2_score": 0,
