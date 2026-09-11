@@ -3,8 +3,8 @@ name: Publish LoL Esports iCal
 on:
   workflow_dispatch:
   schedule:
-  # Every 24 hours at :13 past the hour
-  - cron: "13 0 * * *"
+  # Every 6 hours at :13 past the hour
+  - cron: "13 */6 * * *"
 
 permissions:
   contents: write
@@ -45,14 +45,6 @@ jobs:
           python -m pip install -U pip
           python -m pip install .
 
-      - name: Download previous feed
-        run: |
-          HTTP_CODE=$(curl -sSL -w "%{http_code}" -o _previous_feed.ics "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/feed.ics" || true)
-          if [ "$HTTP_CODE" != "200" ]; then
-            echo "No previous feed found (HTTP $HTTP_CODE)"
-            rm -f _previous_feed.ics
-          fi
-
       - name: Generate feed
         run: |
           mkdir -p _site
@@ -62,34 +54,25 @@ jobs:
       - name: Check if feed changed
         id: feed-diff
         run: |
-          # Strip DTSTAMP lines (they change every run) before comparing
-          if [ -f _previous_feed.ics ]; then
-            grep -v '^DTSTAMP:' _previous_feed.ics > _prev_normalized.ics || true
-            grep -v '^DTSTAMP:' _site/feed.ics > _new_normalized.ics || true
-            if diff -q _prev_normalized.ics _new_normalized.ics > /dev/null 2>&1; then
-              echo "changed=false" >> "$GITHUB_OUTPUT"
-              echo "Feed unchanged, skipping deployment"
-            else
-              echo "changed=true" >> "$GITHUB_OUTPUT"
-              echo "Feed changed, will deploy"
-            fi
+          # Load previous feed from Git HEAD, strip DTSTAMP lines before comparing
+          git show HEAD:feed.ics 2>/dev/null | grep -v '^DTSTAMP:' > _prev_normalized.ics || true
+          grep -v '^DTSTAMP:' _site/feed.ics > _new_normalized.ics || true
+          if [ -s _prev_normalized.ics ] && diff -q _prev_normalized.ics _new_normalized.ics > /dev/null 2>&1; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Feed unchanged, skipping deployment"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
-            echo "No previous feed, will deploy"
+            echo "Feed changed (or no previous feed), will deploy"
           fi
 
-      - name: Commit history
+      - name: Commit feed and history
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/history.json
-          if git diff --quiet --cached; then
-            echo "No history changes"
-          else
-            git pull --rebase origin main || true
-            git commit -m "Update match history [skip ci]"
-            git push
-          fi
+          git add data/history.json _site/feed.ics
+          git pull --rebase origin main || true
+          git commit -m "Update feed and match history [skip ci]" --allow-empty
+          git push
 
       - name: Upload Pages artifact
         if: steps.feed-diff.outputs.changed == 'true'
