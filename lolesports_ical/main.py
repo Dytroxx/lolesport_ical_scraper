@@ -513,19 +513,37 @@ def main(argv: list[str] | None = None) -> int:
         # Merge by canonical key so the same match can't exist twice
         merged_by_canonical: Dict[Tuple[str, str, str], Match] = {}
 
-        # Fresh matches always take precedence
+        # Fresh matches always take precedence, BUT preserve results from history
         for m in matches:
             key = canonical_key_for_match(m)
             # Preserve previously-seen UID for the same match
+            hist_entry = None
             if m.match_id:
                 hist_entry = next(
                     (d for d in history_data.get("matches", []) if d.get("match_id") == m.match_id),
                     None,
                 )
-                if hist_entry and hist_entry.get("stable_uid"):
-                    merged_by_canonical[key] = with_uid(m, hist_entry["stable_uid"])
-                else:
-                    merged_by_canonical[key] = m
+            
+            # Prefer historical result: if history has a completed match with scores,
+            # use those scores even if the API still shows unstarted/inProgress.
+            # This is important because the API only returns future events (newer direction);
+            # completed events are on the older side and won't appear in the API fetch.
+            if hist_entry:
+                result_match = with_uid(m, hist_entry["stable_uid"])
+                # Use historical result data if available and fresh match doesn't have it
+                if (hist_entry.get("state") == "completed" or
+                    (hist_entry.get("team1_score") is not None or hist_entry.get("team2_score") is not None)):
+                    if m.team1_score is None and hist_entry.get("team1_score") is not None:
+                        result_match = Match(
+                            **{k: getattr(result_match, k) for k in result_match.__dataclass_fields__.keys()},
+                            **{
+                                "state": hist_entry.get("state", m.state),
+                                "team1_score": hist_entry["team1_score"],
+                                "team2_score": hist_entry["team2_score"],
+                                "winner": hist_entry.get("winner"),
+                            },
+                        )
+                merged_by_canonical[key] = result_match
             else:
                 merged_by_canonical[key] = m
 
