@@ -49,7 +49,7 @@ jobs:
         run: |
           mkdir -p _site
           python -m lolesports_ical --out _site/feed.ics --tz Europe/Berlin --days 30 --history data/history.json
-          printf '<!doctype html><meta charset="utf-8"><title>LoL Esports iCal</title><a href="feed.ics">feed.ics</a>\n' > _site/index.html
+          cp index.html _site/index.html
 
       - name: Check if feed changed
         id: feed-diff
