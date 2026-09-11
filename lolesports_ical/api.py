@@ -116,20 +116,8 @@ class LolEsportsAPIClient:
                 events = cached.get("events", [])
                 next_token = cached.get("next_token")
             else:
+                # Die API liefert ALLE Events – Filterung erfolgt client-seitig
                 url = f"{API_BASE}/getSchedule?hl=en-US"
-                
-                # WICHTIG: Die API erlaubt leagueIds NUR auf Seite 1!
-                # Alle weiteren Seiten müssen global paginiert werden 
-                # und dann client-seitig gefiltert werden.
-                if page_token is None and league_slugs:
-                    # Erster Request: Filtere nach Ligen
-                    ids = [
-                        LEAGUE_IDS[s]
-                        for s in league_slugs
-                        if s in LEAGUE_IDS
-                    ]
-                    if ids:
-                        url += f"&leagueIds={','.join(ids)}"
                 
                 if page_token:
                     url += f"&pageToken={page_token}"

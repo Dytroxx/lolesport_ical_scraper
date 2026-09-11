@@ -33,6 +33,7 @@ class HistoryStore:
 
     def _init_db(self) -> None:
         """SQLite DB initialisieren mit Indexes."""
+        Path(self.db_path).parent.mkdir(parents=True, exist_ok=True)
         self.conn = sqlite3.connect(self.db_path)
         self.conn.execute("PRAGMA journal_mode=WAL")
         self.conn.execute("""
