@@ -11,7 +11,7 @@ import json
 import logging
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 import httpx
 from zoneinfo import ZoneInfo
@@ -21,18 +21,12 @@ from .util import DiskCache, Fetcher, RateLimiter, RetryConfig, isoformat_z, sta
 
 logger = logging.getLogger(__name__)
 
-# ============================================================
-# API-Endpunkte
-# ============================================================
-
 API_BASE = "https://esports-api.lolesports.com/persisted/gw"
 
-# Stabile API-Keys (public, aus MagicMirror-Modulen etc.)
 API_KEYS = [
     "0TvQnueqKa5mxJntVWt0w4LpLfEkrV1Ta8rQBb9Z",
 ]
 
-# Target League IDs (feste Zahlen, ändern sich nie)
 LEAGUE_IDS = {
     "lec": "98767991302996019",
     "lck": "98767991310872058",
@@ -45,25 +39,16 @@ LEAGUE_IDS = {
 }
 
 
-# ============================================================
-# API-Client
-# ============================================================
-
-
 @dataclass(frozen=True)
 class ApiConfig:
     tz: str = "Europe/Berlin"
     cache_dir: str = ".cache/lolesports_ical"
-    cache_ttl: int = 120  # 2 Minuten – immer frische API-Daten für aktuelle Ergebnisse
-    rate_limit_s: float = 0.15  # 0.15s (~120/min), 15 Seiten × 0.15s ≈ 2s Overhead
-    timeout_s: float = 10.0  # 10s – schnellere Fehlererkennung, API antwortet in <1s
+    cache_ttl: int = 120
+    rate_limit_s: float = 0.15
+    timeout_s: float = 10.0
 
 
 def _get_api_keys() -> List[str]:
-    """API-Keys aus Environment Variable laden, mit Fallback auf hardcoded Liste.
-    
-    Umgebungsvariable: LOL_API_KEYS (kommagetrennt)
-    """
     from os import environ
     env_keys = environ.get("LOL_API_KEYS", "").strip()
     if env_keys:
@@ -73,25 +58,72 @@ def _get_api_keys() -> List[str]:
     return list(API_KEYS)
 
 
+def _validate_response(resp: httpx.Response) -> Dict[str, Any]:
+    """API response validieren und JSON parsen."""
+    status = resp.status_code
+    
+    if status == 401:
+        raise RuntimeError("[api] 401 Unauthorized – API-Key ungültig oder rotiert.")
+    if status == 403:
+        raise RuntimeError("[api] 403 Forbidden – API-Key abgelaufen oder rotiert.")
+    if status == 400:
+        raise RuntimeError(f"[api] 400 Bad Request: {resp.text[:200]}")
+    if status == 404:
+        raise RuntimeError("[api] 404 Not Found – Endpunkt nicht verfügbar")
+    if status == 499:
+        raise RuntimeError("[api] 499 Client Closed Request")
+    
+    if status == 429:
+        retry_after = resp.headers.get("Retry-After", "unbekannt")
+        logger.warning(f"[api] 429 Too Many Requests (Retry-After: {retry_after})")
+    
+    error_msgs = {
+        500: "Internal Server Error",
+        502: "Bad Gateway",
+        503: "Service Unavailable",
+        504: "Gateway Timeout",
+        520: "Cloudflare-Serverfehler",
+        521: "Web Server Down",
+        522: "Connection Timed Out",
+        523: "Origin Unreachable",
+        524: "A Timeout Occurred",
+        525: "SSL Handshake Failed",
+        526: "Invalid SSL Certificate",
+        527: "Railgun Error",
+        528: "Origin Connection Timed Out",
+    }
+    if status in error_msgs:
+        raise RuntimeError(f"[api] {status} {error_msgs[status]}")
+    if 598 <= status <= 599:
+        raise RuntimeError(f"[api] {status} Network Read Timeout")
+    if 500 <= status < 600:
+        raise RuntimeError(f"[api] {status} Server Error")
+    
+    if status >= 400:
+        raise RuntimeError(f"[api] HTTP {status} – {resp.text[:300]}")
+    
+    try:
+        data = resp.json()
+    except json.JSONDecodeError:
+        raise RuntimeError(f"[api] JSON Decode Error: {resp.text[:200]}")
+    
+    if "data" not in data:
+        raise RuntimeError("[api] Missing 'data' key")
+    if "schedule" not in data.get("data", {}):
+        raise RuntimeError("[api] Missing 'data.schedule' key")
+    
+    return data
+
+
 class LolEsportsAPIClient:
-    """Holt Events von der unofficial LoL Esports API.
+    """Holt Events von der unofficial LoL Esports API."""
 
-    Paginiert alle Seiten ab und parsed Events in Match-Objekte.
-    Fallback auf HTML-Parser falls API nicht erreichbar.
-    """
-
-    def __init__(
-        self,
-        config: ApiConfig,
-        fetcher: Fetcher,
-        scrape_matches_func,
-    ):
+    def __init__(self, config: ApiConfig, fetcher: Fetcher, scrape_matches_func):
         self.config = config
         self.fetcher = fetcher
         self.scrape_matches_func = scrape_matches_func
 
     def fetch_matches(self, league_slugs: Optional[List[str]] = None) -> List[Match]:
-        """Hauptmethode: API versuchen, Fallback auf HTML."""
         try:
             return self._fetch_via_api(league_slugs)
         except Exception as exc:
@@ -99,146 +131,59 @@ class LolEsportsAPIClient:
             return self._fetch_via_html(league_slugs)
 
     def _fetch_via_api(self, league_slugs: Optional[List[str]] = None) -> List[Match]:
-        """Paginiert alle Seiten ab und parsed Events."""
+        """Holt zukünftige Events (unstarted, inProgress) über die API.
+        
+        Die API hat bidirektionale Pagination:
+        - older: vergangene Events (completed)
+        - newer: zukünftige Events (unstarted, inProgress)
+        
+        Wir folgen NUR der 'newer'-Richtung, weil die alle zukünftigen Events enthält.
+        """
         allowed = league_slugs if league_slugs else list(LEAGUE_IDS.keys())
-
         all_events: List[Dict[str, Any]] = []
+
+        # Hole nur die "newer"-Richtung (zukünftige Events)
         page_token: Optional[str] = None
-
         while True:
-            cache_key = (
-                f"api_schedule_{page_token or 'first'}"
-                f"_{'_'.join(league_slugs) if league_slugs else 'all'}"
-            )
-            cached = self.fetcher.cache.get(cache_key)
+            url = f"{API_BASE}/getSchedule?hl=en-US"
+            if page_token:
+                url += f"&pageToken={page_token}"
 
+            # Cache prüfen
+            cache_key = f"api_newer_{page_token or 'first'}"
+            cached = self.fetcher.cache.get(cache_key)
+            
             if cached is not None:
                 events = cached.get("events", [])
                 next_token = cached.get("next_token")
             else:
-                # Die API liefert ALLE Events – Filterung erfolgt client-seitig
-                url = f"{API_BASE}/getSchedule?hl=en-US"
-                
-                if page_token:
-                    url += f"&pageToken={page_token}"
-
                 resp = self.fetcher.get(url, headers={"x-api-key": _get_api_keys()[0]})
-                
-                # ========================================
-                # Explizite HTTP-Status-Code Prüfung
-                # ========================================
-                status = resp.status_code
-                
-                if status == 401:
-                    raise RuntimeError(
-                        "[api] 401 Unauthorized – API-Key ungültig oder rotiert. "
-                        "Bitte aktualisiere API_KEYS in api.py."
-                    )
-                if status == 403:
-                    logger.warning("[api] 403 Forbidden – API-Key abgelaufen oder rotiert")
-                    raise RuntimeError(
-                        "[api] 403 Forbidden – API-Key abgelaufen oder rotiert. "
-                        "HTML-Parser wird als Fallback verwendet."
-                    )
-                if status == 400:
-                    error_msg = resp.text[:200]
-                    logger.error(f"[api] 400 Bad Request: {error_msg}")
-                    raise RuntimeError(
-                        f"[api] 400 Bad Request – ungültiger Request: {error_msg}"
-                    )
-                if status == 404:
-                    raise RuntimeError("[api] 404 Not Found – Endpunkt nicht verfügbar")
-                if status == 499:
-                    raise RuntimeError(
-                        "[api] 499 Client Closed Request – "
-                        "Client hat Verbindung abgebrochen (möglicherweise Timeout). "
-                        "HTML-Parser wird als Fallback verwendet."
-                    )
-                if status == 429:
-                    retry_after = resp.headers.get("Retry-After", "unbekannt")
-                    logger.warning(f"[api] 429 Too Many Requests (Retry-After: {retry_after})")
-                    # Wird vom Fetcher retryed, aber loggen für Transparenz
-                    print(f"[api] 429 Too Many Requests – Retry wird durchgeführt...")
-                
-                if status == 500:
-                    raise RuntimeError("[api] 500 Internal Server Error – API interner Fehler")
-                if status == 502:
-                    raise RuntimeError("[api] 502 Bad Gateway – Gateway-Fehler (Reverse Proxy)")
-                if status == 503:
-                    raise RuntimeError("[api] 503 Service Unavailable – API überlastet/unter Wartung")
-                if status == 504:
-                    raise RuntimeError("[api] 504 Gateway Timeout – Zeitüberschreitung")
-                if status == 520:
-                    raise RuntimeError("[api] 520 Unknown Error – Cloudflare-Serverfehler")
-                if status == 521:
-                    raise RuntimeError("[api] 521 Web Server Down – Origin-Server nicht erreichbar")
-                if status == 522:
-                    raise RuntimeError("[api] 522 Connection Timed Out – Verbindung zum Server abgelaufen")
-                if status == 523:
-                    raise RuntimeError("[api] 523 Origin Unreachable – Origin nicht erreichbar")
-                if status == 524:
-                    raise RuntimeError("[api] 524 A Timeout Occurred – Zeitüberschreitung")
-                if status == 525:
-                    raise RuntimeError("[api] 525 SSL Handshake Failed – SSL-Verbindung fehlgeschlagen")
-                if status == 526:
-                    raise RuntimeError("[api] 526 Invalid SSL Certificate – Ungültiges SSL-Zertifikat")
-                if status == 527:
-                    raise RuntimeError("[api] 527 Railgun Error – Railgun-Verbindungsfehler")
-                if status == 528:
-                    raise RuntimeError("[api] 528 Origin Connection Timed Out – Origin-Zeitüberschreitung")
-                if 598 <= status <= 599:
-                    raise RuntimeError(f"[api] {status} Network Read Timeout – Netzwerk-Zeitüberschreitung")
-                if 500 <= status < 600:
-                    raise RuntimeError(f"[api] {status} Server Error – Unbekannter Serverfehler")
-                
-                # 5xx-Fehler sind oben schon als RuntimeError geworfen worden
-                # Hier kommen wir nur bei 2xx/3xx an
-                
-                if status >= 400 and status not in (429,):
-                    raise RuntimeError(
-                        f"[api] HTTP {status} – API-Response: {resp.text[:300]}"
-                    )
-                
-                # JSON-Parsing prüfen
-                try:
-                    data = resp.json()
-                except json.JSONDecodeError:
-                    raise RuntimeError(
-                        f"[api] JSON Decode Error – Response ist kein gültiges JSON. "
-                        f"Response: {resp.text[:200]}"
-                    )
-                
-                # API Response-Validierung
-                if "data" not in data:
-                    raise RuntimeError("[api] API Response: Missing 'data' key")
-                if "schedule" not in data.get("data", {}):
-                    raise RuntimeError("[api] API Response: Missing 'data.schedule' key")
-                
+                data = _validate_response(resp)
+
                 events = data["data"]["schedule"]["events"]
                 pages = data["data"]["schedule"].get("pages", {})
-                next_token = pages.get("older")
+                next_token = pages.get("newer")
 
                 self.fetcher.cache.set(
                     cache_key,
                     status=resp.status_code,
                     headers=dict(resp.headers),
-                    body=json.dumps(
-                        {"events": events, "next_token": next_token}
-                    ).encode("utf-8"),
+                    body=json.dumps({
+                        "events": events,
+                        "next_token": next_token,
+                    }).encode("utf-8"),
                 )
 
             all_events.extend(events)
 
             if not next_token:
                 break
-
             page_token = next_token
 
         print(f"[api] Fetched {len(all_events)} raw events from API")
         return self._parse_events(all_events, allowed)
 
     def _fetch_via_html(self, league_slugs: Optional[List[str]] = None) -> List[Match]:
-        """Fallback: HTML-Parser."""
         from .scrape import scrape_matches as html_fetch
         from .scrape import ScrapeConfig
 
@@ -255,7 +200,6 @@ class LolEsportsAPIClient:
         matches: List[Match] = []
 
         for event in events:
-            # Nur Typ 'match' (keine Shows/Interviews)
             if event.get("type") != "match":
                 continue
 
@@ -267,13 +211,11 @@ class LolEsportsAPIClient:
             if len(teams) < 2:
                 continue
 
-            # League filter
             league = event.get("league", {})
             slug = league.get("slug", "")
             if slug not in allowed:
                 continue
 
-            # Zeit
             start_str = event.get("startTime", "")
             if not start_str:
                 continue
@@ -284,7 +226,6 @@ class LolEsportsAPIClient:
             except (ValueError, TypeError):
                 continue
 
-            # Teams
             t1 = teams[0]
             t2 = teams[1]
             team1_name = t1.get("name") or t1.get("code") or "TBD"
@@ -292,20 +233,17 @@ class LolEsportsAPIClient:
             team1_code = t1.get("code") or None
             team2_code = t2.get("code") or None
 
-            # Scores
             r1 = t1.get("result") or {}
             r2 = t2.get("result") or {}
             team1_score = int(r1["gameWins"]) if "gameWins" in r1 else None
             team2_score = int(r2["gameWins"]) if "gameWins" in r2 else None
 
-            # Winner
             winner = None
             if r1.get("outcome") == "win":
                 winner = team1_name
             elif r2.get("outcome") == "win":
                 winner = team2_name
 
-            # Best of
             strategy = match_data.get("strategy") or {}
             best_of = None
             if strategy.get("type") == "bestOf":
@@ -313,7 +251,6 @@ class LolEsportsAPIClient:
                 if count is not None:
                     best_of = f"Bo{int(count)}"
 
-            # State
             state = event.get("state", "unstarted")
             if state not in ("unstarted", "inProgress", "completed"):
                 state = "unstarted"
@@ -356,16 +293,10 @@ class LolEsportsAPIClient:
                 )
             )
 
-        # Dedup by UID
         seen: Dict[str, Match] = {}
         for m in matches:
             seen[m.stable_uid] = m
         return list(seen.values())
-
-
-# ============================================================
-# Standalone-Funktion für main.py
-# ============================================================
 
 
 def api_fetch_matches(
@@ -374,7 +305,6 @@ def api_fetch_matches(
     fetcher: Fetcher,
     config: ApiConfig,
 ) -> List[Match]:
-    """Hauptfunktion für den API-Call."""
     from .scrape import scrape_matches as html_fetch
     from .scrape import ScrapeConfig
 
