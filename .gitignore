@@ -32,6 +32,5 @@ Thumbs.db
 
 # Project-specific
 /docs/
-/_site/
 /.cache/
 /debug_schedule.html
