@@ -54,7 +54,7 @@ LEAGUE_IDS = {
 class ApiConfig:
     tz: str = "Europe/Berlin"
     cache_dir: str = ".cache/lolesports_ical"
-    cache_ttl: int = 120  # 2 Minuten – API hat 60s CloudFront-Cache
+    cache_ttl: int = 6 * 3600  # 6 Stunden – matcht GitHub Actions Cron-Intervall
     rate_limit_s: float = 0.15  # 0.15s (~120/min), 15 Seiten × 0.15s ≈ 2s Overhead
     timeout_s: float = 10.0  # 10s – schnellere Fehlererkennung, API antwortet in <1s
 
