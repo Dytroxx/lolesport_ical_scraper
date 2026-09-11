@@ -50,8 +50,8 @@ jobs:
           mkdir -p _site
           python -m lolesports_ical --out _site/feed.ics --tz Europe/Berlin --days 30 --history data/history.json
           cp index.html _site/index.html
-          # Generate per-league feeds
-          python scripts/generate_feeds.py _site/feed.ics
+          # Generate per-league feeds into _site
+          python scripts/generate_feeds.py _site/feed.ics _site
 
       - name: Check if feed changed
         id: feed-diff
