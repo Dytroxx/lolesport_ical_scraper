@@ -31,7 +31,6 @@ htmlcov/
 Thumbs.db
 
 # Project-specific
-/feed.ics
 /docs/
 /_site/
 /.cache/
