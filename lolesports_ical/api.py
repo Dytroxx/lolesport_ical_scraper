@@ -154,8 +154,11 @@ class LolEsportsAPIClient:
             cached = self.fetcher.cache.get(cache_key)
             
             if cached is not None:
-                events = cached.get("events", [])
-                next_token = cached.get("next_token")
+                # DiskCache speichert Roh-Payload mit body_b64 — erst decodieren und parsen
+                body_raw = str(cached.get("body_b64", "")).encode("latin1")
+                payload = json.loads(body_raw)
+                events = payload.get("events", [])
+                next_token = payload.get("next_token")
             else:
                 resp = self.fetcher.get(url, headers={"x-api-key": _get_api_keys()[0]})
                 data = _validate_response(resp)

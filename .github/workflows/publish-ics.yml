@@ -50,26 +50,55 @@ jobs:
           mkdir -p _site
           python -m lolesports_ical --out _site/feed.ics --tz Europe/Berlin --days 30 --history data/history.json
           cp index.html _site/index.html
+          # Generate per-league feeds
+          python scripts/generate_feeds.py _site/feed.ics
 
       - name: Check if feed changed
         id: feed-diff
         run: |
-          # Load previous feed from Git HEAD, strip DTSTAMP lines before comparing
-          git show HEAD:feed.ics 2>/dev/null | grep -v '^DTSTAMP:' > _prev_normalized.ics || true
-          grep -v '^DTSTAMP:' _site/feed.ics > _new_normalized.ics || true
-          if [ -s _prev_normalized.ics ] && diff -q _prev_normalized.ics _new_normalized.ics > /dev/null 2>&1; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "Feed unchanged, skipping deployment"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-            echo "Feed changed (or no previous feed), will deploy"
+          # Normalize feeds: strip DTSTAMP (regenerates every run) and compare
+          normalize() {
+            grep -v '^DTSTAMP:' "$1" 2>/dev/null | sort
+          }
+          
+          changed=false
+          # Check combined feed
+          if [ -s _site/feed.ics ]; then
+            normalize _site/feed.ics > _new_combined.ics || true
+            git show HEAD:feed.ics 2>/dev/null | sort > _old_combined.ics || true
+            if ! diff -q _old_combined.ics _new_combined.ics > /dev/null 2>&1; then
+              changed=true
+            fi
           fi
+          
+          # Check per-league feeds
+          for f in _site/feed-*.ics; do
+            [ -f "$f" ] || continue
+            normalize "$f" > _new_league.ics || true
+            slug="${f#_site/feed-}"
+            slug="${slug%.ics}"
+            git show HEAD:"_site/feed-${slug}.ics" 2>/dev/null | sort > _old_league.ics || true
+            if ! diff -q _old_league.ics _new_league.ics > /dev/null 2>&1; then
+              changed=true
+            fi
+          done
+          
+          if [ "$changed" = "true" ]; then
+            echo "Feed changed, will deploy"
+          else
+            echo "Feed unchanged, skipping deployment"
+          fi
+          echo "changed=${changed}" >> "$GITHUB_OUTPUT"
 
       - name: Commit feed and history
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/history.json _site/feed.ics
+          git add _site/feed.ics _site/feed-*.ics index.html
+          # Also commit SQLite history (migrated from JSON)
+          if [ -f data/history.db ]; then
+            git add data/history.db
+          fi
           git pull --rebase origin main || true
           git commit -m "Update feed and match history [skip ci]" --allow-empty
           git push

@@ -95,20 +95,34 @@ class HistoryStore:
         return result
 
     def save(self, matches_dicts: List[Dict[str, Any]], retention_days: int | None = None) -> None:
-        """Matches speichern (upsert)."""
+        """Matches speichern (upsert). Alte Einträge werden vorher bereits bereinigt."""
         cutoff_days = retention_days if retention_days is not None else self.retention_days
         cutoff = datetime.now(timezone.utc) - timedelta(days=cutoff_days)
 
+        # Filter matches_dicts: nur Einträge die jünger als cutoff_days sind
+        filtered: List[Dict[str, Any]] = []
+        pruned = 0
+        for m in matches_dicts:
+            start_utc_str = m.get("match_start_utc")
+            if not start_utc_str:
+                filtered.append(m)
+                continue
+            try:
+                start_utc = datetime.fromisoformat(start_utc_str)
+                if start_utc.tzinfo is None:
+                    start_utc = start_utc.replace(tzinfo=timezone.utc)
+            except (ValueError, TypeError):
+                filtered.append(m)
+                continue
+            if start_utc >= cutoff:
+                filtered.append(m)
+            else:
+                pruned += 1
+
         self.conn.execute("BEGIN")
         try:
-            # DELETE alte Einträge
-            self.conn.execute(
-                "DELETE FROM matches WHERE match_start_utc < ?",
-                (cutoff.isoformat(),),
-            )
-
             # UPSET neu/aktualisierte Einträge
-            for m in matches_dicts:
+            for m in filtered:
                 self.conn.execute("""
                     INSERT INTO matches (
                         league_slug, league_name, match_id, match_start_utc, best_of,
@@ -151,10 +165,6 @@ class HistoryStore:
                 ))
 
             self.conn.commit()
-            pruned = self.conn.execute(
-                "SELECT COUNT(*) FROM matches WHERE match_start_utc < ?",
-                (cutoff.isoformat(),),
-            ).fetchone()[0]
             if pruned:
                 print(f"[history] pruned {pruned} match(es) older than {cutoff_days} days")
         except Exception:
@@ -481,13 +491,20 @@ def main(argv: list[str] | None = None) -> int:
     finally:
         fetcher.close()
 
+    # Use raw fresh matches as the initial candidate (will be merged with history if --history is set)
+    final_matches = list(matches)
+
     # Merge with history if provided
     if args.history:
         history_path = Path(args.history)
 
-        # Auto-migrate JSON to SQLite
+        # Auto-migrate JSON to SQLite (look for history.json next to history file)
         db_path = str(history_path.with_suffix(".db"))
-        store = migrate_json_to_sqlite(history_path.parent / "history.json", db_path)
+        migration_src = history_path.parent / "history.json"
+        if migration_src.exists():
+            store = migrate_json_to_sqlite(migration_src, db_path)
+        else:
+            store = HistoryStore(db_path)
 
         # Load existing history from SQLite
         history_data = store.load()
@@ -499,15 +516,16 @@ def main(argv: list[str] | None = None) -> int:
         # Fresh matches always take precedence
         for m in matches:
             key = canonical_key_for_match(m)
-            # Check if we have this match in history
+            # Preserve previously-seen UID for the same match
             if m.match_id:
                 hist_entry = next(
                     (d for d in history_data.get("matches", []) if d.get("match_id") == m.match_id),
                     None,
                 )
                 if hist_entry and hist_entry.get("stable_uid"):
-                    matches = [with_uid(m, hist_entry["stable_uid"])]
-                merged_by_canonical[key] = m
+                    merged_by_canonical[key] = with_uid(m, hist_entry["stable_uid"])
+                else:
+                    merged_by_canonical[key] = m
             else:
                 merged_by_canonical[key] = m
 
@@ -521,15 +539,19 @@ def main(argv: list[str] | None = None) -> int:
                 except Exception:
                     pass  # Skip malformed entries
 
+        # ---- Use merged matches for BOTH history AND the output feed ----
+        merged_matches = list(merged_by_canonical.values())
+        merged_matches.sort(key=lambda x: x.match_start_utc)
+        final_matches = merged_matches
+
         # Save back to SQLite
-        all_matches_dicts = [match_to_dict(m) for m in merged_by_canonical.values()]
-        all_matches_dicts.sort(key=lambda x: x.get("match_start_utc", ""))
+        all_matches_dicts = [match_to_dict(m) for m in merged_matches]
         store.save(all_matches_dicts, retention_days=args.history_retention_days)
 
-    ics = render_ical(matches)
+    ics = render_ical(final_matches)
     out_path = Path(args.out)
     out_path.write_text(ics, encoding="utf-8")
 
-    leagues_found = {m.league_slug for m in matches}
-    print(f"Fetched {len(matches)} matches across {len(leagues_found)} leagues; wrote {out_path}")
+    leagues_found = {m.league_slug for m in final_matches}
+    print(f"Fetched {len(final_matches)} matches across {len(leagues_found)} leagues; wrote {out_path}")
     return 0
