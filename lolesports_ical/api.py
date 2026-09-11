@@ -184,6 +184,12 @@ class LolEsportsAPIClient:
             page_token = next_token
 
         print(f"[api] Fetched {len(all_events)} raw events from API")
+        
+        # Wenn die API 0 Events zurückgibt, versuche den HTML-Fallback
+        if not all_events:
+            logger.warning("[api] API returned 0 events, falling back to HTML parser")
+            return self._fetch_via_html(allowed)
+        
         return self._parse_events(all_events, allowed)
 
     def _fetch_via_html(self, league_slugs: Optional[List[str]] = None) -> List[Match]:
