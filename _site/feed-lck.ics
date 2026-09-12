@@ -6,17 +6,19 @@ BEGIN:VEVENT
 
 UID:ac89f04d3f0271cdc910ae3e4bd97cde@lolesports
 
-DTSTAMP:20260912T063441Z
+DTSTAMP:20260912T123052Z
 
 DTSTART:20260912T050000Z
 
 DTEND:20260912T090000Z
 
-SUMMARY:[LCK] HLE vs T1
+SUMMARY:[LCK] HLE 3-1 T1
 
 DESCRIPTION:League: LCK\nMatch: Hanwha Life Esports vs T1\nStage: Playoffs\
 
- nFormat: Bo5\nStatus: LIVE
+ nFormat: Bo5\nResult: Hanwha Life Esports 3 - 1 T1\nWinner: Hanwha Life Es
+
+ ports
 
 URL:https://lolesports.com/live/lck/117030752644841637
 
@@ -25,17 +27,17 @@ BEGIN:VEVENT
 
 UID:457f7addfbc73763abf7d125125d5fc0@lolesports
 
-DTSTAMP:20260912T063441Z
+DTSTAMP:20260912T123052Z
 
 DTSTART:20260913T050000Z
 
 DTEND:20260913T090000Z
 
-SUMMARY:[LCK] TBD vs GEN
+SUMMARY:[LCK] HLE vs GEN
 
-DESCRIPTION:League: LCK\nMatch: TBD vs Gen.G Esports\nStage: Finals\nFormat
+DESCRIPTION:League: LCK\nMatch: Hanwha Life Esports vs Gen.G Esports\nStage
 
- : Bo5
+ : Finals\nFormat: Bo5
 
 URL:https://lolesports.com/live/lck/117030752644841643
 
