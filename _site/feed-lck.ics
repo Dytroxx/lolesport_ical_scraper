@@ -6,7 +6,7 @@ BEGIN:VEVENT
 
 UID:ac89f04d3f0271cdc910ae3e4bd97cde@lolesports
 
-DTSTAMP:20260913T063933Z
+DTSTAMP:20260913T123103Z
 
 DTSTART:20260912T050000Z
 
@@ -27,17 +27,19 @@ BEGIN:VEVENT
 
 UID:457f7addfbc73763abf7d125125d5fc0@lolesports
 
-DTSTAMP:20260913T063933Z
+DTSTAMP:20260913T123103Z
 
 DTSTART:20260913T050000Z
 
 DTEND:20260913T090000Z
 
-SUMMARY:[LCK] GEN vs HLE
+SUMMARY:[LCK] GEN 3-1 HLE
 
 DESCRIPTION:League: LCK\nMatch: Gen.G Esports vs Hanwha Life Esports\nStage
 
- : Finals\nFormat: Bo5\nStatus: LIVE
+ : Finals\nFormat: Bo5\nResult: Gen.G Esports 3 - 1 Hanwha Life Esports\nWi
+
+ nner: Gen.G Esports
 
 URL:https://lolesports.com/live/lck/117030752644841643
 
