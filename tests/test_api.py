@@ -148,6 +148,39 @@ def test_league_directory_validates_slugs_and_accepts_new_entries(make_client):
     ]
 
 
+@pytest.mark.parametrize(
+    "image,expected",
+    [
+        (
+            "http://static.lolesports.com/leagues/lec.png",
+            "https://static.lolesports.com/leagues/lec.png",
+        ),
+        (
+            "https://static.lolesports.com/leagues/lec.png",
+            "https://static.lolesports.com/leagues/lec.png",
+        ),
+        (None, None),
+        ("javascript:alert(1)", None),
+        ("data:image/svg+xml,test", None),
+    ],
+)
+def test_league_logos_use_https_or_are_omitted(make_client, image, expected):
+    client = make_client(
+        lambda request: httpx.Response(
+            200,
+            json={
+                "data": {
+                    "leagues": [
+                        {"slug": "lec", "name": "LEC", "image": image},
+                    ]
+                }
+            },
+        )
+    )
+    league = api_fetch_leagues(client.fetcher)[0]
+    assert league.get("image") == expected
+
+
 def test_upstream_hidden_status_is_preserved(make_client):
     client = make_client(
         lambda request: httpx.Response(

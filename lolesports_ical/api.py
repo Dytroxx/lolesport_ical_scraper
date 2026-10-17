@@ -301,6 +301,15 @@ def api_fetch_leagues(fetcher: Fetcher) -> List[Dict[str, Any]]:
                 "name": str(league.get("name") or slug).strip(),
                 "region": str(league.get("region") or ""),
             }
+            image = league.get("image")
+            if isinstance(image, str):
+                image = (
+                    image.replace("http://", "https://", 1)
+                    if image.startswith("http://")
+                    else image
+                )
+                if image.startswith("https://"):
+                    entry["image"] = image
             if (league.get("displayPriority") or {}).get("status") == "hidden":
                 entry["hidden"] = True
             leagues.append(entry)

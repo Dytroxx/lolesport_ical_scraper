@@ -91,6 +91,93 @@ test('language switch preserves selection and search; blocked storage is harmles
   assert.equal(view.elements.get('urlList').children[0].children[2].textContent, 'Copy');
 });
 
+test('renders lazy decorative logos and handles broken images without losing selection', async () => {
+  const view = await page({ directory: [
+    { slug: 'lec', name: 'LEC', image: 'https://static.lolesports.com/leagues/lec.png' },
+    { slug: 'lck', name: 'LCK' },
+    { slug: 'unsafe', name: 'Unsafe', image: 'javascript:alert(1)' },
+  ] });
+  const grid = view.elements.get('leagueGrid');
+  const [checkbox, icon, text] = grid.children[0].children;
+  assert.equal(icon.src, 'https://static.lolesports.com/leagues/lec.png');
+  assert.equal(icon.alt, '');
+  assert.equal(icon.loading, 'lazy');
+  assert.equal(icon.decoding, 'async');
+  assert.equal(icon.referrerPolicy, 'no-referrer');
+  assert.equal(icon.width, 24);
+  assert.equal(icon.height, 24);
+  assert.equal(text.children[0].textContent, 'LEC');
+  icon.dispatch('error');
+  assert.equal(icon.hidden, true);
+  checkbox.checked = true;
+  grid.dispatch('change', checkbox);
+  assert.match(view.elements.get('urlList').children[0].children[1].textContent, /feed-lec\.ics$/);
+  assert.equal(grid.children[1].children.length, 2);
+  assert.equal(grid.children[2].children.length, 2);
+});
+
+test('region categories combine with search and preserve selections across language and filter changes', async () => {
+  const view = await page({ directory: [
+    { slug: 'lec', name: 'LEC', region: 'EMEA' },
+    { slug: 'lfl', name: 'LFL', region: 'EMEA' },
+    { slug: 'lck', name: 'LCK', region: 'KOREA' },
+    { slug: 'lcs', name: 'LCS', region: 'AMERICAS' },
+    { slug: 'retired', name: 'Retired', region: 'HIDDEN', hidden: true },
+    { slug: 'other', name: 'Other' },
+  ] });
+  const filter = view.elements.get('regionFilter');
+  const grid = view.elements.get('leagueGrid');
+  assert.deepEqual(filter.children.map(option => option.value), ['', 'AMERICAS', 'EMEA', 'KOREA']);
+  assert.equal(filter.children[0].textContent, 'Alle Regionen');
+  filter.value = 'KOREA';
+  filter.dispatch('change');
+  assert.equal(grid.children.length, 1);
+  const input = grid.children[0].children[0];
+  assert.equal(input.value, 'lck');
+  input.checked = true;
+  grid.dispatch('change', input);
+  filter.value = 'EMEA';
+  filter.dispatch('change');
+  assert.equal(grid.children.length, 2);
+  const search = view.elements.get('leagueSearch');
+  search.value = 'lec';
+  search.dispatch('input');
+  assert.equal(grid.children.length, 1);
+  assert.equal(grid.children[0].children[0].value, 'lec');
+  const language = view.elements.get('language');
+  language.value = 'en';
+  language.dispatch('change');
+  assert.equal(filter.value, 'EMEA');
+  assert.equal(search.value, 'lec');
+  assert.equal(filter.children[0].textContent, 'All regions');
+  assert.match(view.elements.get('urlList').children[0].children[1].textContent, /feed-lck\.ics$/);
+  filter.value = '';
+  filter.dispatch('change');
+  search.value = '';
+  search.dispatch('input');
+  assert.equal(grid.children.length, 5);
+  assert.equal(grid.children.find(item => item.children[0].value === 'lck').children[0].checked, true);
+});
+
+test('region with no search matches shows an empty-state message and can be reset', async () => {
+  const view = await page({ directory: [
+    { slug: 'lec', name: 'LEC', region: 'EMEA' },
+    { slug: 'lck', name: 'LCK', region: 'KOREA' },
+  ] });
+  const filter = view.elements.get('regionFilter');
+  filter.value = 'EMEA';
+  filter.dispatch('change');
+  const search = view.elements.get('leagueSearch');
+  search.value = 'lck';
+  search.dispatch('input');
+  assert.equal(view.elements.get('leagueGrid').children.length, 0);
+  assert.equal(view.elements.get('leagueStatus').textContent, 'Keine passenden Ligen gefunden.');
+  filter.value = '';
+  filter.dispatch('change');
+  assert.equal(view.elements.get('leagueGrid').children.length, 1);
+  assert.equal(view.elements.get('leagueStatus').textContent, '');
+});
+
 test('restores the saved language preference', async () => {
   const view = await page({ savedLanguage: 'en' });
   assert.equal(view.document.documentElement.lang, 'en');

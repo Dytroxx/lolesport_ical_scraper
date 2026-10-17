@@ -25,7 +25,7 @@ Get individual feeds for specific leagues:
 
 ### Landing Page
 
-Visit [dytroxx.github.io/lolesport_ical_scraper](https://dytroxx.github.io/lolesport_ical_scraper/) to search the automatically refreshed league directory and select subscription URLs. The responsive page supports German and English; your language preference is saved locally. Selecting multiple leagues gives separate subscriptions, or the combined feed when all leagues are selected.
+Visit [dytroxx.github.io/lolesport_ical_scraper](https://dytroxx.github.io/lolesport_ical_scraper/) to search the automatically refreshed league directory, filter by region and select subscription URLs. League logos are loaded lazily from the upstream image URLs when available. The responsive page supports German and English; your language preference is saved locally. Selecting multiple leagues gives separate subscriptions, or the combined feed when all leagues are selected.
 
 ## Features
 
