@@ -1,0 +1,146 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//LoL Esports iCal//EN
+X-WR-CALNAME:LoL Esports - demacia_cup
+BEGIN:VEVENT
+UID:3a6bf734fed936610778bb63c934dcc4@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261007T070000Z
+DTEND:20261007T093000Z
+SUMMARY:[DCGI] FLY 2-0 GAM
+DESCRIPTION:League: DCGI\nMatch: FlyQuest vs GAM Esports\nStage: Swiss\nFor
+ mat: Bo3\nResult: FlyQuest 2 - 0 GAM Esports\nWinner: FlyQuest
+URL:https://lolesports.com/live/demacia_cup/117133816701918794
+END:VEVENT
+BEGIN:VEVENT
+UID:225df8a9db7b7e4b6dceb95b83ea0792@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261007T090000Z
+DTEND:20261007T113000Z
+SUMMARY:[DCGI] GAM 0-2 SR
+DESCRIPTION:League: DCGI\nMatch: GAM Esports vs Shopify Rebellion\nStage: S
+ wiss\nFormat: Bo3\nResult: GAM Esports 0 - 2 Shopify Rebellion\nWinner: Sh
+ opify Rebellion
+URL:https://lolesports.com/live/demacia_cup/117133816701918798
+END:VEVENT
+BEGIN:VEVENT
+UID:56838b7824b102cd0f586b43a95e5d7e@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261007T110000Z
+DTEND:20261007T133000Z
+SUMMARY:[DCGI] SR 1-2 FLY
+DESCRIPTION:League: DCGI\nMatch: Shopify Rebellion vs FlyQuest\nStage: Swis
+ s\nFormat: Bo3\nResult: Shopify Rebellion 1 - 2 FlyQuest\nWinner: FlyQuest
+URL:https://lolesports.com/live/demacia_cup/117133816701918802
+END:VEVENT
+BEGIN:VEVENT
+UID:ea930feaedcce86c523afb81f4d3e92c@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261008T090000Z
+DTEND:20261008T113000Z
+SUMMARY:[DCGI] RED 0-2 FLY
+DESCRIPTION:League: DCGI\nMatch: RED Kalunga vs FlyQuest\nStage: Swiss\nFor
+ mat: Bo3\nResult: RED Kalunga 0 - 2 FlyQuest\nWinner: FlyQuest
+URL:https://lolesports.com/live/demacia_cup/117133830114188936
+END:VEVENT
+BEGIN:VEVENT
+UID:5091c445fe371cede59a6127bf02089d@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261008T110000Z
+DTEND:20261008T133000Z
+SUMMARY:[DCGI] JDG 2-1 NAVI
+DESCRIPTION:League: DCGI\nMatch: Beijing JDG Esports vs Natus Vincere\nStag
+ e: Swiss\nFormat: Bo3\nResult: Beijing JDG Esports 2 - 1 Natus Vincere\nWi
+ nner: Beijing JDG Esports
+URL:https://lolesports.com/live/demacia_cup/117133830114188940
+END:VEVENT
+BEGIN:VEVENT
+UID:7025ca192911e207ebdf95374cc5c60e@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261012T060000Z
+DTEND:20261012T100000Z
+SUMMARY:[DCGI] KT 3-2 VIT
+DESCRIPTION:League: DCGI\nMatch: kt Rolster vs Team Vitality\nStage: Quarte
+ rfinals\nFormat: Bo5\nResult: kt Rolster 3 - 2 Team Vitality\nWinner: kt R
+ olster
+URL:https://lolesports.com/live/demacia_cup/117133830110912099
+END:VEVENT
+BEGIN:VEVENT
+UID:c1b7e970cc4be792882bd2bbd32e9727@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261012T090000Z
+DTEND:20261012T130000Z
+SUMMARY:[DCGI] BFX 3-2 JDG
+DESCRIPTION:League: DCGI\nMatch: BNK FEARX vs Beijing JDG Esports\nStage: Q
+ uarterfinals\nFormat: Bo5\nResult: BNK FEARX 3 - 2 Beijing JDG Esports\nWi
+ nner: BNK FEARX
+URL:https://lolesports.com/live/demacia_cup/117133830110912093
+END:VEVENT
+BEGIN:VEVENT
+UID:3775470c98817433404d17d7dc87921f@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261013T060000Z
+DTEND:20261013T100000Z
+SUMMARY:[DCGI] WE 3-2 FLY
+DESCRIPTION:League: DCGI\nMatch: Xi'an Team WE vs FlyQuest\nStage: Quarterf
+ inals\nFormat: Bo5\nResult: Xi'an Team WE 3 - 2 FlyQuest\nWinner: Xi'an Te
+ am WE
+URL:https://lolesports.com/live/demacia_cup/117133830110912105
+END:VEVENT
+BEGIN:VEVENT
+UID:f1fdf778912ba009f23568328a645f8f@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261013T090000Z
+DTEND:20261013T130000Z
+SUMMARY:[DCGI] BRO 3-1 LGD
+DESCRIPTION:League: DCGI\nMatch: HANJIN BRION vs LGD GAMING\nStage: Quarter
+ finals\nFormat: Bo5\nResult: HANJIN BRION 3 - 1 LGD GAMING\nWinner: HANJIN
+  BRION
+URL:https://lolesports.com/live/demacia_cup/117133830110912111
+END:VEVENT
+BEGIN:VEVENT
+UID:7bef5568e2d34419430eebd233bf618b@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261014T090000Z
+DTEND:20261014T130000Z
+SUMMARY:[DCGI] KT 1-3 BFX
+DESCRIPTION:League: DCGI\nMatch: kt Rolster vs BNK FEARX\nStage: Semifinals
+ \nFormat: Bo5\nResult: kt Rolster 1 - 3 BNK FEARX\nWinner: BNK FEARX
+URL:https://lolesports.com/live/demacia_cup/117133830110912117
+END:VEVENT
+BEGIN:VEVENT
+UID:4c8eaa7798b533462675c5c75caab8ac@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261015T090000Z
+DTEND:20261015T130000Z
+SUMMARY:[DCGI] BRO 2-3 WE
+DESCRIPTION:League: DCGI\nMatch: HANJIN BRION vs Xi'an Team WE\nStage: Semi
+ finals\nFormat: Bo5\nResult: HANJIN BRION 2 - 3 Xi'an Team WE\nWinner: Xi'
+ an Team WE
+URL:https://lolesports.com/live/demacia_cup/117133830110912123
+END:VEVENT
+BEGIN:VEVENT
+UID:8cbd6cc8f0d30fc4ad38ea28bc0b58cb@lolesports
+X-LOL-LEAGUE-SLUG:demacia_cup
+DTSTAMP:20261017T103438Z
+DTSTART:20261017T090000Z
+DTEND:20261017T130000Z
+SUMMARY:[DCGI] WE vs BFX
+DESCRIPTION:League: DCGI\nMatch: Xi'an Team WE vs BNK FEARX\nStage: Finals\
+ nFormat: Bo5\nStatus: LIVE
+URL:https://lolesports.com/live/demacia_cup/117133830110912129
+END:VEVENT
+END:VCALENDAR

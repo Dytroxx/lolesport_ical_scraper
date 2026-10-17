@@ -1,0 +1,266 @@
+[
+  {
+    "slug": "americas_cup",
+    "name": "Americas Cup",
+    "region": "AMERICAS"
+  },
+  {
+    "slug": "arabian_league",
+    "name": "Arabian League",
+    "region": "EMEA"
+  },
+  {
+    "slug": "asian_games",
+    "name": "Asian Games",
+    "region": "INTERNATIONAL"
+  },
+  {
+    "slug": "cacg",
+    "name": "CACG",
+    "region": "AMERICAS",
+    "hidden": true
+  },
+  {
+    "slug": "cblol-brazil",
+    "name": "CBLOL",
+    "region": "BRAZIL"
+  },
+  {
+    "slug": "cblol_promotion",
+    "name": "CBLOL Promotion",
+    "region": "BRAZIL"
+  },
+  {
+    "slug": "cd",
+    "name": "Circuito Desafiante",
+    "region": "BRAZIL"
+  },
+  {
+    "slug": "demacia_cup",
+    "name": "DCGI",
+    "region": "INTERNATIONAL"
+  },
+  {
+    "slug": "emea_masters",
+    "name": "EMEA Masters",
+    "region": "EMEA"
+  },
+  {
+    "slug": "esports_balkan_league",
+    "name": "Esports Balkan League",
+    "region": "EMEA"
+  },
+  {
+    "slug": "ewc_lol",
+    "name": "Esports World Cup",
+    "region": "INTERNATIONAL"
+  },
+  {
+    "slug": "first_stand",
+    "name": "First Stand",
+    "region": "INTERNATIONAL"
+  },
+  {
+    "slug": "fls",
+    "name": "FLS",
+    "region": "OCEANIA"
+  },
+  {
+    "slug": "hellenic_legends_league",
+    "name": "Hellenic Legends League",
+    "region": "EMEA"
+  },
+  {
+    "slug": "hitpoint_masters",
+    "name": "Hitpoint Masters",
+    "region": "EMEA"
+  },
+  {
+    "slug": "kespa_cup",
+    "name": "KeSPA Cup",
+    "region": "KOREA"
+  },
+  {
+    "slug": "duelo_de_reyes",
+    "name": "King's Duel",
+    "region": "LATIN AMERICA",
+    "hidden": true
+  },
+  {
+    "slug": "lfl",
+    "name": "La Ligue Française",
+    "region": "EMEA"
+  },
+  {
+    "slug": "lck",
+    "name": "LCK",
+    "region": "KOREA"
+  },
+  {
+    "slug": "lck_challengers_league",
+    "name": "LCK Challengers",
+    "region": "KOREA"
+  },
+  {
+    "slug": "lcl",
+    "name": "LCL",
+    "region": "COMMONWEALTH OF INDEPENDENT STATES",
+    "hidden": true
+  },
+  {
+    "slug": "lco",
+    "name": "LCO",
+    "region": "OCEANIA",
+    "hidden": true
+  },
+  {
+    "slug": "lcp",
+    "name": "LCP",
+    "region": "PACIFIC"
+  },
+  {
+    "slug": "lcp_promotion",
+    "name": "LCP P&R",
+    "region": "PACIFIC"
+  },
+  {
+    "slug": "lcs",
+    "name": "LCS",
+    "region": "NORTH AMERICA"
+  },
+  {
+    "slug": "lcs_promotion",
+    "name": "LCS Promotion",
+    "region": "NORTH AMERICA"
+  },
+  {
+    "slug": "lec",
+    "name": "LEC",
+    "region": "EMEA"
+  },
+  {
+    "slug": "les",
+    "name": "LES",
+    "region": "EMEA"
+  },
+  {
+    "slug": "liga_portuguesa",
+    "name": "Liga Portuguesa",
+    "region": "EMEA"
+  },
+  {
+    "slug": "ljl-japan",
+    "name": "LJL",
+    "region": "JAPAN"
+  },
+  {
+    "slug": "lla",
+    "name": "LLA",
+    "region": "LATIN AMERICA",
+    "hidden": true
+  },
+  {
+    "slug": "lit",
+    "name": "LoL Italian Tournament",
+    "region": "EMEA"
+  },
+  {
+    "slug": "lpl",
+    "name": "LPL",
+    "region": "CHINA"
+  },
+  {
+    "slug": "north_regional_league",
+    "name": "LRN",
+    "region": "LATIN AMERICA NORTH"
+  },
+  {
+    "slug": "south_regional_league",
+    "name": "LRS",
+    "region": "LATIN AMERICA SOUTH"
+  },
+  {
+    "slug": "lta_cross",
+    "name": "LTA Cross-Conference",
+    "region": "AMERICAS",
+    "hidden": true
+  },
+  {
+    "slug": "lta_n",
+    "name": "LTA North",
+    "region": "AMERICAS",
+    "hidden": true
+  },
+  {
+    "slug": "lta_s",
+    "name": "LTA South",
+    "region": "AMERICAS",
+    "hidden": true
+  },
+  {
+    "slug": "msi",
+    "name": "MSI",
+    "region": "INTERNATIONAL"
+  },
+  {
+    "slug": "nacl",
+    "name": "NACL",
+    "region": "NORTH AMERICA"
+  },
+  {
+    "slug": "nlc",
+    "name": "NLC",
+    "region": "EMEA"
+  },
+  {
+    "slug": "pcs",
+    "name": "PCS",
+    "region": "HONG KONG, MACAU, TAIWAN"
+  },
+  {
+    "slug": "primeleague",
+    "name": "Prime League",
+    "region": "EMEA"
+  },
+  {
+    "slug": "rift_legends",
+    "name": "Rift Legends",
+    "region": "EMEA"
+  },
+  {
+    "slug": "roadoflegends",
+    "name": "Road of Legends",
+    "region": "EMEA"
+  },
+  {
+    "slug": "turkiye-sampiyonluk-ligi",
+    "name": "TCL",
+    "region": "EMEA"
+  },
+  {
+    "slug": "tft_esports",
+    "name": "TFT Esports",
+    "region": "INTERNATIONAL"
+  },
+  {
+    "slug": "vcs",
+    "name": "VCS",
+    "region": "VIETNAM"
+  },
+  {
+    "slug": "worlds",
+    "name": "Worlds",
+    "region": "INTERNATIONAL"
+  },
+  {
+    "slug": "wqs",
+    "name": "Worlds Qualifying Series",
+    "region": "INTERNATIONAL",
+    "hidden": true
+  },
+  {
+    "slug": "wsci",
+    "name": "WSCI",
+    "region": "INTERNATIONAL"
+  }
+]
