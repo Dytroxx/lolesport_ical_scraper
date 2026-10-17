@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.3.0
         with:
-          fetch-depth: 2  # Need previous commit for feed diff (git show HEAD:feed.ics)
+          fetch-depth: 2
 
       - name: Set up Python
         uses: actions/setup-python@v5.6.0
@@ -43,12 +43,17 @@ jobs:
       - name: Install
         run: |
           python -m pip install -U pip
-          python -m pip install .
+          python -m pip install '.[dev]'
+
+      - name: Test
+        run: |
+          python -m pytest
+          node --test tests/test_frontend.js
 
       - name: Generate feed
         run: |
           mkdir -p _site
-          python -m lolesports_ical --out _site/feed.ics --tz Europe/Berlin --days 30 --history data/history.json
+          python -m lolesports_ical --out _site/feed.ics --tz Europe/Berlin --days 30 --history data/history.db --league-index _site/leagues.json
           cp index.html _site/index.html
           # Generate per-league feeds into _site
           python scripts/generate_feeds.py _site/feed.ics _site
@@ -56,65 +61,28 @@ jobs:
       - name: Check if feed changed
         id: feed-diff
         run: |
-          # Normalize feeds: strip DTSTAMP (regenerates every run) and compare
-          normalize() {
-            grep -v '^DTSTAMP:' "$1" 2>/dev/null | sort
-          }
-          
-          changed=false
-          # Check combined feed
-          if [ -s _site/feed.ics ]; then
-            normalize _site/feed.ics > _new_combined.ics || true
-            git show HEAD:feed.ics 2>/dev/null | sort > _old_combined.ics || true
-            if ! diff -q _old_combined.ics _new_combined.ics > /dev/null 2>&1; then
-              changed=true
-            fi
-          fi
-          
-          # Check per-league feeds
-          for f in _site/feed-*.ics; do
-            [ -f "$f" ] || continue
-            normalize "$f" > _new_league.ics || true
-            slug="${f#_site/feed-}"
-            slug="${slug%.ics}"
-            git show HEAD:"_site/feed-${slug}.ics" 2>/dev/null | sort > _old_league.ics || true
-            if ! diff -q _old_league.ics _new_league.ics > /dev/null 2>&1; then
-              changed=true
-            fi
-          done
-          
-          if [ "$changed" = "true" ]; then
-            echo "Feed changed, will deploy"
-          else
-            echo "Feed unchanged, skipping deployment"
-          fi
-          echo "changed=${changed}" >> "$GITHUB_OUTPUT"
+          python scripts/check_site_changes.py _site >> "$GITHUB_OUTPUT"
 
       - name: Commit feed and history
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Add combined feed if it exists
-          if [ -f _site/feed.ics ]; then
-            git add _site/feed.ics
+          # Do not commit timestamp-only calendar changes.
+          if [ "${{ steps.feed-diff.outputs.changed }}" = "true" ]; then
+            git add _site/*.ics _site/index.html _site/leagues.json
           fi
-          
-          # Add per-league feeds if any exist
-          for f in _site/feed-*.ics; do
-            [ -f "$f" ] && git add "$f"
-          done
-          
-          git add index.html
           
           # Also commit SQLite history (migrated from JSON)
           if [ -f data/history.db ]; then
             git add data/history.db
           fi
           
-          git pull --rebase origin main || true
-          git commit -m "Update feed and match history [skip ci]" --allow-empty
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(feeds): update calendars and match history [skip ci]"
+            git pull --rebase --autostash origin main
+            git push
+          fi
 
       - name: Upload Pages artifact
         if: steps.feed-diff.outputs.changed == 'true'

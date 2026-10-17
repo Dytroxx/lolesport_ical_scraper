@@ -36,3 +36,17 @@ def test_timezone_conversion_berlin() -> None:
     assert local.tzinfo is not None
     # In winter, Berlin is UTC+1
     assert local.hour == 19
+
+
+def test_ics_folding_limits_utf8_octets_without_losing_text() -> None:
+    from lolesports_ical.ical import _fold_ics_line
+
+    text = "DESCRIPTION:" + "世界 🏆 é " * 30
+    folded = _fold_ics_line(text)
+    assert all(len(line.encode("utf-8")) <= 75 for line in folded.split("\r\n"))
+    assert folded.replace("\r\n ", "") == text
+
+
+def test_timezone_conversion_berlin_summer() -> None:
+    utc = datetime(2026, 7, 12, 18, tzinfo=timezone.utc)
+    assert utc.astimezone(ZoneInfo("Europe/Berlin")).hour == 20

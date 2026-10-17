@@ -13,13 +13,18 @@ def _ics_escape(text: str) -> str:
 
 def _fold_ics_line(line: str, limit: int = 75) -> str:
     # RFC5545 line folding: CRLF + single space continuation.
-    if len(line) <= limit:
-        return line
     out = []
-    while len(line) > limit:
-        out.append(line[:limit])
-        line = " " + line[limit:]
-    out.append(line)
+    current = ""
+    octets = 0
+    for char in line:
+        size = len(char.encode("utf-8"))
+        if octets + size > limit:
+            out.append(current)
+            current = " "
+            octets = 1
+        current += char
+        octets += size
+    out.append(current)
     return "\r\n".join(out)
 
 
@@ -86,6 +91,7 @@ def render_ical(matches: Iterable[Match], *, prodid: str = "-//lolesports-ical//
         event_lines = [
             "BEGIN:VEVENT",
             f"UID:{_ics_escape(m.stable_uid)}",
+            f"X-LOL-LEAGUE-SLUG:{_ics_escape(m.league_slug)}",
             f"DTSTAMP:{_dt_to_ics_utc(now)}",
             f"DTSTART:{_dt_to_ics_utc(m.match_start_utc)}",
             f"DTEND:{_dt_to_ics_utc(match_end_utc)}",

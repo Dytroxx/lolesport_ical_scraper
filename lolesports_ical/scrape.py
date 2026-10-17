@@ -13,18 +13,6 @@ from .models import Match
 from .util import Fetcher, isoformat_z, stable_uid
 
 
-LEAGUE_SLUGS_DEFAULT = [
-    "emea_masters",
-    "first_stand",
-    "lck",
-    "lcs",
-    "lec",
-    "lpl",
-    "msi",
-    "worlds",
-]
-
-
 @dataclass(frozen=True)
 class ScrapeConfig:
     tz: str = "Europe/Berlin"
@@ -53,6 +41,19 @@ class HtmlScraper:
         )
         if apollo_matches:
             return apollo_matches
+
+        if not league_slugs:
+            league_slugs = sorted(
+                {
+                    match.group(1)
+                    for link in soup.find_all("a", href=True)
+                    if (
+                        match := re.search(
+                            r"/leagues/([a-z0-9][a-z0-9_-]*)(?:[/?#]|$)", str(link["href"])
+                        )
+                    )
+                }
+            )
 
         # Heuristic: Next.js often embeds JSON in a script tag.
         league_name_by_slug: Dict[str, str] = {s: s for s in league_slugs}
@@ -280,7 +281,7 @@ class HtmlScraper:
             for ev in events:
                 league = ev.get("league") or {}
                 slug = league.get("slug")
-                if not slug or slug not in set(league_slugs):
+                if not slug or (league_slugs and slug not in league_slugs):
                     continue
 
                 start = ev.get("startTime")

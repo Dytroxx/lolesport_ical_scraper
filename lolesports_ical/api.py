@@ -9,15 +9,16 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
 
 import httpx
 from zoneinfo import ZoneInfo
 
 from .models import Match
-from .util import DiskCache, Fetcher, RateLimiter, RetryConfig, isoformat_z, stable_uid
+from .util import Fetcher, isoformat_z, stable_uid
 
 logger = logging.getLogger(__name__)
 
@@ -27,17 +28,6 @@ API_KEYS = [
     "0TvQnueqKa5mxJntVWt0w4LpLfEkrV1Ta8rQBb9Z",
 ]
 
-LEAGUE_IDS = {
-    "lec": "98767991302996019",
-    "lck": "98767991310872058",
-    "lcs": "98767991299243165",
-    "lpl": "98767991314006698",
-    "msi": "98767991325878492",
-    "worlds": "98767975604431411",
-    "emea_masters": "100695891328981122",
-    "first_stand": "113464388705111224",
-}
-
 
 @dataclass(frozen=True)
 class ApiConfig:
@@ -46,10 +36,13 @@ class ApiConfig:
     cache_ttl: int = 120
     rate_limit_s: float = 0.15
     timeout_s: float = 10.0
+    days: int = 30
+    result_lookback_days: int = 7
 
 
 def _get_api_keys() -> List[str]:
     from os import environ
+
     env_keys = environ.get("LOL_API_KEYS", "").strip()
     if env_keys:
         keys = [k.strip() for k in env_keys.split(",") if k.strip()]
@@ -61,7 +54,7 @@ def _get_api_keys() -> List[str]:
 def _validate_response(resp: httpx.Response) -> Dict[str, Any]:
     """API response validieren und JSON parsen."""
     status = resp.status_code
-    
+
     if status == 401:
         raise RuntimeError("[api] 401 Unauthorized – API-Key ungültig oder rotiert.")
     if status == 403:
@@ -72,11 +65,11 @@ def _validate_response(resp: httpx.Response) -> Dict[str, Any]:
         raise RuntimeError("[api] 404 Not Found – Endpunkt nicht verfügbar")
     if status == 499:
         raise RuntimeError("[api] 499 Client Closed Request")
-    
+
     if status == 429:
         retry_after = resp.headers.get("Retry-After", "unbekannt")
         logger.warning(f"[api] 429 Too Many Requests (Retry-After: {retry_after})")
-    
+
     error_msgs = {
         500: "Internal Server Error",
         502: "Bad Gateway",
@@ -98,20 +91,20 @@ def _validate_response(resp: httpx.Response) -> Dict[str, Any]:
         raise RuntimeError(f"[api] {status} Network Read Timeout")
     if 500 <= status < 600:
         raise RuntimeError(f"[api] {status} Server Error")
-    
+
     if status >= 400:
         raise RuntimeError(f"[api] HTTP {status} – {resp.text[:300]}")
-    
+
     try:
         data = resp.json()
     except json.JSONDecodeError:
         raise RuntimeError(f"[api] JSON Decode Error: {resp.text[:200]}")
-    
+
     if "data" not in data:
         raise RuntimeError("[api] Missing 'data' key")
     if "schedule" not in data.get("data", {}):
         raise RuntimeError("[api] Missing 'data.schedule' key")
-    
+
     return data
 
 
@@ -131,80 +124,64 @@ class LolEsportsAPIClient:
             return self._fetch_via_html(league_slugs)
 
     def _fetch_via_api(self, league_slugs: Optional[List[str]] = None) -> List[Match]:
-        """Holt zukünftige Events (unstarted, inProgress) über die API.
-        
-        Die API hat bidirektionale Pagination:
-        - older: vergangene Events (completed)
-        - newer: zukünftige Events (unstarted, inProgress)
-        
-        Wir folgen NUR der 'newer'-Richtung, weil die alle zukünftigen Events enthält.
-        """
-        allowed = league_slugs if league_slugs else list(LEAGUE_IDS.keys())
-        all_events: List[Dict[str, Any]] = []
+        now = datetime.now(timezone.utc)
+        lower = now - timedelta(days=self.config.result_lookback_days)
+        upper = now + timedelta(days=self.config.days)
 
-        # Hole nur die "newer"-Richtung (zukünftige Events)
-        page_token: Optional[str] = None
-        while True:
-            url = f"{API_BASE}/getSchedule?hl=en-US"
-            if page_token:
-                url += f"&pageToken={page_token}"
+        def fetch_page(token: str | None = None) -> Dict[str, Any]:
+            params = {"hl": "en-US"}
+            if token:
+                params["pageToken"] = token
+            response = self.fetcher.get(
+                f"{API_BASE}/getSchedule",
+                params=params,
+                headers={"x-api-key": _get_api_keys()[0]},
+            )
+            return _validate_response(response)["data"]["schedule"]
 
-            # Cache prüfen
-            cache_key = f"api_newer_{page_token or 'first'}"
-            cached = self.fetcher.cache.get(cache_key)
-            
-            if cached is not None:
-                # DiskCache speichert Roh-Payload mit body_b64 — erst decodieren und parsen
-                body_raw = str(cached.get("body_b64", "")).encode("latin1")
-                payload = json.loads(body_raw)
-                events = payload.get("events", [])
-                next_token = payload.get("next_token")
-            else:
-                resp = self.fetcher.get(url, headers={"x-api-key": _get_api_keys()[0]})
-                data = _validate_response(resp)
-
-                events = data["data"]["schedule"]["events"]
-                pages = data["data"]["schedule"].get("pages", {})
-                next_token = pages.get("newer")
-
-                self.fetcher.cache.set(
-                    cache_key,
-                    status=resp.status_code,
-                    headers=dict(resp.headers),
-                    body=json.dumps({
-                        "events": events,
-                        "next_token": next_token,
-                    }).encode("utf-8"),
-                )
-
-            all_events.extend(events)
-
-            if not next_token:
-                break
-            page_token = next_token
+        first = fetch_page()
+        all_events = list(first.get("events", []))
+        for direction in ("newer", "older"):
+            page = first
+            seen_tokens: set[str] = set()
+            while True:
+                dates = []
+                for event in page.get("events", []):
+                    try:
+                        dates.append(
+                            datetime.fromisoformat(
+                                event["startTime"].replace("Z", "+00:00")
+                            ).astimezone(timezone.utc)
+                        )
+                    except (KeyError, TypeError, ValueError):
+                        continue
+                if dates and (
+                    (direction == "newer" and max(dates) >= upper)
+                    or (direction == "older" and min(dates) <= lower)
+                ):
+                    break
+                token = page.get("pages", {}).get(direction)
+                if not token:
+                    break
+                if token in seen_tokens:
+                    raise RuntimeError("[api] Repeated pagination token")
+                seen_tokens.add(token)
+                page = fetch_page(token)
+                all_events.extend(page.get("events", []))
 
         print(f"[api] Fetched {len(all_events)} raw events from API")
-        
-        # Wenn die API 0 Events zurückgibt, versuche den HTML-Fallback
         if not all_events:
             logger.warning("[api] API returned 0 events, falling back to HTML parser")
-            return self._fetch_via_html(allowed)
-        
-        return self._parse_events(all_events, allowed)
+            return self._fetch_via_html(league_slugs)
+        return self._parse_events(all_events, league_slugs or [])
 
     def _fetch_via_html(self, league_slugs: Optional[List[str]] = None) -> List[Match]:
-        from .scrape import scrape_matches as html_fetch
-        from .scrape import ScrapeConfig
-
-        return html_fetch(
-            league_slugs=league_slugs or list(LEAGUE_IDS.keys()),
+        return self.scrape_matches_func(
+            league_slugs=league_slugs or [],
             fetcher=self.fetcher,
-            config=ScrapeConfig(tz=self.config.tz),
         )
 
-    def _parse_events(
-        self, events: List[Dict[str, Any]], allowed: List[str]
-    ) -> List[Match]:
+    def _parse_events(self, events: List[Dict[str, Any]], allowed: List[str]) -> List[Match]:
         tz = ZoneInfo(self.config.tz)
         matches: List[Match] = []
 
@@ -221,8 +198,8 @@ class LolEsportsAPIClient:
                 continue
 
             league = event.get("league", {})
-            slug = league.get("slug", "")
-            if slug not in allowed:
+            slug = league.get("slug") or ""
+            if not re.fullmatch(r"[a-z0-9][a-z0-9_-]*", slug) or (allowed and slug not in allowed):
                 continue
 
             start_str = event.get("startTime", "")
@@ -244,8 +221,8 @@ class LolEsportsAPIClient:
 
             r1 = t1.get("result") or {}
             r2 = t2.get("result") or {}
-            team1_score = int(r1["gameWins"]) if "gameWins" in r1 else None
-            team2_score = int(r2["gameWins"]) if "gameWins" in r2 else None
+            team1_score = int(r1["gameWins"]) if r1.get("gameWins") is not None else None
+            team2_score = int(r2["gameWins"]) if r2.get("gameWins") is not None else None
 
             winner = None
             if r1.get("outcome") == "win":
@@ -306,6 +283,30 @@ class LolEsportsAPIClient:
         for m in matches:
             seen[m.stable_uid] = m
         return list(seen.values())
+
+
+def api_fetch_leagues(fetcher: Fetcher) -> List[Dict[str, Any]]:
+    response = fetcher.get(
+        f"{API_BASE}/getLeagues",
+        params={"hl": "en-US"},
+        headers={"x-api-key": _get_api_keys()[0]},
+    )
+    response.raise_for_status()
+    leagues = []
+    for league in response.json()["data"]["leagues"]:
+        slug = league.get("slug") or ""
+        if re.fullmatch(r"[a-z0-9][a-z0-9_-]*", slug):
+            entry: Dict[str, Any] = {
+                "slug": slug,
+                "name": str(league.get("name") or slug).strip(),
+                "region": str(league.get("region") or ""),
+            }
+            if (league.get("displayPriority") or {}).get("status") == "hidden":
+                entry["hidden"] = True
+            leagues.append(entry)
+    if not leagues:
+        raise ValueError("[api] Empty league directory")
+    return sorted(leagues, key=lambda league: (league["name"].casefold(), league["slug"]))
 
 
 def api_fetch_matches(

@@ -45,3 +45,17 @@ def test_parse_schedule_html_apollo_fixture() -> None:
     assert m.best_of == "Bo3"
     assert m.team1 == "Team One"
     assert m.team2 == "Team Two"
+
+
+def test_discovers_leagues_without_fixed_allowlist() -> None:
+    for fixture in ("schedule_fixture.html", "schedule_apollo_fixture.html"):
+        html = (Path(__file__).parent / "fixtures" / fixture).read_text(encoding="utf-8")
+        html = html.replace("lec", "new_league")
+        matches = HtmlScraper.parse_schedule_html(
+            html,
+            league_slugs=[],
+            tz_name="Europe/Berlin",
+            page_url="https://lolesports.com/schedule",
+        )
+        assert len(matches) == 1
+        assert matches[0].league_slug == "new_league"

@@ -25,11 +25,11 @@ Get individual feeds for specific leagues:
 
 ### Landing Page
 
-Visit [dytroxx.github.io/lolesport_ical_scraper](https://dytroxx.github.io/lolesport_ical_scraper/) to browse leagues and generate your own custom subscription URLs.
+Visit [dytroxx.github.io/lolesport_ical_scraper](https://dytroxx.github.io/lolesport_ical_scraper/) to search the automatically refreshed league directory and select subscription URLs. The responsive page supports German and English; your language preference is saved locally. Selecting multiple leagues gives separate subscriptions, or the combined feed when all leagues are selected.
 
 ## Features
 
-- **All major leagues**: LEC, LCK, LPL, LCS, Worlds, MSI, EMEA Masters, First Stand
+- **Automatic league discovery**: the upstream league directory updates on each generation, including new leagues and offseason subscriptions
 - **Match results** with final scores for completed games
 - **Auto-updates** every 6 hours via GitHub Actions
 - **Persistent history** — past matches stay in your calendar
@@ -70,6 +70,16 @@ Generate a feed with custom settings:
 python -m lolesports_ical --out feed.ics --tz Europe/Berlin --days 60 --leagues lec,lck
 ```
 
+Generate the complete static site (no browser-side calls to the external esports API):
+
+```bash
+python -m lolesports_ical --out _site/feed.ics --history data/history.db --league-index _site/leagues.json
+python scripts/generate_feeds.py _site/feed.ics _site
+cp index.html _site/index.html
+```
+
+Serve `_site/` over HTTP to preview the selector. `leagues.json` is generated from the official directory; if it cannot be fetched, the previous directory is retained, or inferred from matches on the first run. Every listed league gets a valid feed, even with no current events. Competitions marked hidden by the upstream directory are omitted from the selector; their feed URLs remain available for existing subscriptions.
+
 ### Command-Line Options
 
 | Option | Description | Default |
@@ -79,8 +89,9 @@ python -m lolesports_ical --out feed.ics --tz Europe/Berlin --days 60 --leagues 
 | `--days` | Days of matches to include | `30` |
 | `--leagues` | Comma-separated league slugs (e.g., `lec,lck,lpl`) | All leagues |
 | `--cache-dir` | Directory for HTTP response cache | `.cache/lolesports_ical` |
-| `--cache-ttl` | Cache TTL in seconds | `1800` |
-| `--history` | Path to JSON/SQLite history file | `data/history.json` |
+| `--cache-ttl` | Cache TTL in seconds | `120` |
+| `--history` | SQLite history path; a specified JSON file is migrated automatically | Disabled |
+| `--league-index` | Output path for the current league directory JSON | Disabled |
 | `--history-retention-days` | Keep history entries from last N days | `365` |
 
 ## How It Works
@@ -91,7 +102,9 @@ The scraper uses two data sources, always preferring the more reliable one:
 
 1. **LoL Esports API** (primary) — The unofficial Riot Games esports API (`esports-api.lolesports.com/persisted/gw`). This is the most accurate and up-to-date source.
 
-2. **HTML Parser** (fallback) — If the API is unreachable, the scraper falls back to parsing the LoL Esports live page. This ensures you always get match data even during API outages.
+2. **HTML Parser** (fallback) — If the API is unreachable, the scraper tries the LoL Esports schedule page (Apollo SSR data, then HTML match cards). Both sources depend on upstream availability and formats.
+
+Schedule pagination follows future pages up to `--days` and past pages up to seven days back to refresh recent results. Older matches remain available through history; results missed during outages longer than that lookback are not guaranteed to be recovered. `--days` limits future feed events, while history retention limits past events. An explicit `--leagues` filter also applies to the output when history contains other leagues.
 
 ### Architecture
 
@@ -133,8 +146,10 @@ The [GitHub Actions workflow](.github/workflows/publish-ics.yml) runs every 6 ho
 1. Fetches fresh match data from the API (with HTML fallback)
 2. Merges new matches with SQLite history
 3. Generates `feed.ics` and per-league `feed-{league}.ics` files
-4. Updates `index.html` with the latest feeds
-5. Commits changes and deploys to GitHub Pages
+4. Publishes the current `leagues.json` directory and copies `index.html`
+5. Compares generated feeds (ignoring DTSTAMP), directory and page; commits meaningful updates and deploys changed sites to GitHub Pages
+
+Python and dependency-free JavaScript regression tests run before generation.
 
 ### API Configuration
 
@@ -142,6 +157,16 @@ The [GitHub Actions workflow](.github/workflows/publish-ics.yml) runs every 6 ho
 - **Timeout**: 10s per API call
 - **Cache TTL**: 120s (2 minutes) for fresh results
 - **API Key**: Optional `LOL_API_KEYS` environment variable (hardcoded key used as public fallback)
+
+## Development checks
+
+```bash
+python -m pip install -e '.[dev]'
+python -m pytest
+node --test tests/test_frontend.js
+```
+
+Tests use temporary history/feed files and mocked HTTP responses, not the versioned production database. Node is only needed for the dependency-free frontend tests, not for site generation or hosting.
 
 ## Project Structure
 

@@ -6,8 +6,19 @@
   <title>LoL Esports iCal – Spielplan-Feed für deinen Kalender</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { color-scheme: dark; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #0f1115; color: #e5e5e5; line-height: 1.6; }
-    .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr); gap: 1.5rem; align-items: start; }
+    .layout > *, .step > p { min-width: 0; }
+    button, input, select { font: inherit; }
+    select, input[type="search"] { background: #0f1115; color: #e5e5e5; border: 1px solid #555; border-radius: 6px; padding: 0.6rem; }
+    input[type="search"] { width: 100%; margin-bottom: 1rem; }
+    :focus-visible { outline: 2px solid #c8965e; outline-offset: 3px; }
+    .hint { color: #a0a0a0; font-size: 0.9rem; margin-bottom: 1rem; }
+    .hint:empty { display: none; }
+    [hidden] { display: none !important; }
     h1 { font-size: 1.8rem; font-weight: 700; color: #f0e6d2; margin-bottom: 0.5rem; }
     .subtitle { color: #a0a0a0; margin-bottom: 2rem; font-size: 1.05rem; }
     .card { background: #1a1c24; border: 1px solid #2a2d37; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
@@ -28,17 +39,15 @@
     footer { text-align: center; margin-top: 2rem; color: #555; font-size: 0.85rem; }
 
     /* League selector styles */
-    .league-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; margin-bottom: 1rem; }
+    .league-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; margin-bottom: 1rem; max-height: 50vh; overflow-y: auto; padding: 3px; align-content: start; }
     .league-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; background: #0f1115; border: 1px solid #2a2d37; border-radius: 8px; cursor: pointer; transition: all 0.2s; user-select: none; }
     .league-item:hover { border-color: #c8965e; background: #1a1c24; }
-    .league-item.selected { border-color: #c8965e; background: rgba(200,150,94,0.1); }
-    .league-item input[type="checkbox"] { display: none; }
-    .league-check { width: 18px; height: 18px; border: 2px solid #555; border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
-    .league-item.selected .league-check { background: #c8965e; border-color: #c8965e; }
-    .league-check svg { width: 12px; height: 12px; fill: #fff; opacity: 0; transition: opacity 0.2s; }
-    .league-item.selected .league-check svg { opacity: 1; }
-    .league-name { font-size: 0.9rem; font-weight: 600; color: #e5e5e5; }
-    .league-desc { font-size: 0.75rem; color: #888; }
+    .league-item:has(input:checked) { border-color: #c8965e; background: rgba(200,150,94,0.1); }
+    .league-item:focus-within { border-color: #c8965e; }
+    .league-item input[type="checkbox"] { accent-color: #c8965e; width: 18px; height: 18px; flex-shrink: 0; }
+    .league-item > span { min-width: 0; overflow-wrap: anywhere; }
+    .league-name { display: block; font-size: 0.9rem; font-weight: 600; color: #e5e5e5; }
+    .league-desc { display: block; font-size: 0.75rem; color: #a0a0a0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
     .selected-url { background: #0f1115; border: 1px solid #2a2d37; border-radius: 8px; padding: 0.75rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem; }
     .selected-url code { flex: 1; font-size: 0.85rem; color: #e8d5b8; word-break: break-all; }
@@ -48,71 +57,83 @@
 
     .no-selection { color: #888; font-size: 0.9rem; text-align: center; padding: 1rem; }
 
+    @media (max-width: 850px) {
+      .layout { grid-template-columns: 1fr; gap: 0; }
+    }
     @media (max-width: 500px) {
       .container { padding: 2rem 1rem; }
       h1 { font-size: 1.5rem; }
-      .league-grid { grid-template-columns: 1fr; }
+      .league-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .selected-url { flex-wrap: wrap; }
+      .selected-url code { flex-basis: 100%; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>LoL Esports iCal</h1>
-    <p class="subtitle">Automatischer Spielplan-Feed für League of Legends Esports. Wähle deine Ligen und abonniere den Feed direkt in deinem Kalender.</p>
+    <header>
+      <h1>LoL Esports iCal</h1>
+      <select id="language" aria-label="Language / Sprache">
+        <option value="de">Deutsch</option><option value="en">English</option>
+      </select>
+    </header>
+    <p class="subtitle" data-i18n="subtitle">Wähle deine Ligen und abonniere ihre Spielpläne direkt in deinem Kalender.</p>
+    <main class="layout">
 
     <div class="card">
-      <h2>📅 Wähle deine Ligen</h2>
-      <p style="color: #888; margin-bottom: 1rem; font-size: 0.95rem;">Klicke auf die Ligen, die dich interessieren:</p>
-
-      <div class="league-grid" id="leagueGrid">
-        <!-- Generated by JS -->
-      </div>
+      <h2 data-i18n="choose">Wähle deine Ligen</h2>
+      <p class="hint" data-i18n="directory">Die Liga-Auswahl wird mit jedem Spielplan-Update automatisch aktualisiert. Auch Ligen ohne aktuelle Termine sind abonnierbar.</p>
+      <input id="leagueSearch" type="search" data-i18n-placeholder="search" placeholder="Ligen suchen" aria-label="Ligen suchen">
+      <p class="hint" id="leagueStatus" role="status"></p>
+      <div class="league-grid" id="leagueGrid"></div>
+      <noscript>JavaScript wird für die Auswahl benötigt. / JavaScript is required for the selector. <a href="feed.ics">Alle Ligen / All leagues</a></noscript>
 
       <div id="urlSection">
-        <p class="no-selection" id="noSelection">Wähle mindestens eine Liga, um deine Feed-URL zu erhalten.</p>
-        <div id="urlsContainer" style="display: none;">
-          <p style="color: #c8965e; font-size: 0.9rem; margin-bottom: 0.75rem;">Deine Feed-URL(s):</p>
+        <p class="no-selection" id="noSelection" data-i18n="noSelection">Wähle mindestens eine Liga, um deine Feed-URL zu erhalten.</p>
+        <div id="urlsContainer" hidden>
+          <p class="hint" data-i18n="yourUrls">Deine Feed-URL(s):</p>
           <div id="urlList"></div>
-          <p style="color: #888; font-size: 0.85rem; margin-top: 1rem;">💡 Füge die URL(s) in deinen Kalender ein (Apple, Google, Thunderbird, etc.)</p>
         </div>
       </div>
     </div>
 
+    <aside>
     <div class="card">
-      <h2>📱 So bindest du den Feed ein</h2>
-      <p style="color: #888; margin-bottom: 1rem; font-size: 0.95rem;">Füge die Feed-URL(s) zu deinem Kalender hinzu:</p>
+      <h2 data-i18n="instructions">Kalender abonnieren</h2>
+      <p class="hint" data-i18n="subscribeHint">Als Kalender-Abo hinzufügen, nicht als Datei importieren. So erhältst du Updates automatisch.</p>
 
       <div class="step">
         <div class="step-num">1</div>
-        <p><strong>iOS / macOS (Apple Kalender):</strong><br><code>Öffnen → Datei → Neu Kalenderquelle → „URL abonnieren"</code><br>oder direkt hier klicken: <a class="icon-link" href="feed.ics"><svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-8l-2-2z"/></svg> Alle Ligen abonnieren</a></p>
+        <p><strong>Apple Calendar</strong><br><span data-i18n="apple">macOS: Ablage → Neues Kalenderabonnement. iOS: Kalender → Kalender hinzufügen → Kalenderabonnement.</span></p>
       </div>
 
       <div class="step">
         <div class="step-num">2</div>
-        <p><strong>Google Kalender:</strong><br><code>Kalender-Einstellungen → Andere Kalender → „URL einer Kalender-ICal" hinzufügen</code><br>Feed-URL einfügen.</p>
+        <p><strong>Google Calendar</strong><br><span data-i18n="google">Im Browser: Weitere Kalender → + → Per URL. Kopierte Feed-URL einfügen.</span></p>
       </div>
 
       <div class="step">
         <div class="step-num">3</div>
-        <p><strong>Apple Calendar (macOS):</strong><br><code>Account → Neuer abonniertes Kalender</code> und URL eingeben.</p>
+        <p><strong>Outlook</strong><br><span data-i18n="outlook">Kalender hinzufügen → Aus dem Web abonnieren. Feed-URL einfügen.</span></p>
       </div>
 
       <div class="step">
         <div class="step-num">4</div>
-        <p><strong>Thunderbird / Evolution:</strong><br><code>Kalender → Im Netzwerk → ICS/iCal</code></p>
+        <p><strong>Thunderbird / Evolution</strong><br><span data-i18n="thunderbird">Neuer Kalender → Im Netzwerk → iCalendar (ICS). Feed-URL einfügen.</span></p>
       </div>
     </div>
 
     <div class="card">
-      <h2>🎮 Was steckt drin?</h2>
+      <h2 data-i18n="features">Was steckt drin?</h2>
       <ul>
-        <li>Alle Ligen: LCK, LPL, LCS, LEC, Worlds, MSI, VCT, CL, PCL und mehr</li>
-        <li>Aktualisierung alle 6 Stunden automatisch</li>
-        <li>30 Tage im Voraus geplant</li>
-        <li>Turniername, Liga, Teams und Match-Times (MEZ)</li>
-        <li>Wähle nur die Ligen, die du möchtest!</li>
+        <li data-i18n="updates">Automatische Aktualisierung alle 6 Stunden</li>
+        <li data-i18n="window">Bis zu 30 Tage im Voraus, mit vergangenen Ergebnissen</li>
+        <li data-i18n="timezone">Spielzeiten in der Zeitzone deines Kalenders</li>
       </ul>
+      <a class="icon-link" href="feed.ics" data-i18n="all">Alle Ligen (komplett)</a>
     </div>
+    </aside>
+    </main>
 
     <footer>
       <a class="icon-link" href="https://github.com/Dytroxx/lolesport_ical_scraper" style="margin-bottom: 0.5rem;"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0012 .3"/></svg> GitHub</a><br>
@@ -121,106 +142,175 @@
   </div>
 
   <script>
-    const BASE_URL = window.location.origin + window.location.pathname.replace('index.html', '');
-    const LEAGUES = [
-      { slug: 'lec', name: 'LEC', desc: 'Europa' },
-      { slug: 'lck', name: 'LCK', desc: 'Korea' },
-      { slug: 'lpl', name: 'LPL', desc: 'China' },
-      { slug: 'lcs', name: 'LCS', desc: 'Nordamerika' },
-      { slug: 'worlds', name: 'Worlds', desc: 'Weltmeisterschaft' },
-      { slug: 'msi', name: 'MSI', desc: 'Mid-Season' },
-      { slug: 'emea_masters', name: 'EM Masters', desc: 'Regional' },
-      { slug: 'first_stand', name: 'First Stand', desc: 'Turnier' },
-    ];
+    const BASE_URL = new URL('./', window.location.href);
+    const TEXT = {
+      de: {
+        title: 'LoL Esports iCal – Spielpläne für deinen Kalender',
+        subtitle: 'Wähle deine Ligen und abonniere ihre Spielpläne direkt in deinem Kalender.',
+        choose: 'Wähle deine Ligen',
+        directory: 'Die Liga-Auswahl wird mit jedem Spielplan-Update automatisch aktualisiert. Auch Ligen ohne aktuelle Termine sind abonnierbar.',
+        search: 'Ligen oder Regionen suchen', loading: 'Ligen werden geladen …',
+        loadError: 'Liga-Auswahl nicht verfügbar. Den Gesamtfeed kannst du weiterhin unten abonnieren.',
+        noResults: 'Keine passenden Ligen gefunden.',
+        noSelection: 'Wähle mindestens eine Liga, um deine Feed-URL zu erhalten.',
+        yourUrls: 'Deine Feed-URL(s):', all: 'Alle Ligen (komplett)',
+        copy: 'Kopieren', copied: 'Kopiert!', copyError: 'Bitte die URL manuell kopieren.',
+        instructions: 'Kalender abonnieren',
+        subscribeHint: 'Als Kalender-Abo hinzufügen, nicht als Datei importieren. So erhältst du Updates automatisch.',
+        apple: 'macOS: Ablage → Neues Kalenderabonnement. iOS: Kalender → Kalender hinzufügen → Kalenderabonnement.',
+        google: 'Im Browser: Weitere Kalender → + → Per URL. Kopierte Feed-URL einfügen.',
+        outlook: 'Kalender hinzufügen → Aus dem Web abonnieren. Feed-URL einfügen.',
+        thunderbird: 'Neuer Kalender → Im Netzwerk → iCalendar (ICS). Feed-URL einfügen.',
+        features: 'Was steckt drin?', updates: 'Automatische Aktualisierung alle 6 Stunden',
+        window: 'Bis zu 30 Tage im Voraus, mit vergangenen Ergebnissen',
+        timezone: 'Spielzeiten in der Zeitzone deines Kalenders'
+      },
+      en: {
+        title: 'LoL Esports iCal – Schedules for your calendar',
+        subtitle: 'Choose your leagues and subscribe to their schedules in your calendar.',
+        choose: 'Choose your leagues',
+        directory: 'The league directory refreshes with every schedule update. You can also subscribe to leagues with no current matches.',
+        search: 'Search leagues or regions', loading: 'Loading leagues …',
+        loadError: 'League selection unavailable. You can still subscribe to the combined feed below.',
+        noResults: 'No matching leagues found.',
+        noSelection: 'Choose at least one league to get your feed URL.',
+        yourUrls: 'Your feed URL(s):', all: 'All leagues (combined)',
+        copy: 'Copy', copied: 'Copied!', copyError: 'Please copy the URL manually.',
+        instructions: 'Subscribe to a calendar',
+        subscribeHint: 'Add a calendar subscription rather than importing a file to receive updates automatically.',
+        apple: 'macOS: File → New Calendar Subscription. iOS: Calendar → Add Calendar → Add Subscription Calendar.',
+        google: 'In your browser: Other calendars → + → From URL. Paste the feed URL.',
+        outlook: 'Add calendar → Subscribe from web. Paste the feed URL.',
+        thunderbird: 'New calendar → On the network → iCalendar (ICS). Paste the feed URL.',
+        features: 'What’s included?', updates: 'Automatic updates every 6 hours',
+        window: 'Up to 30 days ahead, including past results',
+        timezone: 'Match times in your calendar’s time zone'
+      }
+    };
+    let language = navigator.language?.startsWith('de') ? 'de' : 'en';
+    try { language = localStorage.getItem('language') || language; } catch {}
+    if (!TEXT[language]) language = 'en';
+    let leagues = [];
+    let loadState = 'loading';
+    const selected = new Set();
+    const t = key => TEXT[language][key];
+    const grid = document.getElementById('leagueGrid');
+    const search = document.getElementById('leagueSearch');
 
-    let selected = new Set();
+    function applyLanguage() {
+      document.documentElement.lang = language;
+      document.title = t('title');
+      document.getElementById('language').value = language;
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        element.textContent = t(element.dataset.i18n);
+      });
+      search.placeholder = t('search');
+      search.setAttribute('aria-label', t('search'));
+      renderGrid();
+      updateURLs();
+    }
 
     function renderGrid() {
-      const grid = document.getElementById('leagueGrid');
-      grid.innerHTML = LEAGUES.map(l => `
-        <label class="league-item" data-league="${l.slug}">
-          <input type="checkbox" ${selected.has(l.slug) ? 'checked' : ''}>
-          <div class="league-check">
-            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          </div>
-          <div>
-            <div class="league-name">${l.name}</div>
-            <div class="league-desc">${l.desc}</div>
-          </div>
-        </label>
-      `).join('');
-
-      // Event listeners
-      grid.querySelectorAll('.league-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-          const slug = item.dataset.league;
-          if (e.target.tagName === 'INPUT' || e.target.closest('.league-check') || e.target.closest('.league-name')) {
-            if (selected.has(slug)) selected.delete(slug);
-            else selected.add(slug);
-          }
-          renderGrid();
-          updateURLs();
-        });
-      });
+      const query = search.value.trim().toLocaleLowerCase();
+      const visible = leagues.filter(league =>
+        `${league.name} ${league.slug} ${league.region || ''}`.toLocaleLowerCase().includes(query)
+      );
+      grid.replaceChildren();
+      for (const league of visible) {
+        const label = document.createElement('label');
+        label.className = 'league-item';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = league.slug;
+        checkbox.checked = selected.has(league.slug);
+        const text = document.createElement('span');
+        const name = document.createElement('span');
+        name.className = 'league-name';
+        name.textContent = league.name;
+        const region = document.createElement('span');
+        region.className = 'league-desc';
+        region.textContent = league.region || '';
+        region.title = league.region || '';
+        text.append(name, region);
+        label.append(checkbox, text);
+        grid.append(label);
+      }
+      document.getElementById('leagueStatus').textContent =
+        loadState !== 'ready' ? t(loadState) : (visible.length ? '' : t('noResults'));
     }
 
     function updateURLs() {
-      const noSel = document.getElementById('noSelection');
+      document.getElementById('noSelection').hidden = selected.size > 0;
+      document.getElementById('urlsContainer').hidden = selected.size === 0;
       const container = document.getElementById('urlList');
-      const urlsDiv = document.getElementById('urlsContainer');
-
-      if (selected.size === 0) {
-        noSel.style.display = 'block';
-        urlsDiv.style.display = 'none';
-        return;
-      }
-
-      noSel.style.display = 'none';
-      urlsDiv.style.display = 'block';
-
-      const slugs = Array.from(selected).sort();
-      container.innerHTML = '';
-
-      // All leagues combined
-      if (slugs.length === LEAGUES.length) {
-        // Show direct link to full feed
-        const allUrl = `${BASE_URL}feed.ics`;
-        container.innerHTML += createURLRow(allUrl, 'Alle Ligen (komplett)');
+      container.replaceChildren();
+      if (!selected.size) return;
+      if (selected.size === leagues.length) {
+        container.append(createURLRow('feed.ics', t('all')));
       } else {
-        // Show per-league URLs
-        slugs.forEach(slug => {
-          const league = LEAGUES.find(l => l.slug === slug);
-          const url = `${BASE_URL}feed-${slug}.ics`;
-          container.innerHTML += createURLRow(url, league.name + ' ' + league.desc);
-        });
+        for (const league of leagues.filter(item => selected.has(item.slug))) {
+          container.append(createURLRow(`feed-${league.slug}.ics`, league.name));
+        }
       }
     }
 
-    function createURLRow(url, label) {
-      const id = 'url-' + Math.random().toString(36).substr(2, 9);
-      return `
-        <div class="selected-url">
-          <span style="color: #c8965e; font-size: 0.85rem; font-weight: 600; min-width: 90px;">${label}</span>
-          <code>${url}</code>
-          <button class="copy-btn" data-url="${url}" onclick="copyToClipboard(this)">Kopieren</button>
-        </div>
-      `;
-    }
-
-    function copyToClipboard(btn) {
-      const url = btn.dataset.url;
-      navigator.clipboard.writeText(url).then(() => {
-        btn.textContent = '✓ Kopiert!';
-        btn.classList.add('copied');
-        setTimeout(() => {
-          btn.textContent = 'Kopieren';
-          btn.classList.remove('copied');
-        }, 2000);
+    function createURLRow(path, name) {
+      const url = new URL(path, BASE_URL).href;
+      const row = document.createElement('div');
+      row.className = 'selected-url';
+      const label = document.createElement('span');
+      label.textContent = name;
+      const code = document.createElement('code');
+      code.textContent = url;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'copy-btn';
+      button.textContent = t('copy');
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(url);
+          button.textContent = t('copied');
+          setTimeout(() => { button.textContent = t('copy'); }, 2000);
+        } catch {
+          button.textContent = t('copyError');
+        }
       });
+      row.append(label, code, button);
+      return row;
     }
 
-    // Init
-    renderGrid();
+    grid.addEventListener('change', event => {
+      const input = event.target;
+      if (input.type !== 'checkbox') return;
+      if (input.checked) selected.add(input.value);
+      else selected.delete(input.value);
+      updateURLs();
+    });
+    search.addEventListener('input', renderGrid);
+    document.getElementById('language').addEventListener('change', event => {
+      language = event.target.value;
+      try { localStorage.setItem('language', language); } catch {}
+      applyLanguage();
+    });
+
+    async function loadLeagues() {
+      try {
+        const response = await fetch(new URL('leagues.json', BASE_URL));
+        if (!response.ok) throw new Error('League directory unavailable');
+        const directory = await response.json();
+        if (!Array.isArray(directory) || !directory.length) throw new Error('Empty directory');
+        leagues = directory.filter(league =>
+          !league.hidden && /^[a-z0-9][a-z0-9_-]*$/.test(league.slug) && typeof league.name === 'string'
+        );
+        if (!leagues.length) throw new Error('Invalid directory');
+        loadState = 'ready';
+      } catch {
+        loadState = 'loadError';
+      }
+      renderGrid();
+    }
+    applyLanguage();
+    loadLeagues();
   </script>
 </body>
 </html>

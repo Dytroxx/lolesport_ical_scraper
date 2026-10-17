@@ -2,15 +2,17 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
+from dataclasses import replace
 import sqlite3
+import httpx
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 from .ical import render_ical
 from .models import Match
-from .scrape import LEAGUE_SLUGS_DEFAULT, ScrapeConfig, scrape_matches
-from .api import ApiConfig, api_fetch_matches
+from .api import ApiConfig, api_fetch_leagues, api_fetch_matches
 from .util import DiskCache, Fetcher, RateLimiter, RetryConfig
 from zoneinfo import ZoneInfo
 
@@ -74,24 +76,26 @@ class HistoryStore:
         rows = cursor.fetchall()
         result: Dict[str, Any] = {"matches": []}
         for row in rows:
-            result["matches"].append({
-                "league_slug": row[0],
-                "league_name": row[1],
-                "match_id": row[2],
-                "match_start_utc": row[3],
-                "best_of": row[4],
-                "team1": row[5],
-                "team2": row[6],
-                "team1_code": row[7],
-                "team2_code": row[8],
-                "stage": row[9],
-                "match_url": row[10],
-                "stable_uid": row[11],
-                "state": row[12],
-                "team1_score": row[13],
-                "team2_score": row[14],
-                "winner": row[15],
-            })
+            result["matches"].append(
+                {
+                    "league_slug": row[0],
+                    "league_name": row[1],
+                    "match_id": row[2],
+                    "match_start_utc": row[3],
+                    "best_of": row[4],
+                    "team1": row[5],
+                    "team2": row[6],
+                    "team1_code": row[7],
+                    "team2_code": row[8],
+                    "stage": row[9],
+                    "match_url": row[10],
+                    "stable_uid": row[11],
+                    "state": row[12],
+                    "team1_score": row[13],
+                    "team2_score": row[14],
+                    "winner": row[15],
+                }
+            )
         return result
 
     def save(self, matches_dicts: List[Dict[str, Any]], retention_days: int | None = None) -> None:
@@ -108,7 +112,7 @@ class HistoryStore:
                 filtered.append(m)
                 continue
             try:
-                start_utc = datetime.fromisoformat(start_utc_str)
+                start_utc = datetime.fromisoformat(str(start_utc_str).replace("Z", "+00:00"))
                 if start_utc.tzinfo is None:
                     start_utc = start_utc.replace(tzinfo=timezone.utc)
             except (ValueError, TypeError):
@@ -119,11 +123,19 @@ class HistoryStore:
             else:
                 pruned += 1
 
+        existing = {m["stable_uid"]: m for m in self.load()["matches"]}
         self.conn.execute("BEGIN")
         try:
+            self.conn.execute(
+                "DELETE FROM matches WHERE julianday(match_start_utc) < julianday(?)",
+                (cutoff.isoformat(),),
+            )
             # UPSET neu/aktualisierte Einträge
             for m in filtered:
-                self.conn.execute("""
+                if existing.get(m.get("stable_uid")) == m:
+                    continue
+                self.conn.execute(
+                    """
                     INSERT INTO matches (
                         league_slug, league_name, match_id, match_start_utc, best_of,
                         team1, team2, team1_code, team2_code, stage, match_url,
@@ -145,24 +157,26 @@ class HistoryStore:
                         team1_score = excluded.team1_score,
                         team2_score = excluded.team2_score,
                         winner = excluded.winner
-                """, (
-                    m.get("league_slug"),
-                    m.get("league_name"),
-                    m.get("match_id"),
-                    m.get("match_start_utc"),
-                    m.get("best_of"),
-                    m.get("team1"),
-                    m.get("team2"),
-                    m.get("team1_code"),
-                    m.get("team2_code"),
-                    m.get("stage"),
-                    m.get("match_url"),
-                    m.get("stable_uid"),
-                    m.get("state"),
-                    m.get("team1_score"),
-                    m.get("team2_score"),
-                    m.get("winner"),
-                ))
+                """,
+                    (
+                        m.get("league_slug"),
+                        m.get("league_name"),
+                        m.get("match_id"),
+                        m.get("match_start_utc"),
+                        m.get("best_of"),
+                        m.get("team1"),
+                        m.get("team2"),
+                        m.get("team1_code"),
+                        m.get("team2_code"),
+                        m.get("stage"),
+                        m.get("match_url"),
+                        m.get("stable_uid"),
+                        m.get("state"),
+                        m.get("team1_score"),
+                        m.get("team2_score"),
+                        m.get("winner"),
+                    ),
+                )
 
             self.conn.commit()
             if pruned:
@@ -193,7 +207,9 @@ def migrate_json_to_sqlite(json_path: Path, db_path: str) -> HistoryStore:
         history_data = json.loads(json_path.read_text(encoding="utf-8"))
         store = HistoryStore(db_path)
         store.save(history_data.get("matches", []))
-        print(f"[migration] Converted {len(history_data.get('matches', []))} matches from JSON to SQLite")
+        print(
+            f"[migration] Converted {len(history_data.get('matches', []))} matches from JSON to SQLite"
+        )
         json_path.rename(json_path.with_suffix(".json.bak"))
         return store
     return HistoryStore(db_path)
@@ -220,13 +236,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument(
         "--leagues",
-        default=",".join(LEAGUE_SLUGS_DEFAULT),
+        default="",
         help="Comma-separated league slugs (default: all supported)",
     )
     p.add_argument(
         "--cache-dir", default=str(Path(".cache") / "lolesports_ical"), help="Disk cache dir"
     )
-    p.add_argument("--cache-ttl", type=int, default=60 * 30, help="Cache TTL seconds (default: 1800)")
+    p.add_argument("--cache-ttl", type=int, default=120, help="Cache TTL seconds (default: 120)")
+    p.add_argument("--league-index", help="Write the current league directory as JSON")
     p.add_argument("--history", default=None, help="Path to JSON file for persisting match history")
     p.add_argument(
         "--history-retention-days",
@@ -262,7 +279,7 @@ def match_to_dict(m: Match) -> Dict[str, Any]:
 def dict_to_match(d: Dict[str, Any], tz_name: str) -> Match:
     """Convert a dict back to a Match object."""
     tz = ZoneInfo(tz_name)
-    start_utc = datetime.fromisoformat(d["match_start_utc"])
+    start_utc = datetime.fromisoformat(d["match_start_utc"].replace("Z", "+00:00"))
     if start_utc.tzinfo is None:
         start_utc = start_utc.replace(tzinfo=timezone.utc)
     start_local = start_utc.astimezone(tz)
@@ -314,8 +331,9 @@ def canonical_key_for_dict(d: Dict[str, Any]) -> Tuple[str, str, str]:
 
 
 def canonical_key_for_match(m: Match) -> Tuple[str, str, str]:
-    if m.match_id:
-        return ("id", m.league_slug, str(m.match_id))
+    match_id = m.match_id or extract_match_id_from_url(m.match_url)
+    if match_id:
+        return ("id", m.league_slug, str(match_id))
     return (
         "fallback",
         m.league_slug,
@@ -371,7 +389,7 @@ def prune_history(
         if not start_utc_str:
             continue
         try:
-            start_utc = datetime.fromisoformat(start_utc_str)
+            start_utc = datetime.fromisoformat(str(start_utc_str).replace("Z", "+00:00"))
             if start_utc.tzinfo is None:
                 start_utc = start_utc.replace(tzinfo=timezone.utc)
         except (ValueError, TypeError):
@@ -455,23 +473,74 @@ def merge_with_history(
     all_matches_dicts = prune_history(all_matches_dicts, retention_days)
 
     history_path.parent.mkdir(parents=True, exist_ok=True)
-    history_path.write_text(
-        json.dumps({"matches": all_matches_dicts}, indent=2), encoding="utf-8"
-    )
+    history_path.write_text(json.dumps({"matches": all_matches_dicts}, indent=2), encoding="utf-8")
 
     return list(merged_by_canonical.values())
 
 
+def merge_matches(
+    fresh_matches: List[Match],
+    history: List[Dict[str, Any]],
+    tz_name: str,
+) -> List[Match]:
+    historical: Dict[Tuple[str, str, str], Dict[str, Any]] = {}
+    for entry in history:
+        key = canonical_key_for_dict(entry)
+        previous = historical.get(key)
+        if previous is None or history_rank(entry) > history_rank(previous):
+            historical[key] = entry
+
+    merged: Dict[Tuple[str, str, str], Match] = {}
+    for match in fresh_matches:
+        key = canonical_key_for_match(match)
+        old = historical.get(key)
+        if old:
+            if old.get("stable_uid"):
+                match = replace(match, stable_uid=old["stable_uid"])
+            if (
+                old.get("state") == "completed"
+                and old.get("team1_score") is not None
+                and old.get("team2_score") is not None
+                and (
+                    match.state != "completed"
+                    or match.team1_score is None
+                    or match.team2_score is None
+                )
+            ):
+                match = replace(
+                    match,
+                    state="completed",
+                    team1_score=old["team1_score"],
+                    team2_score=old["team2_score"],
+                    winner=old.get("winner"),
+                )
+        merged[key] = match
+
+    for key, entry in historical.items():
+        if key not in merged:
+            try:
+                merged[key] = dict_to_match(entry, tz_name)
+            except (KeyError, TypeError, ValueError):
+                logging.getLogger(__name__).warning("Skipping malformed history entry")
+    return sorted(merged.values(), key=lambda match: match.match_start_utc)
+
+
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.days <= 0 or args.history_retention_days <= 0 or args.cache_ttl < 0:
+        parser.error(
+            "days and history-retention-days must be positive; cache-ttl must be nonnegative"
+        )
+    ZoneInfo(args.tz)
 
     league_slugs = [s.strip() for s in str(args.leagues).split(",") if s.strip()]
 
     cache = DiskCache(Path(args.cache_dir), ttl_s=int(args.cache_ttl))
-    
+
     # API-Config mit optimierten Werten
-    api_config = ApiConfig(tz=args.tz)
-    
+    api_config = ApiConfig(tz=args.tz, days=args.days)
+
     # Rate-Limiter und Fetcher mit API-Konfiguration synchronisieren
     rate_limiter = RateLimiter(api_config.rate_limit_s)
     retry = RetryConfig()
@@ -482,12 +551,20 @@ def main(argv: list[str] | None = None) -> int:
         timeout_s=api_config.timeout_s,
     )
 
+    leagues = None
     try:
         matches = api_fetch_matches(
             league_slugs=league_slugs,
             fetcher=fetcher,
             config=api_config,
         )
+        if args.league_index:
+            try:
+                leagues = api_fetch_leagues(fetcher)
+            except (httpx.HTTPError, KeyError, TypeError, ValueError):
+                logging.getLogger(__name__).warning(
+                    "League directory unavailable; keeping the previous index if present"
+                )
     finally:
         fetcher.close()
 
@@ -498,78 +575,59 @@ def main(argv: list[str] | None = None) -> int:
     if args.history:
         history_path = Path(args.history)
 
-        # Auto-migrate JSON to SQLite (look for history.json next to history file)
+        # Migrate the requested JSON history or the matching JSON beside the database.
         db_path = str(history_path.with_suffix(".db"))
-        migration_src = history_path.parent / "history.json"
+        migration_src = (
+            history_path if history_path.suffix == ".json" else history_path.with_suffix(".json")
+        )
         if migration_src.exists():
             store = migrate_json_to_sqlite(migration_src, db_path)
         else:
             store = HistoryStore(db_path)
 
-        # Load existing history from SQLite
-        history_data = store.load()
-        print(f"[history] Loaded {len(history_data.get('matches', []))} matches from SQLite")
+        with store:
+            history_data = store.load()
+            print(f"[history] Loaded {len(history_data['matches'])} matches from SQLite")
+            final_matches = merge_matches(matches, history_data["matches"], args.tz)
+            store.save(
+                [match_to_dict(m) for m in final_matches],
+                retention_days=args.history_retention_days,
+            )
 
-        # Merge by canonical key so the same match can't exist twice
-        merged_by_canonical: Dict[Tuple[str, str, str], Match] = {}
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(days=args.history_retention_days)
+    until = now + timedelta(days=args.days)
+    final_matches = [
+        match
+        for match in final_matches
+        if cutoff <= match.match_start_utc <= until
+        and (not league_slugs or match.league_slug in league_slugs)
+    ]
 
-        # Fresh matches always take precedence, BUT preserve results from history
-        for m in matches:
-            key = canonical_key_for_match(m)
-            # Preserve previously-seen UID for the same match
-            hist_entry = None
-            if m.match_id:
-                hist_entry = next(
-                    (d for d in history_data.get("matches", []) if d.get("match_id") == m.match_id),
-                    None,
+    if args.league_index:
+        index_path = Path(args.league_index)
+        if leagues is not None or not index_path.exists():
+            if leagues is None:
+                leagues = list(
+                    {
+                        m.league_slug: {"slug": m.league_slug, "name": m.league_name, "region": ""}
+                        for m in final_matches
+                    }.values()
                 )
-            
-            # Prefer historical result: if history has a completed match with scores,
-            # use those scores even if the API still shows unstarted/inProgress.
-            # This is important because the API only returns future events (newer direction);
-            # completed events are on the older side and won't appear in the API fetch.
-            if hist_entry:
-                result_match = with_uid(m, hist_entry["stable_uid"])
-                # Use historical result data if available and fresh match doesn't have it
-                if (hist_entry.get("state") == "completed" or
-                    (hist_entry.get("team1_score") is not None or hist_entry.get("team2_score") is not None)):
-                    if m.team1_score is None and hist_entry.get("team1_score") is not None:
-                        result_match = Match(
-                            **{k: getattr(result_match, k) for k in result_match.__dataclass_fields__.keys()},
-                            **{
-                                "state": hist_entry.get("state", m.state),
-                                "team1_score": hist_entry["team1_score"],
-                                "team2_score": hist_entry["team2_score"],
-                                "winner": hist_entry.get("winner"),
-                            },
-                        )
-                merged_by_canonical[key] = result_match
-            else:
-                merged_by_canonical[key] = m
-
-        # Add historical matches that aren't in fresh data
-        for hist in history_data.get("matches", []):
-            key = canonical_key_for_dict(hist)
-            if key not in merged_by_canonical:
-                try:
-                    matched_match = dict_to_match(hist, args.tz)
-                    merged_by_canonical[key] = matched_match
-                except Exception:
-                    pass  # Skip malformed entries
-
-        # ---- Use merged matches for BOTH history AND the output feed ----
-        merged_matches = list(merged_by_canonical.values())
-        merged_matches.sort(key=lambda x: x.match_start_utc)
-        final_matches = merged_matches
-
-        # Save back to SQLite
-        all_matches_dicts = [match_to_dict(m) for m in merged_matches]
-        store.save(all_matches_dicts, retention_days=args.history_retention_days)
+            if league_slugs:
+                leagues = [league for league in leagues if league["slug"] in league_slugs]
+            index_path.parent.mkdir(parents=True, exist_ok=True)
+            index_path.write_text(
+                json.dumps(leagues, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+            )
 
     ics = render_ical(final_matches)
     out_path = Path(args.out)
-    out_path.write_text(ics, encoding="utf-8")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_bytes(ics.encode("utf-8"))
 
     leagues_found = {m.league_slug for m in final_matches}
-    print(f"Fetched {len(final_matches)} matches across {len(leagues_found)} leagues; wrote {out_path}")
+    print(
+        f"Fetched {len(final_matches)} matches across {len(leagues_found)} leagues; wrote {out_path}"
+    )
     return 0
