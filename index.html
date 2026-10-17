@@ -41,13 +41,13 @@
 
     /* League selector styles */
     .league-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; margin-bottom: 1rem; max-height: 50vh; overflow-y: auto; padding: 3px; align-content: start; }
-    .league-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; background: #0f1115; border: 1px solid #2a2d37; border-radius: 8px; cursor: pointer; transition: all 0.2s; user-select: none; }
+    .league-item { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; min-height: 160px; padding: 1rem 0.75rem; text-align: center; background: #0f1115; border: 1px solid #2a2d37; border-radius: 8px; cursor: pointer; transition: border-color 0.2s, background 0.2s; user-select: none; }
     .league-item:hover { border-color: #c8965e; background: #1a1c24; }
-    .league-item:has(input:checked) { border-color: #c8965e; background: rgba(200,150,94,0.1); }
-    .league-item:focus-within { border-color: #c8965e; }
-    .league-item input[type="checkbox"] { accent-color: #c8965e; width: 18px; height: 18px; flex-shrink: 0; }
-    .league-item > span { min-width: 0; overflow-wrap: anywhere; }
-    .league-logo { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
+    .league-item:has(input:checked) { border-color: #c8965e; background: rgba(200,150,94,0.15); box-shadow: inset 0 0 0 1px #c8965e; }
+    .league-item:has(input:focus-visible) { outline: 2px solid #c8965e; outline-offset: 1px; }
+    .league-item input[type="checkbox"] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .league-item > span { width: 100%; min-width: 0; overflow-wrap: anywhere; }
+    .league-logo { width: 72px; height: 72px; object-fit: contain; flex-shrink: 0; }
     .league-name { display: block; font-size: 0.9rem; font-weight: 600; color: #e5e5e5; }
     .league-desc { display: block; font-size: 0.75rem; color: #a0a0a0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
@@ -69,9 +69,6 @@
       .filters { grid-template-columns: 1fr; }
       .selected-url { flex-wrap: wrap; }
       .selected-url code { flex-basis: 100%; }
-    }
-    @media (max-width: 380px) {
-      .league-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -266,8 +263,8 @@
           icon.className = 'league-logo';
           icon.src = league.image;
           icon.alt = '';
-          icon.width = 24;
-          icon.height = 24;
+          icon.width = 72;
+          icon.height = 72;
           icon.loading = 'lazy';
           icon.decoding = 'async';
           icon.referrerPolicy = 'no-referrer';

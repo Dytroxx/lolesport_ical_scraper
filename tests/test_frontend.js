@@ -104,8 +104,8 @@ test('renders lazy decorative logos and handles broken images without losing sel
   assert.equal(icon.loading, 'lazy');
   assert.equal(icon.decoding, 'async');
   assert.equal(icon.referrerPolicy, 'no-referrer');
-  assert.equal(icon.width, 24);
-  assert.equal(icon.height, 24);
+  assert.equal(icon.width, 72);
+  assert.equal(icon.height, 72);
   assert.equal(text.children[0].textContent, 'LEC');
   icon.dispatch('error');
   assert.equal(icon.hidden, true);
@@ -182,6 +182,29 @@ test('restores the saved language preference', async () => {
   const view = await page({ savedLanguage: 'en' });
   assert.equal(view.document.documentElement.lang, 'en');
   assert.equal(view.elements.get('leagueSearch').placeholder, 'Search leagues or regions');
+});
+
+test('multiple tiles can be selected independently and deselected', async () => {
+  const view = await page({ directory: [
+    { slug: 'lec', name: 'LEC' },
+    { slug: 'lck', name: 'LCK' },
+    { slug: 'lpl', name: 'LPL' },
+  ] });
+  const grid = view.elements.get('leagueGrid');
+  const first = grid.children[0].children[0];
+  const second = grid.children[1].children[0];
+  for (const input of [first, second]) {
+    input.checked = true;
+    grid.dispatch('change', input);
+  }
+  const urls = view.elements.get('urlList');
+  assert.equal(urls.children.length, 2);
+  assert.match(urls.children[0].children[1].textContent, /feed-lec\.ics$/);
+  assert.match(urls.children[1].children[1].textContent, /feed-lck\.ics$/);
+  first.checked = false;
+  grid.dispatch('change', first);
+  assert.equal(urls.children.length, 1);
+  assert.match(urls.children[0].children[1].textContent, /feed-lck\.ics$/);
 });
 
 test('selecting all leagues yields the combined feed', async () => {
