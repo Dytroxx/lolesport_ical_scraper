@@ -14,7 +14,8 @@
     .layout > *, .step > p { min-width: 0; }
     button, input, select { font: inherit; }
     select, input[type="search"] { background: #0f1115; color: #e5e5e5; border: 1px solid #555; border-radius: 6px; padding: 0.6rem; }
-    input[type="search"] { width: 100%; margin-bottom: 1rem; }
+    .filters { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 210px); gap: 0.5rem; margin-bottom: 1rem; }
+    .filters input, .filters select { width: 100%; min-width: 0; }
     :focus-visible { outline: 2px solid #c8965e; outline-offset: 3px; }
     .hint { color: #a0a0a0; font-size: 0.9rem; margin-bottom: 1rem; }
     .hint:empty { display: none; }
@@ -46,6 +47,7 @@
     .league-item:focus-within { border-color: #c8965e; }
     .league-item input[type="checkbox"] { accent-color: #c8965e; width: 18px; height: 18px; flex-shrink: 0; }
     .league-item > span { min-width: 0; overflow-wrap: anywhere; }
+    .league-logo { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
     .league-name { display: block; font-size: 0.9rem; font-weight: 600; color: #e5e5e5; }
     .league-desc { display: block; font-size: 0.75rem; color: #a0a0a0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
@@ -64,8 +66,12 @@
       .container { padding: 2rem 1rem; }
       h1 { font-size: 1.5rem; }
       .league-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .filters { grid-template-columns: 1fr; }
       .selected-url { flex-wrap: wrap; }
       .selected-url code { flex-basis: 100%; }
+    }
+    @media (max-width: 380px) {
+      .league-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -83,7 +89,10 @@
     <div class="card">
       <h2 data-i18n="choose">Wähle deine Ligen</h2>
       <p class="hint" data-i18n="directory">Die Liga-Auswahl wird mit jedem Spielplan-Update automatisch aktualisiert. Auch Ligen ohne aktuelle Termine sind abonnierbar.</p>
-      <input id="leagueSearch" type="search" data-i18n-placeholder="search" placeholder="Ligen suchen" aria-label="Ligen suchen">
+      <div class="filters">
+        <input id="leagueSearch" type="search" data-i18n-placeholder="search" placeholder="Ligen suchen" aria-label="Ligen suchen">
+        <select id="regionFilter" aria-label="Region"><option value="">Alle Regionen</option></select>
+      </div>
       <p class="hint" id="leagueStatus" role="status"></p>
       <div class="league-grid" id="leagueGrid"></div>
       <noscript>JavaScript wird für die Auswahl benötigt. / JavaScript is required for the selector. <a href="feed.ics">Alle Ligen / All leagues</a></noscript>
@@ -150,6 +159,7 @@
         choose: 'Wähle deine Ligen',
         directory: 'Die Liga-Auswahl wird mit jedem Spielplan-Update automatisch aktualisiert. Auch Ligen ohne aktuelle Termine sind abonnierbar.',
         search: 'Ligen oder Regionen suchen', loading: 'Ligen werden geladen …',
+        region: 'Region', allRegions: 'Alle Regionen',
         loadError: 'Liga-Auswahl nicht verfügbar. Den Gesamtfeed kannst du weiterhin unten abonnieren.',
         noResults: 'Keine passenden Ligen gefunden.',
         noSelection: 'Wähle mindestens eine Liga, um deine Feed-URL zu erhalten.',
@@ -171,6 +181,7 @@
         choose: 'Choose your leagues',
         directory: 'The league directory refreshes with every schedule update. You can also subscribe to leagues with no current matches.',
         search: 'Search leagues or regions', loading: 'Loading leagues …',
+        region: 'Region', allRegions: 'All regions',
         loadError: 'League selection unavailable. You can still subscribe to the combined feed below.',
         noResults: 'No matching leagues found.',
         noSelection: 'Choose at least one league to get your feed URL.',
@@ -196,6 +207,7 @@
     const t = key => TEXT[language][key];
     const grid = document.getElementById('leagueGrid');
     const search = document.getElementById('leagueSearch');
+    const regionFilter = document.getElementById('regionFilter');
 
     function applyLanguage() {
       document.documentElement.lang = language;
@@ -206,13 +218,29 @@
       });
       search.placeholder = t('search');
       search.setAttribute('aria-label', t('search'));
+      renderRegions();
       renderGrid();
       updateURLs();
+    }
+
+    function renderRegions() {
+      const current = regionFilter.value;
+      const regions = [...new Set(leagues.map(league => league.region).filter(Boolean))].sort();
+      regionFilter.replaceChildren();
+      for (const value of ['', ...regions]) {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value || t('allRegions');
+        regionFilter.append(option);
+      }
+      regionFilter.value = regions.includes(current) ? current : '';
+      regionFilter.setAttribute('aria-label', t('region'));
     }
 
     function renderGrid() {
       const query = search.value.trim().toLocaleLowerCase();
       const visible = leagues.filter(league =>
+        (!regionFilter.value || league.region === regionFilter.value) &&
         `${league.name} ${league.slug} ${league.region || ''}`.toLocaleLowerCase().includes(query)
       );
       grid.replaceChildren();
@@ -232,7 +260,21 @@
         region.textContent = league.region || '';
         region.title = league.region || '';
         text.append(name, region);
-        label.append(checkbox, text);
+        label.append(checkbox);
+        if (typeof league.image === 'string' && league.image.startsWith('https://')) {
+          const icon = document.createElement('img');
+          icon.className = 'league-logo';
+          icon.src = league.image;
+          icon.alt = '';
+          icon.width = 24;
+          icon.height = 24;
+          icon.loading = 'lazy';
+          icon.decoding = 'async';
+          icon.referrerPolicy = 'no-referrer';
+          icon.addEventListener('error', () => { icon.hidden = true; });
+          label.append(icon);
+        }
+        label.append(text);
         grid.append(label);
       }
       document.getElementById('leagueStatus').textContent =
@@ -287,6 +329,7 @@
       updateURLs();
     });
     search.addEventListener('input', renderGrid);
+    regionFilter.addEventListener('change', renderGrid);
     document.getElementById('language').addEventListener('change', event => {
       language = event.target.value;
       try { localStorage.setItem('language', language); } catch {}
@@ -307,6 +350,7 @@
       } catch {
         loadState = 'loadError';
       }
+      renderRegions();
       renderGrid();
     }
     applyLanguage();

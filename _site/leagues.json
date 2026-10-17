@@ -2,265 +2,316 @@
   {
     "slug": "americas_cup",
     "name": "Americas Cup",
-    "region": "AMERICAS"
+    "region": "AMERICAS",
+    "image": "https://static.lolesports.com/leagues/1771489335111_CopyofICONGOLD.png"
   },
   {
     "slug": "arabian_league",
     "name": "Arabian League",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1738573749768_GoldAL.png"
   },
   {
     "slug": "asian_games",
     "name": "Asian Games",
-    "region": "INTERNATIONAL"
+    "region": "INTERNATIONAL",
+    "image": "https://static.lolesports.com/leagues/1790001420419_asia.png"
   },
   {
     "slug": "cacg",
     "name": "CACG",
     "region": "AMERICAS",
+    "image": "https://static.lolesports.com/leagues/1786093799714_LOGOSantoDomingo26-021.png",
     "hidden": true
   },
   {
     "slug": "cblol-brazil",
     "name": "CBLOL",
-    "region": "BRAZIL"
+    "region": "BRAZIL",
+    "image": "https://static.lolesports.com/leagues/cblol-logo-symbol-offwhite.png"
   },
   {
     "slug": "cblol_promotion",
     "name": "CBLOL Promotion",
-    "region": "BRAZIL"
+    "region": "BRAZIL",
+    "image": "https://static.lolesports.com/leagues/1790925246191_600px-CBLOL_2021_darkmode1.png"
   },
   {
     "slug": "cd",
     "name": "Circuito Desafiante",
-    "region": "BRAZIL"
+    "region": "BRAZIL",
+    "image": "https://static.lolesports.com/leagues/1739883216140_CIRCUITO_DESAFIANTE_COLOR_ORANGE.png"
   },
   {
     "slug": "demacia_cup",
     "name": "DCGI",
-    "region": "INTERNATIONAL"
+    "region": "INTERNATIONAL",
+    "image": "https://static.lolesports.com/leagues/1788253732774_94x-81.png"
   },
   {
     "slug": "emea_masters",
     "name": "EMEA Masters",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1669375535108_EM_Icon_Green1.png"
   },
   {
     "slug": "esports_balkan_league",
     "name": "Esports Balkan League",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1625735031226_ebl_crest-whitePNG.png"
   },
   {
     "slug": "ewc_lol",
     "name": "Esports World Cup",
-    "region": "INTERNATIONAL"
+    "region": "INTERNATIONAL",
+    "image": "https://static.lolesports.com/leagues/1782814488205_EWC26_PRIMARY_ABBREVIATED_LOGO_WHITE.png"
   },
   {
     "slug": "first_stand",
     "name": "First Stand",
-    "region": "INTERNATIONAL"
+    "region": "INTERNATIONAL",
+    "image": "https://static.lolesports.com/leagues/1740042025201_RG_LOL_FIRST_STAND_LOGO_VOLT_ALPHA.png"
   },
   {
     "slug": "fls",
     "name": "FLS",
-    "region": "OCEANIA"
+    "region": "OCEANIA",
+    "image": "https://static.lolesports.com/leagues/1784549419927_Icon_BURST1.png"
   },
   {
     "slug": "hellenic_legends_league",
     "name": "Hellenic Legends League",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1736361775356_HLL_FULL_COLOUR_DARKBG.png"
   },
   {
     "slug": "hitpoint_masters",
     "name": "Hitpoint Masters",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1641465237186_HM_white.png"
   },
   {
     "slug": "kespa_cup",
     "name": "KeSPA Cup",
-    "region": "KOREA"
+    "region": "KOREA",
+    "image": "https://static.lolesports.com/leagues/1784195628750_original1.png"
   },
   {
     "slug": "duelo_de_reyes",
     "name": "King's Duel",
     "region": "LATIN AMERICA",
+    "image": "https://static.lolesports.com/leagues/1695282324552_B.png",
     "hidden": true
   },
   {
     "slug": "lfl",
     "name": "La Ligue Française",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/LFL_Logo_2020_black1.png"
   },
   {
     "slug": "lck",
     "name": "LCK",
-    "region": "KOREA"
+    "region": "KOREA",
+    "image": "https://static.lolesports.com/leagues/lck-color-on-black.png"
   },
   {
     "slug": "lck_challengers_league",
     "name": "LCK Challengers",
-    "region": "KOREA"
+    "region": "KOREA",
+    "image": "https://static.lolesports.com/leagues/lck-cl-white.png"
   },
   {
     "slug": "lcl",
     "name": "LCL",
     "region": "COMMONWEALTH OF INDEPENDENT STATES",
+    "image": "https://static.lolesports.com/leagues/1593016885758_LCL-01-FullonDark.png",
     "hidden": true
   },
   {
     "slug": "lco",
     "name": "LCO",
     "region": "OCEANIA",
+    "image": "https://static.lolesports.com/leagues/lco-color-white.png",
     "hidden": true
   },
   {
     "slug": "lcp",
     "name": "LCP",
-    "region": "PACIFIC"
+    "region": "PACIFIC",
+    "image": "https://static.lolesports.com/leagues/1733468139601_lcp-color-golden.png"
   },
   {
     "slug": "lcp_promotion",
     "name": "LCP P&R",
-    "region": "PACIFIC"
+    "region": "PACIFIC",
+    "image": "https://static.lolesports.com/leagues/1791280620794_image1.png"
   },
   {
     "slug": "lcs",
     "name": "LCS",
-    "region": "NORTH AMERICA"
+    "region": "NORTH AMERICA",
+    "image": "https://static.lolesports.com/leagues/1706356907418_LCSNew-01-FullonDark.png"
   },
   {
     "slug": "lcs_promotion",
     "name": "LCS Promotion",
-    "region": "NORTH AMERICA"
+    "region": "NORTH AMERICA",
+    "image": "https://static.lolesports.com/leagues/1790925122018_LCS_2024.png"
   },
   {
     "slug": "lec",
     "name": "LEC",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1592516184297_LEC-01-FullonDark.png"
   },
   {
     "slug": "les",
     "name": "LES",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1769592521710_estrella-rojo.png"
   },
   {
     "slug": "liga_portuguesa",
     "name": "Liga Portuguesa",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1649884876085_LPLOL_2021_ISO_G-c389e9ae85c243e4f76a8028bbd9ca1609c2d12bc47c3709a9250d1b3ca43f58.png"
   },
   {
     "slug": "ljl-japan",
     "name": "LJL",
-    "region": "JAPAN"
+    "region": "JAPAN",
+    "image": "https://static.lolesports.com/leagues/1733997208721_LJL_icon_white_724px.png"
   },
   {
     "slug": "lla",
     "name": "LLA",
     "region": "LATIN AMERICA",
+    "image": "https://static.lolesports.com/leagues/1592516315279_LLA-01-FullonDark.png",
     "hidden": true
   },
   {
     "slug": "lit",
     "name": "LoL Italian Tournament",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1703058345246_IMG_4673.png"
   },
   {
     "slug": "lpl",
     "name": "LPL",
-    "region": "CHINA"
+    "region": "CHINA",
+    "image": "https://static.lolesports.com/leagues/1592516115322_LPL-01-FullonDark.png"
   },
   {
     "slug": "north_regional_league",
     "name": "LRN",
-    "region": "LATIN AMERICA NORTH"
+    "region": "LATIN AMERICA NORTH",
+    "image": "https://static.lolesports.com/leagues/1742461971444_FULL_COLOR_FOR_DARK_BG1.png"
   },
   {
     "slug": "south_regional_league",
     "name": "LRS",
-    "region": "LATIN AMERICA SOUTH"
+    "region": "LATIN AMERICA SOUTH",
+    "image": "https://static.lolesports.com/leagues/1742460115671_FULL_COLOR_FOR_DARK_BG.png"
   },
   {
     "slug": "lta_cross",
     "name": "LTA Cross-Conference",
     "region": "AMERICAS",
+    "image": "https://static.lolesports.com/leagues/1731566966819_LTA-LOGO-LightGold_RGB2000px.png",
     "hidden": true
   },
   {
     "slug": "lta_n",
     "name": "LTA North",
     "region": "AMERICAS",
+    "image": "https://static.lolesports.com/leagues/1731566778368_LTANORTH-LOGO_Blue_RGB2000px.png",
     "hidden": true
   },
   {
     "slug": "lta_s",
     "name": "LTA South",
     "region": "AMERICAS",
+    "image": "https://static.lolesports.com/leagues/1731566868757_LTASOUTH-LOGO_Red_RGB2000px.png",
     "hidden": true
   },
   {
     "slug": "msi",
     "name": "MSI",
-    "region": "INTERNATIONAL"
+    "region": "INTERNATIONAL",
+    "image": "https://static.lolesports.com/leagues/1592594634248_MSIDarkBG.png"
   },
   {
     "slug": "nacl",
     "name": "NACL",
-    "region": "NORTH AMERICA"
+    "region": "NORTH AMERICA",
+    "image": "https://static.lolesports.com/leagues/1740390007442_FULL_COLOR_FOR_DARK_BG.png"
   },
   {
     "slug": "nlc",
     "name": "NLC",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1778584186679_nlc_monogram_gold.png"
   },
   {
     "slug": "pcs",
     "name": "PCS",
-    "region": "HONG KONG, MACAU, TAIWAN"
+    "region": "HONG KONG, MACAU, TAIWAN",
+    "image": "https://static.lolesports.com/leagues/1592515942679_PCS-01-FullonDark.png"
   },
   {
     "slug": "primeleague",
     "name": "Prime League",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/PrimeLeagueResized.png"
   },
   {
     "slug": "rift_legends",
     "name": "Rift Legends",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1736963779891_Logo_short_lightRL__.png"
   },
   {
     "slug": "roadoflegends",
     "name": "Road of Legends",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1737450944766_ROL_DARKBG.png"
   },
   {
     "slug": "turkiye-sampiyonluk-ligi",
     "name": "TCL",
-    "region": "EMEA"
+    "region": "EMEA",
+    "image": "https://static.lolesports.com/leagues/1738338347640_ampiyonlukLigi-AMBLEM.png"
   },
   {
     "slug": "tft_esports",
     "name": "TFT Esports",
-    "region": "INTERNATIONAL"
+    "region": "INTERNATIONAL",
+    "image": "https://static.lolesports.com/leagues/1723029828764_TFT_GRADIENT_2.png"
   },
   {
     "slug": "vcs",
     "name": "VCS",
-    "region": "VIETNAM"
+    "region": "VIETNAM",
+    "image": "https://static.lolesports.com/leagues/1677578094811_VCS_SYMBOL_TITANIUM_RGB.png"
   },
   {
     "slug": "worlds",
     "name": "Worlds",
-    "region": "INTERNATIONAL"
+    "region": "INTERNATIONAL",
+    "image": "https://static.lolesports.com/leagues/1592594612171_WorldsDarkBG.png"
   },
   {
     "slug": "wqs",
     "name": "Worlds Qualifying Series",
     "region": "INTERNATIONAL",
+    "image": "https://static.lolesports.com/leagues/1693555886600_lolesports_icon_ice-01.png",
     "hidden": true
   },
   {
     "slug": "wsci",
     "name": "WSCI",
-    "region": "INTERNATIONAL"
+    "region": "INTERNATIONAL",
+    "image": "https://static.lolesports.com/leagues/1788259526036_WSCIlogo_1-061.png"
   }
 ]
